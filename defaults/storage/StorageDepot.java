@@ -1,3 +1,5 @@
+package storage;
+
 import javax.naming.OperationNotSupportedException;
 
 public interface StorageDepot<T> {

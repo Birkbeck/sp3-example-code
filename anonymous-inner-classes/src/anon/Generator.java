@@ -1,4 +1,4 @@
-package anonymous.anonymous;
+package anon;
 
 public class Generator {
     public Sensor getSensor() {

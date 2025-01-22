@@ -1,4 +1,4 @@
-package anonymous.anonymous;
+package anon;
 
 @FunctionalInterface
 interface SomeInterface {

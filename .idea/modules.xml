@@ -11,10 +11,22 @@
       <module fileurl="file://$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDI/HelloWorldSpringWithDI.iml" filepath="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDI/HelloWorldSpringWithDI.iml" />
       <module fileurl="file://$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFile/HelloWorldSpringWithDIXMLFile.iml" filepath="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFile/HelloWorldSpringWithDIXMLFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFileConstructorArgument/HelloWorldSpringWithDIXMLFileConstructorArgument.iml" filepath="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFileConstructorArgument/HelloWorldSpringWithDIXMLFileConstructorArgument.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anonymous-inner-classes/anonymous-inner-classes.iml" filepath="$PROJECT_DIR$/anonymous-inner-classes/anonymous-inner-classes.iml" />
       <module fileurl="file://$PROJECT_DIR$/bridgebetween/bridgebetween.iml" filepath="$PROJECT_DIR$/bridgebetween/bridgebetween.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger/dagger.iml" filepath="$PROJECT_DIR$/dagger/dagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/defaults/defaults.iml" filepath="$PROJECT_DIR$/defaults/defaults.iml" />
       <module fileurl="file://$PROJECT_DIR$/dependency-injection-example/dependency-injection-example.iml" filepath="$PROJECT_DIR$/dependency-injection-example/dependency-injection-example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sp3-example-code.iml" filepath="$PROJECT_DIR$/sp3-example-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generics/generics.iml" filepath="$PROJECT_DIR$/generics/generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" filepath="$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" filepath="$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-streams/java-streams.iml" filepath="$PROJECT_DIR$/java-streams/java-streams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lombok/lombok.iml" filepath="$PROJECT_DIR$/lombok/lombok.iml" />
+      <module fileurl="file://$PROJECT_DIR$/optional/optional.iml" filepath="$PROJECT_DIR$/optional/optional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/records/records.iml" filepath="$PROJECT_DIR$/records/records.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sealed/sealed.iml" filepath="$PROJECT_DIR$/sealed/sealed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solid/solid.iml" filepath="$PROJECT_DIR$/solid/solid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/static/static.iml" filepath="$PROJECT_DIR$/static/static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/switchexpressions/switchexpressions.iml" filepath="$PROJECT_DIR$/switchexpressions/switchexpressions.iml" />
     </modules>
   </component>
 </project>
