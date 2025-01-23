@@ -5,47 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/defaults/defaults.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/java-streams.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/lombok.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optional/optional.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/records/records.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sealed/sealed.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solid/solid.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/defaults/src/multipleinheritance/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anonymous-inner-classes/anonymous-inner-classes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/anonymous-inner-classes/anonymous-inner-classes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anonymous-inner-classes/src/anonymous/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/anonymous-inner-classes/src/anon/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anonymous-inner-classes/src/anonymous/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/anonymous-inner-classes/src/anon/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anonymous-inner-classes/src/anonymous/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/anonymous-inner-classes/src/anon/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anonymous-inner-classes/src/anonymous/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/anonymous-inner-classes/src/anon/Sensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defaults/StorageDepot.java" beforeDir="false" afterPath="$PROJECT_DIR$/defaults/storage/StorageDepot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/Bar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/Box.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/BoxDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/BoxUpper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/Example.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/Foo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/FooBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/IntBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/MathBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/NewSum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/NewSumMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/OldBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/OldBoxDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/StrBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/Sum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generics/src/SumMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/defaults/src/multipleinheritance/B.java" beforeDir="false" afterPath="$PROJECT_DIR$/defaults/src/multipleinheritance/B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/defaults/src/multipleinheritance/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/defaults/src/multipleinheritance/C.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-lambdas-examples/src/demos/LambdaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-lambdas-examples/src/demos/LambdaDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-lambdas-examples/src/demos/MethodReferenceDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-lambdas-examples/src/demos/MethodReferenceDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-lambdas-examples/src/functionalinterfaces/CustomFunctionalInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-lambdas-examples/src/functionalinterfaces/CustomFunctionalInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/lombok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lombok/lombok.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" beforeDir="false" afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExampleCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExampleCategoryOrig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExampleOrig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +100,19 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.C.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Example.executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloWorld (1).executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloWorld (2).executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloWorld.executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloWorldSpringWithDIXMLFile.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LambdaDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MethodReferenceDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.lombokexamples.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Gradle.Build spring-boot-helloworld.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -149,7 +134,7 @@
     &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
@@ -178,7 +163,7 @@
       <recent name="helloworld" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.C">
+  <component name="RunManager" selected="Application.lombokexamples.Main">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -194,69 +179,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="multipleinheritance.C" />
-      <module name="defaults" />
+    <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lambdas.Example" />
+      <module name="java-lambdas-examples" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="multipleinheritance.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorld (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
-      <module name="HelloWorldSpringWithDI" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helloworld.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorld (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
-      <module name="springframeworkexample" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helloworld.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
-      <module name="HelloWorldCommandLineArguments" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helloworld.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorldSpringWithDIXMLFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorldSpringWithDIXMLFile" />
-      <module name="HelloWorldSpringWithDIXMLFile" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helloworld.*" />
+          <option name="PATTERN" value="lambdas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -320,8 +249,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LambdaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demos.LambdaDemo" />
+      <module name="java-lambdas-examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="multipleinheritance.Main" />
+      <module name="defaults" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="multipleinheritance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MethodReferenceDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demos.MethodReferenceDemo" />
+      <module name="java-lambdas-examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lombokexamples.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lombokexamples.Main" />
+      <module name="lombok" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lombokexamples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -329,20 +314,6 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpringBootHelloworldApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="spring-boot-helloworld.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.springboothelloworld.SpringBootHelloworldApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.springboothelloworld.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -358,11 +329,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.C" />
-        <item itemvalue="Application.HelloWorld (2)" />
-        <item itemvalue="Application.HelloWorldSpringWithDIXMLFile" />
-        <item itemvalue="Spring Boot.SpringBootHelloworldApplication" />
-        <item itemvalue="Application.HelloWorld (1)" />
+        <item itemvalue="Application.lombokexamples.Main" />
+        <item itemvalue="Application.Example" />
+        <item itemvalue="Application.MethodReferenceDemo" />
+        <item itemvalue="Application.LambdaDemo" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -393,7 +364,8 @@
       <workItem from="1709048773334" duration="841000" />
       <workItem from="1737138790162" duration="313000" />
       <workItem from="1737564025286" duration="2570000" />
-      <workItem from="1737568525239" duration="815000" />
+      <workItem from="1737568525239" duration="9703000" />
+      <workItem from="1737652147772" duration="29000" />
     </task>
     <servers />
   </component>
