@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/defaults/src/multipleinheritance/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defaults/src/multipleinheritance/B.java" beforeDir="false" afterPath="$PROJECT_DIR$/defaults/src/multipleinheritance/B.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defaults/src/multipleinheritance/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/defaults/src/multipleinheritance/C.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-lambdas-examples/src/demos/LambdaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-lambdas-examples/src/demos/LambdaDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-lambdas-examples/src/demos/MethodReferenceDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-lambdas-examples/src/demos/MethodReferenceDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-lambdas-examples/src/functionalinterfaces/CustomFunctionalInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-lambdas-examples/src/functionalinterfaces/CustomFunctionalInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/lombok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lombok/lombok.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" beforeDir="false" afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExampleCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExampleCategoryOrig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/LogExampleOrig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/general/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/java-streams.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-streams/java-streams.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,9 +98,9 @@
     &quot;Application.lombokexamples.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Gradle.Build spring-boot-helloworld.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -340,8 +327,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28390b856d98-intellij.indexing.shared.core-IU-251.14649.49" />
-        <option value="bundled-js-predefined-d6986cc7102b-b81319f9767f-JavaScript-IU-251.14649.49" />
+        <option value="bundled-jdk-9823dce3aa75-28390b856d98-intellij.indexing.shared.core-IU-251.17181.16" />
+        <option value="bundled-js-predefined-d6986cc7102b-b81319f9767f-JavaScript-IU-251.17181.16" />
       </set>
     </attachedChunks>
   </component>
@@ -366,6 +353,8 @@
       <workItem from="1737564025286" duration="2570000" />
       <workItem from="1737568525239" duration="9703000" />
       <workItem from="1737652147772" duration="29000" />
+      <workItem from="1738231232535" duration="257000" />
+      <workItem from="1738231507647" duration="3048000" />
     </task>
     <servers />
   </component>
