@@ -1,7 +1,10 @@
-package chaining;
+package optional;
+
+import lombok.Data;
 
 import java.util.Optional;
 
+@Data
 public class User {
     private String email;
     private String password;

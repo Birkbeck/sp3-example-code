@@ -18,29 +18,6 @@ public class OptionalTest {
 
     private Logger logger = LogManager.getLogManager().getLogger("optional.OptionalTest");
 
-    @Test(expected = NullPointerException.class)
-    public void testNull() {
-        String isocode = user.getAddress().getCountry().getIsocode().toUpperCase();
-    }
-
-    @Test
-    public void test() {
-
-        if (user != null) {
-            Address address = user.getAddress();
-            if (address != null) {
-                Country country = address.getCountry();
-                if (country != null) {
-                    String isocode = country.getIsocode();
-                    if (isocode != null) {
-                        isocode = isocode.toUpperCase();
-                    }
-                }
-            }
-        }
-
-    }
-
     @Test(expected = NoSuchElementException.class)
     public void whenCreateEmptyOptional_thenNull() {
         Optional<User> emptyOpt = Optional.empty();
