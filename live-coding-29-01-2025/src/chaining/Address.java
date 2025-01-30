@@ -1,6 +1,4 @@
-package optional.chaining;
-
-import optional.Country;
+package chaining;
 
 import java.util.Optional;
 

@@ -5,14 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-29-01-2025/live-coding-29-01-2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-streams/java-streams.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-streams/java-streams.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optional/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optional/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optional/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optional/chaining/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/chaining/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optional/chaining/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/chaining/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optional/chaining/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/chaining/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitamin.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitamin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminAllowingNulls.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminAllowingNulls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminOverloading.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminOverloading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminStaticFactoryMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminStaticFactoryMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminWithBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminWithBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/streams/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/streams/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/streams/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/test/optional/OptionalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OptionalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/test/streams/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/EmployeeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/optional/src/optional/OptionalDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OptionalDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/optional/src/optional/OrElseThrowExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OrElseThrowExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/optional/src/optional/OrElseThrowExampleTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OrElseThrowExampleTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/optional/src/optional/OrElseThrowIntExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OrElseThrowIntExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,7 +374,7 @@
       <workItem from="1737568525239" duration="9703000" />
       <workItem from="1737652147772" duration="29000" />
       <workItem from="1738231232535" duration="257000" />
-      <workItem from="1738231507647" duration="3048000" />
+      <workItem from="1738231507647" duration="4005000" />
     </task>
     <servers />
   </component>

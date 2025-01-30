@@ -18,7 +18,32 @@ public class Main {
         whenIterateStream_thenGetInfiniteStream();
         whenGetStreamFromList_ObtainStream(empList);
         whenGetStreamFromArray_ObtainStream(arrayOfEmps);
-
+        whenGetStreamFromElements_ObtainStream(arrayOfEmps);
+        whenBuildStreamFromElements_ObtainStream(arrayOfEmps);
+        whenIncrementSalaryForEachEmployee_thenApplyNewSalary(arrayOfEmps);
+        whenMapIdToEmployees_thenGetEmployeeStream(employeeRepository);
+        whenFlatMapEmployeeNames_thenGetNameStream();
+        whenFilterEmployees_thenGetFilteredStream(employeeRepository,arrayOfEmps);
+        whenFindFirst_thenGetFirstEmployeeInStream(employeeRepository);
+        whenStreamCount_thenGetElementCount(empList);
+        whenLimitInfiniteStream_thenGetFiniteElements();
+        whenSortStream_thenGetSortedStream(empList);
+        whenFindMin_thenGetMinElementFromStream(empList);
+        whenApplyDistinct_thenRemoveDuplicatesFromStream();
+        whenApplyMatch_thenReturnBoolean();
+        whenFindMaxOnIntStream_thenGetMaxInteger(empList);
+        whenApplySumOnIntStream_thenGetSum(empList);
+        whenFindMax_thenGetMaxElementFromStream(empList);
+        whenApplyReduceOnStream_thenGetValue(empList);
+        whenCollectByJoining_thenGetJoinedString(empList);
+        whenCollectBySet_thenGetSet(empList);
+        whenToVectorCollection_thenGetVector(empList);
+        whenApplySummarizing_thenGetBasicStats(empList);
+        whenApplySummaryStatistics_thenGetBasicStats(empList);
+        whenStreamPartition_thenGetMap();
+        whenStreamGroupingBy_thenGetMap(empList);
+        whenStreamReducing_thenGetValue(empList);
+        whenStreamGroupingAndReducing_thenGetMap(empList);
     }
 
     static void whenParallelStream_thenPerformOperationsInParallel(Employee[] arrayOfEmps) {

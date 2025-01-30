@@ -1,4 +1,4 @@
-package optional.chaining;
+package chaining;
 
 public class Country {
     private String name;

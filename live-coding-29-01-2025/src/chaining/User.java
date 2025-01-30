@@ -1,4 +1,4 @@
-package optional.chaining;
+package chaining;
 
 import java.util.Optional;
 

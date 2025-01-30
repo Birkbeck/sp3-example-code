@@ -19,7 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/generics/generics.iml" filepath="$PROJECT_DIR$/generics/generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" filepath="$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" filepath="$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java-streams/java-streams.iml" filepath="$PROJECT_DIR$/java-streams/java-streams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/live-coding-29-01-2025/live-coding-29-01-2025.iml" filepath="$PROJECT_DIR$/live-coding-29-01-2025/live-coding-29-01-2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/lombok/lombok.iml" filepath="$PROJECT_DIR$/lombok/lombok.iml" />
       <module fileurl="file://$PROJECT_DIR$/optional/optional.iml" filepath="$PROJECT_DIR$/optional/optional.iml" />
       <module fileurl="file://$PROJECT_DIR$/records/records.iml" filepath="$PROJECT_DIR$/records/records.iml" />

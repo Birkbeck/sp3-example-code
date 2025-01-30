@@ -1,24 +1,6 @@
 package streams;
-
-import org.junit.AfterClass;
-import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-
 public class EmployeeTest {
+    /*
     private static String fileName = "src/test/resources/test.txt";
 
     private static Employee[] arrayOfEmps = {
@@ -112,7 +94,7 @@ public class EmployeeTest {
                 .map(employeeRepository::findById)
                 .collect(Collectors.toList());
 
-        assertEquals(empIds.length, employees.size());
+        Assert.assertEquals(empIds.length, employees.size());
     }
 
     @Test
@@ -130,7 +112,7 @@ public class EmployeeTest {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
-        assertEquals(namesNested.size() * 2, namesFlatStream.size());
+        Assert.assertEquals(namesNested.size() * 2, namesFlatStream.size());
     }
 
     @Test
@@ -145,7 +127,7 @@ public class EmployeeTest {
 
         //employees.stream().forEach(System.out::println);
 
-        assertEquals(Arrays.asList(arrayOfEmps[2]), employees);
+        Assert.assertEquals(Arrays.asList(arrayOfEmps[2]), employees);
     }
 
     @Test
@@ -167,14 +149,14 @@ public class EmployeeTest {
     public void whenCollectStreamToList_thenGetList() {
         List<Employee> employees = empList.stream().collect(Collectors.toList());
 
-        assertEquals(empList, employees);
+        Assert.assertEquals(empList, employees);
     }
 
     @Test
     public void whenStreamToArray_thenGetArray() {
         Employee[] employees = empList.stream().toArray(Employee[]::new);
 
-        assertThat(empList.toArray(), equalTo(employees));
+        MatcherAssert.assertThat(empList.toArray(), CoreMatchers.equalTo(employees));
     }
 
     @Test
@@ -183,7 +165,7 @@ public class EmployeeTest {
                 .filter(e -> e.getSalary() > 200_000)
                 .count();
 
-        assertEquals(empCount, Long.valueOf(1));
+        Assert.assertEquals(empCount, Long.valueOf(1));
     }
 
     @Test
@@ -195,7 +177,7 @@ public class EmployeeTest {
                 .limit(5)
                 .collect(Collectors.toList());
 
-        assertEquals(collect, Arrays.asList(16, 32, 64, 128, 256));
+        Assert.assertEquals(collect, Arrays.asList(16, 32, 64, 128, 256));
     }
 
     @Test
@@ -233,7 +215,7 @@ public class EmployeeTest {
         List<Integer> intList = Arrays.asList(2, 5, 3, 2, 4, 3);
         List<Integer> distinctIntList = intList.stream().distinct().collect(Collectors.toList());
 
-        assertEquals(distinctIntList, Arrays.asList(2, 5, 3, 4));
+        Assert.assertEquals(distinctIntList, Arrays.asList(2, 5, 3, 4));
     }
 
     @Test
@@ -244,9 +226,9 @@ public class EmployeeTest {
         boolean oneEven = intList.stream().anyMatch(i -> i % 2 == 0);
         boolean noneMultipleOfThree = intList.stream().noneMatch(i -> i % 3 == 0);
 
-        assertEquals(allEven, false);
-        assertEquals(oneEven, true);
-        assertEquals(noneMultipleOfThree, false);
+        Assert.assertEquals(allEven, false);
+        Assert.assertEquals(oneEven, true);
+        Assert.assertEquals(noneMultipleOfThree, false);
     }
 
     @Test
@@ -256,7 +238,7 @@ public class EmployeeTest {
                 .max()
                 .orElseThrow(NoSuchElementException::new);
 
-        assertEquals(latestEmpId, new Integer(3));
+        Assert.assertEquals(latestEmpId, new Integer(3));
     }
 
     @Test
@@ -266,7 +248,7 @@ public class EmployeeTest {
                 .average()
                 .orElseThrow(NoSuchElementException::new);
 
-        assertEquals(avgSal, new Double(200000));
+        Assert.assertEquals(avgSal, new Double(200000));
     }
 
     @Test
@@ -275,7 +257,7 @@ public class EmployeeTest {
                 .map(Employee::getSalary)
                 .reduce(0.0, Double::sum);
 
-        assertEquals(sumSal, new Double(600000));
+        Assert.assertEquals(sumSal, new Double(600000));
     }
 
     @Test
@@ -285,7 +267,7 @@ public class EmployeeTest {
                 .collect(Collectors.joining(", "))
                 .toString();
 
-        assertEquals(empNames, "Jeff Bezos, Bill Gates, Mark Zuckerberg");
+        Assert.assertEquals(empNames, "Jeff Bezos, Bill Gates, Mark Zuckerberg");
     }
 
     @Test
@@ -294,7 +276,7 @@ public class EmployeeTest {
                 .map(Employee::getName)
                 .collect(Collectors.toSet());
 
-        assertEquals(empNames.size(), 3);
+        Assert.assertEquals(empNames.size(), 3);
     }
 
     @Test
@@ -303,7 +285,7 @@ public class EmployeeTest {
                 .map(Employee::getName)
                 .collect(Collectors.toCollection(Vector::new));
 
-        assertEquals(empNames.size(), 3);
+        Assert.assertEquals(empNames.size(), 3);
     }
 
     @Test
@@ -311,11 +293,11 @@ public class EmployeeTest {
         DoubleSummaryStatistics stats = empList.stream()
                 .collect(Collectors.summarizingDouble(Employee::getSalary));
 
-        assertEquals(stats.getCount(), 3);
-        assertEquals(stats.getSum(), 600000.0, 0);
-        assertEquals(stats.getMin(), 100000.0, 0);
-        assertEquals(stats.getMax(), 300000.0, 0);
-        assertEquals(stats.getAverage(), 200000.0, 0);
+        Assert.assertEquals(stats.getCount(), 3);
+        Assert.assertEquals(stats.getSum(), 600000.0, 0);
+        Assert.assertEquals(stats.getMin(), 100000.0, 0);
+        Assert.assertEquals(stats.getMax(), 300000.0, 0);
+        Assert.assertEquals(stats.getAverage(), 200000.0, 0);
     }
 
     @Test
@@ -324,11 +306,11 @@ public class EmployeeTest {
                 .mapToDouble(Employee::getSalary)
                 .summaryStatistics();
 
-        assertEquals(stats.getCount(), 3);
-        assertEquals(stats.getSum(), 600000.0, 0);
-        assertEquals(stats.getMin(), 100000.0, 0);
-        assertEquals(stats.getMax(), 300000.0, 0);
-        assertEquals(stats.getAverage(), 200000.0, 0);
+        Assert.assertEquals(stats.getCount(), 3);
+        Assert.assertEquals(stats.getSum(), 600000.0, 0);
+        Assert.assertEquals(stats.getMin(), 100000.0, 0);
+        Assert.assertEquals(stats.getMax(), 300000.0, 0);
+        Assert.assertEquals(stats.getAverage(), 200000.0, 0);
     }
 
     @Test
@@ -337,8 +319,8 @@ public class EmployeeTest {
         Map<Boolean, List<Integer>> isEven = intList.stream().collect(
                 Collectors.partitioningBy(i -> i % 2 == 0));
 
-        assertEquals(isEven.get(true).size(), 4);
-        assertEquals(isEven.get(false).size(), 1);
+        Assert.assertEquals(isEven.get(true).size(), 4);
+        Assert.assertEquals(isEven.get(false).size(), 1);
     }
 
     @Test
@@ -357,9 +339,9 @@ public class EmployeeTest {
                 Collectors.groupingBy(e -> new Character(e.getName().charAt(0)),
                         Collectors.mapping(Employee::getId, Collectors.toList())));
 
-        assertEquals(idGroupedByAlphabet.get('B').get(0), new Integer(2));
-        assertEquals(idGroupedByAlphabet.get('J').get(0), new Integer(1));
-        assertEquals(idGroupedByAlphabet.get('M').get(0), new Integer(3));
+        Assert.assertEquals(idGroupedByAlphabet.get('B').get(0), new Integer(2));
+        Assert.assertEquals(idGroupedByAlphabet.get('J').get(0), new Integer(1));
+        Assert.assertEquals(idGroupedByAlphabet.get('M').get(0), new Integer(3));
     }
 
     @Test
@@ -368,7 +350,7 @@ public class EmployeeTest {
         Double salIncrOverhead = empList.stream().collect(Collectors.reducing(
                 0.0, e -> e.getSalary() * percentage / 100, (s1, s2) -> s1 + s2));
 
-        assertEquals(salIncrOverhead, 60000.0, 0);
+        Assert.assertEquals(salIncrOverhead, 60000.0, 0);
     }
 
     @Test
@@ -412,7 +394,7 @@ public class EmployeeTest {
                 .limit(5)
                 .collect(Collectors.toList());
 
-        assertEquals(collect, Arrays.asList(2, 4, 8, 16, 32));
+        Assert.assertEquals(collect, Arrays.asList(2, 4, 8, 16, 32));
     }
 
     @Test
@@ -444,4 +426,6 @@ public class EmployeeTest {
 //        List<String> str = getPalindrome(Files.lines(Paths.get(fileName)), 5);
 //        assertThat(str, contains("refer", "level"));
 //    }
+
+     */
 }
