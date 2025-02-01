@@ -16,7 +16,7 @@ public class OptionalTest {
 
     private User user;
 
-    private Logger logger = LogManager.getLogManager().getLogger("optional.OptionalTest");
+    private final Logger logger = LogManager.getLogManager().getLogger("optional.OptionalTest");
 
     @Test(expected = NoSuchElementException.class)
     public void whenCreateEmptyOptional_thenNull() {
