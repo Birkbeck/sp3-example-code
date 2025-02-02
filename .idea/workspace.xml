@@ -5,34 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/exampleone/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/exampletwo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OptionalDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OrElseThrowExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OrElseThrowExampleTwo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OrElseThrowIntExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/chaining/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/chaining/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/chaining/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitamin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminAllowingNulls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminOverloading.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminStaticFactoryMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminWithBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Example.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/delegate/HasContactInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/exceptions/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/exceptions/UserServiceLombok.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bridgebetween/qodana.sarif.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bridgebetween/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/help-session-02-02-2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/resources/alice.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.replit" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help-session-02-02-2025/src/examplethree/OptionalDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/examplethree/OptionalDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
@@ -85,6 +66,9 @@
     </option>
   </component>
   <component name="KubernetesApiProvider">{}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -119,6 +103,7 @@
     "Application.Main.executor": "Run",
     "Application.MethodReferenceDemo.executor": "Run",
     "Application.OptionalDemo.executor": "Run",
+    "Application.examplethree.OptionalDemo.executor": "Run",
     "Application.lombokexamples.Main.executor": "Run",
     "Application.streams.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
@@ -154,6 +139,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/38/lr15031n5gldp7lrlktyhntc0000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="f1e8c3b5-6b11-4c58-bc8d-744b928c3e1a" />
+        <option name="reportName" value="repo/qodana/2025-02-02" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/38/lr15031n5gldp7lrlktyhntc0000gn/T/qodana_output/qodana.sarif.json" reportGuid="f1e8c3b5-6b11-4c58-bc8d-744b928c3e1a" reportId="repo/qodana/2025-02-02" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/springframeworkexample/src" />
@@ -163,6 +165,7 @@
       <recent name="$PROJECT_DIR$/dependency-injection-example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/help-session-02-02-2025/resources" />
       <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFile/resources" />
       <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDI/resources" />
       <recent name="$PROJECT_DIR$/dependency-injection-example/lib" />
@@ -177,7 +180,7 @@
       <recent name="helloworld" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OptionalDemo">
+  <component name="RunManager" selected="Application.examplethree.OptionalDemo">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -200,20 +203,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="lambdas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
-      <module name="HelloWorldDecoupledInterfaceWithFactory" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helloworld.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -250,20 +239,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MethodReferenceDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demos.MethodReferenceDemo" />
-      <module name="java-lambdas-examples" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="demos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OptionalDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="optional.OptionalDemo" />
       <module name="optional" />
@@ -280,6 +255,20 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="examplethree.OptionalDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="examplethree.OptionalDemo" />
+      <module name="help-session-02-02-2025" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="examplethree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -316,11 +305,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.examplethree.OptionalDemo" />
         <item itemvalue="Application.OptionalDemo" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.streams.Main" />
         <item itemvalue="Application.Example" />
-        <item itemvalue="Application.MethodReferenceDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -359,6 +348,7 @@
       <workItem from="1738345938815" duration="6607000" />
       <workItem from="1738448711344" duration="486000" />
       <workItem from="1738495883083" duration="3007000" />
+      <workItem from="1738499357405" duration="1920000" />
     </task>
     <servers />
   </component>
