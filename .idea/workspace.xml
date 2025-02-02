@@ -5,21 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/help-session-01-26-2025/help-session-01-26-2025.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/help-session-01-26-2025/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/exampleone/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/exampletwo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OptionalDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OrElseThrowExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OrElseThrowExampleTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/optional/OrElseThrowIntExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/chaining/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/chaining/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optional/chaining/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitamin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminAllowingNulls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminOverloading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminStaticFactoryMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/optionalparams/MultiVitaminWithBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Example.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/delegate/HasContactInformation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/exceptions/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok/src/lombokexamples/exceptions/UserServiceLombok.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OptionalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OptionalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/PersonRedux.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/delegate/HasContactInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/exceptions/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lombok/src/lombokexamples/exceptions/UserServiceLombok.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +118,7 @@
     "Application.LambdaDemo.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MethodReferenceDemo.executor": "Run",
+    "Application.OptionalDemo.executor": "Run",
     "Application.lombokexamples.Main.executor": "Run",
     "Application.streams.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
@@ -160,7 +177,7 @@
       <recent name="helloworld" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.OptionalDemo">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -183,20 +200,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="lambdas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
-      <module name="HelloWorldDecoupledInterface" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="helloworld.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -232,20 +235,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LambdaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demos.LambdaDemo" />
-      <module name="java-lambdas-examples" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="demos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="24" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -268,6 +257,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="demos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OptionalDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="optional.OptionalDemo" />
+      <module name="optional" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="optional.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -313,11 +316,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OptionalDemo" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.streams.Main" />
         <item itemvalue="Application.Example" />
         <item itemvalue="Application.MethodReferenceDemo" />
-        <item itemvalue="Application.LambdaDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -354,7 +357,8 @@
       <workItem from="1738231507647" duration="8652000" />
       <workItem from="1738264592048" duration="12000" />
       <workItem from="1738345938815" duration="6607000" />
-      <workItem from="1738448711344" duration="416000" />
+      <workItem from="1738448711344" duration="486000" />
+      <workItem from="1738495883083" duration="3007000" />
     </task>
     <servers />
   </component>
