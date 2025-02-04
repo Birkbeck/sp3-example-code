@@ -68,14 +68,14 @@ public class PatternMatching {
 //        };
 //    }
 
-    static Function<Integer, String> testParen(Object obj) {
-        boolean b = true;
-        Function<Integer, String> integerStringFunction = switch (obj) {
-            case (String s && b) ->{
-                yield t -> s;
-            }
-            default -> t -> "Default string";
-        }; return integerStringFunction;
-    }
+//    static Function<Integer, String> testParen(Object obj) {
+//        boolean b = true;
+//        Function<Integer, String> integerStringFunction = switch (obj) {
+//            case (String s && b) ->{
+//                yield t -> s;
+//            }
+//            default -> t -> "Default string";
+//        }; return integerStringFunction;
+//    }
 }
 

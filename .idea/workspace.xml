@@ -5,18 +5,216 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bridgebetween/qodana.sarif.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bridgebetween/qodana.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/help-session-02-02-2025.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help-session-02-02-2025/resources/alice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/live-coding-01-29-2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/live-coding-29-01-2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/OptionalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/OrElseThrowExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/OrElseThrowExampleTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/OrElseThrowIntExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optional/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optionalparams/MultiVitamin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optionalparams/MultiVitaminAllowingNulls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optionalparams/MultiVitaminOverloading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optionalparams/MultiVitaminStaticFactoryMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/optionalparams/MultiVitaminWithBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/streams/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/streams/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/streams/EmployeeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-01-29-2025/src/streams/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/live-coding-02-05-2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/beans_autoscan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/beans_en_GB.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.cmd.line/HelloWorldWithCommandLineArguments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/HelloWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/HelloWorldMessageProviderAlternative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/MessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/MessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/MessageSupportFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled/HelloWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.annotations/HelloWorldSpringWithAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.annotations/MessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.annotations/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.autoscan/HelloWorldMP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.autoscan/HelloWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.autoscan/HelloWorldSpringWithAutoscan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.autoscan/MessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.autoscan/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di.xml/HelloWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di.xml/HelloWorldSpringWithDIXMLFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di.xml/MessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di.xml/MessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di.xml/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di/HelloWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di/HelloWorldMessageProviderAlternative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di/HelloWorldSpringWithDI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di/MessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring.di/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring/AnotherWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring/HelloWorldSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.spring/StandardOutMessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld/interfaces/HelloWorldDecoupledInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld/interfaces/HelloWorldMessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld/interfaces/MessageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld/interfaces/MessageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld/interfaces/StandardOutMessageRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.replit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bridgebetween/bridgebetween.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bridgebetween/bridgebetween.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/binarytree/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/binarytree/BinaryTreePrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/circularbuffer/CircularBuffer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/circularlinkedlist/CircularLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/graph/Graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/graph/GraphTraversal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/minmaxheap/MinMaxHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/src/tree/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/binarytree/BinaryTreePrinterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/circularbuffer/CircularBufferTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/circularbuffer/ProducerConsumerLiveTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/circularlinkedlist/CircularLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/graph/GraphTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/minmaxheap/MinMaxHeapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures-2/tests/tree/BinaryTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/libraries/Spring_5_2_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorld/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorld/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldCommandLineArguments/HelloWorldCommandLineArguments.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldCommandLineArguments/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupled/HelloWorldDecoupled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupled/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupled/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupled/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterface/HelloWorldDecoupledInterface.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterface/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterface/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterface/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterface/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterface/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/HelloWorldDecoupledInterfaceWithFactory.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/resources/bean.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/bean.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/HelloWorldMessageProviderAlternative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/MessageSupportFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/HelloWorldSpring.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/resources/beans.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/src/helloworld/AnotherWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpring/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAnnotation/src/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAnnotation/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAnnotation/src/helloworld/HelloWorldSpringWithAnnotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAnnotation/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAnnotation/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/helloworld/HelloWorldMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/helloworld/HelloWorldSpringWithAutoscan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithAutoscan/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/HelloWorldSpringWithDI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/resources/beans.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/src/helloworld/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/src/helloworld/HelloWorldMessageProviderAlternative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDI/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/HelloWorldSpringWithDIXMLFile.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/resources/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/src/helloworld/HelloWorldSpringWithDIXMLFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFile/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFileConstructorArgument/HelloWorldSpringWithDIXMLFileConstructorArgument.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFileConstructorArgument/resources/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFileConstructorArgument/src/helloworld/ConfigurableMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFileConstructorArgument/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFileConstructorArgument/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/HelloWorldSpringWithDIXMLFileConstructorArgument/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-injection/dependency-injection-example.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help-session-02-02-2025/src/examplethree/OptionalDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/help-session-02-02-2025/src/examplethree/OptionalDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-patternmatching/src/PatternMatching.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-patternmatching/src/PatternMatching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/live-coding-29-01-2025.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/Country.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OptionalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OrElseThrowExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OrElseThrowExampleTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/OrElseThrowIntExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optional/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitamin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminAllowingNulls.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminOverloading.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminStaticFactoryMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/optionalparams/MultiVitaminWithBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/EmployeeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-coding-29-01-2025/src/streams/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorld/src/helloworld/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldCommandLineArguments/src/helloworld/HelloWorldWithCommandLineArguments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupled/src/helloworld/HelloWorldDecoupled.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupled/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupled/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterface/src/helloworld/HelloWorldDecoupledInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterface/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterface/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/HelloWorldDecoupledWithFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/HelloWorldMessageProviderAlternative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/MessageSupportFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldDecoupledInterfaceWithFactory/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpring/src/helloworld/AnotherWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpring/src/helloworld/HelloWorldSpring.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpring/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAnnotation/src/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-coding-02-05-2025/src/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAnnotation/src/helloworld/HelloWorldSpringWithAnnotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAnnotation/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAnnotation/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAutoscan/src/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAutoscan/src/helloworld/HelloWorldMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAutoscan/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAutoscan/src/helloworld/HelloWorldSpringWithAutoscan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAutoscan/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithAutoscan/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDI/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDI/src/helloworld/HelloWorldMessageProviderAlternative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDI/src/helloworld/HelloWorldSpringWithDI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDI/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDI/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDIXMLFile/src/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDIXMLFile/src/helloworld/HelloWorldMessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDIXMLFile/src/helloworld/HelloWorldSpringWithDIXMLFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDIXMLFile/src/helloworld/MessageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDIXMLFile/src/helloworld/MessageRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/di-helloworld/HelloWorldSpringWithDIXMLFile/src/helloworld/StandardOutMessageRenderer.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +253,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitLabMergeRequestsSettings">{}</component>
   <component name="GithubPullRequestsUISettings">{}</component>
@@ -98,12 +297,15 @@
     "Application.HelloWorld (1).executor": "Run",
     "Application.HelloWorld (2).executor": "Run",
     "Application.HelloWorld.executor": "Run",
+    "Application.HelloWorldDecoupled.executor": "Run",
     "Application.HelloWorldSpringWithDIXMLFile.executor": "Run",
+    "Application.HelloWorldWithCommandLineArguments.executor": "Run",
     "Application.LambdaDemo.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MethodReferenceDemo.executor": "Run",
     "Application.OptionalDemo.executor": "Run",
     "Application.examplethree.OptionalDemo.executor": "Run",
+    "Application.helloworld.decoupled.factory.Main.executor": "Run",
     "Application.lombokexamples.Main.executor": "Run",
     "Application.streams.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
@@ -123,7 +325,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/keith/Documents/Courses/sdp-sp3/repo",
+    "last_opened_file_path": "/Users/keith/Documents/Courses/sdp-sp3/repo/live-coding-02-05-2025",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -139,18 +341,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="/private/var/folders/38/lr15031n5gldp7lrlktyhntc0000gn/T/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="f1e8c3b5-6b11-4c58-bc8d-744b928c3e1a" />
-        <option name="reportName" value="repo/qodana/2025-02-02" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="/private/var/folders/38/lr15031n5gldp7lrlktyhntc0000gn/T/qodana_output/qodana.sarif.json" reportGuid="f1e8c3b5-6b11-4c58-bc8d-744b928c3e1a" reportId="repo/qodana/2025-02-02" />
@@ -158,29 +348,32 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/live-coding-02-05-2025" />
+      <recent name="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory" />
+      <recent name="$PROJECT_DIR$/live-coding-02-05-2025/src" />
       <recent name="$PROJECT_DIR$/springframeworkexample/src" />
       <recent name="$PROJECT_DIR$/springframeworkexample/resources" />
-      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpring/src/helloworld" />
-      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldDecoupledInterfaceWithFactory/resources" />
-      <recent name="$PROJECT_DIR$/dependency-injection-example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/live-coding-02-05-2025/src" />
+      <recent name="$PROJECT_DIR$/live-coding-02-05-2025/resources" />
+      <recent name="$PROJECT_DIR$/live-coding-02-05-2025/src/helloworld.decoupled.factory" />
       <recent name="$PROJECT_DIR$/help-session-02-02-2025/resources" />
       <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFile/resources" />
-      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDI/resources" />
-      <recent name="$PROJECT_DIR$/dependency-injection-example/lib" />
-      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpring/resources" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+      <recent name="helloworld.decoupled.factory" />
       <recent name="lombokexamples" />
       <recent name="helloworld" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="helloworld.interfaces" />
       <recent name="lombokexamples" />
       <recent name="helloworld" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.examplethree.OptionalDemo">
+  <component name="RunManager" selected="Application.helloworld.decoupled.factory.Main">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -196,23 +389,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lambdas.Example" />
-      <module name="java-lambdas-examples" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lambdas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="HelloWorld (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
-      <module name="HelloWorldSpring" />
+      <module name="live-coding-02-05-2025" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -224,28 +403,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="24" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="lombokexamples.Main" />
-      <module name="help-session-01-31-2025" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+      <option name="MAIN_CLASS_NAME" value="HelloWorld" />
+      <module name="live-coding-02-05-2025" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionalDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="optional.OptionalDemo" />
-      <module name="optional" />
+    <configuration name="HelloWorldWithCommandLineArguments" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+      <option name="MAIN_CLASS_NAME" value="HelloWorldWithCommandLineArguments" />
+      <option name="PROGRAM_PARAMETERS" value="Hello GoodBye" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="helloworld.decoupled.Main" />
+      <module name="live-coding-02-05-2025" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="optional.*" />
+          <option name="PATTERN" value="helloworld.decoupled.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -259,27 +440,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="examplethree.OptionalDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="examplethree.OptionalDemo" />
-      <module name="help-session-02-02-2025" />
+    <configuration name="helloworld.decoupled.factory.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="helloworld.decoupled.factory.Main" />
+      <module name="live-coding-02-05-2025" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="examplethree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="streams.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="streams.Main" />
-      <module name="live-coding-29-01-2025" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="streams.*" />
+          <option name="PATTERN" value="helloworld.decoupled.factory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -303,13 +470,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.helloworld.decoupled.factory.Main" />
+      <item itemvalue="Application.HelloWorld" />
+      <item itemvalue="Application.HelloWorld (1)" />
+      <item itemvalue="Application.HelloWorldWithCommandLineArguments" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.examplethree.OptionalDemo" />
-        <item itemvalue="Application.OptionalDemo" />
+        <item itemvalue="Application.helloworld.decoupled.factory.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.streams.Main" />
-        <item itemvalue="Application.Example" />
+        <item itemvalue="Application.HelloWorldWithCommandLineArguments" />
+        <item itemvalue="Application.HelloWorld" />
+        <item itemvalue="Application.HelloWorld (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -349,6 +523,8 @@
       <workItem from="1738448711344" duration="486000" />
       <workItem from="1738495883083" duration="3007000" />
       <workItem from="1738499357405" duration="1920000" />
+      <workItem from="1738511849458" duration="153000" />
+      <workItem from="1738684961277" duration="6488000" />
     </task>
     <servers />
   </component>
