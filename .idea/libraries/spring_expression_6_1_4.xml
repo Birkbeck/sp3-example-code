@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="spring-expression-6.1.4">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dependency-injection-example/lib/spring-expression-6.1.4.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
