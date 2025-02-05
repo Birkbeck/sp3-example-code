@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
@@ -35,3 +36,34 @@
     </modules>
   </component>
 </project>
+||||||| (empty tree)
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/anonymous-inner-classes/anonymous-inner-classes.iml" filepath="$PROJECT_DIR$/anonymous-inner-classes/anonymous-inner-classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bridgebetween/bridgebetween.iml" filepath="$PROJECT_DIR$/bridgebetween/bridgebetween.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dagger/dagger.iml" filepath="$PROJECT_DIR$/dagger/dagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/defaults/defaults.iml" filepath="$PROJECT_DIR$/defaults/defaults.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependency-injection-example/dependency-injection-example.iml" filepath="$PROJECT_DIR$/dependency-injection-example/dependency-injection-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generics/generics.iml" filepath="$PROJECT_DIR$/generics/generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/help-session-01-17-2025/help-session-01-17-2025/help-session-01-17-2025.iml" filepath="$PROJECT_DIR$/help-session-01-17-2025/help-session-01-17-2025/help-session-01-17-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/help-session-01-26-2025/help-session-01-26-2025/help-session-01-26-2025.iml" filepath="$PROJECT_DIR$/help-session-01-26-2025/help-session-01-26-2025/help-session-01-26-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/help-session-01-17-2025/help-session-01-31-2025/help-session-01-31-2025/help-session-01-31-2025.iml" filepath="$PROJECT_DIR$/help-session-01-17-2025/help-session-01-31-2025/help-session-01-31-2025/help-session-01-31-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/help-session-02-02-2025/help-session-02-02-2025.iml" filepath="$PROJECT_DIR$/help-session-02-02-2025/help-session-02-02-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" filepath="$PROJECT_DIR$/java-lambdas-examples/java-lambdas-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" filepath="$PROJECT_DIR$/java-patternmatching/java-patternmatching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/live-coding-01-29-2025/live-coding-01-29-2025.iml" filepath="$PROJECT_DIR$/live-coding-01-29-2025/live-coding-01-29-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/live-coding-02-05-2025/live-coding-02-05-2025.iml" filepath="$PROJECT_DIR$/live-coding-02-05-2025/live-coding-02-05-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/live-coding-29-01-2025/live-coding-29-01-2025.iml" filepath="$PROJECT_DIR$/live-coding-29-01-2025/live-coding-29-01-2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/optional/optional.iml" filepath="$PROJECT_DIR$/optional/optional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/records/records.iml" filepath="$PROJECT_DIR$/records/records.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sealed/sealed.iml" filepath="$PROJECT_DIR$/sealed/sealed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solid/solid.iml" filepath="$PROJECT_DIR$/solid/solid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/static/static.iml" filepath="$PROJECT_DIR$/static/static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/switchexpressions/switchexpressions.iml" filepath="$PROJECT_DIR$/switchexpressions/switchexpressions.iml" />
+    </modules>
+  </component>
+</project>
+>>>>>>> 5ce30b0 (Update changes)

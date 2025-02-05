@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package helloworld.spring;
 
 public class StandardOutMessageRenderer implements MessageRenderer {
@@ -19,3 +20,26 @@ public class StandardOutMessageRenderer implements MessageRenderer {
         this.messageProvider = provider;
     }
 }
+||||||| (empty tree)
+=======
+package helloworld.spring;
+
+import lombok.Setter;
+
+@Setter
+public class StandardOutMessageRenderer implements MessageRenderer {
+
+    private MessageProvider messageProvider = null;
+
+    @Override
+    public void render() {
+        if (messageProvider == null) {
+            throw new RuntimeException(
+                    "You must set the property messageProvider of class:"
+                            + StandardOutMessageRenderer.class.getName());
+        }
+        System.out.println(messageProvider.getMessage());
+    }
+
+}
+>>>>>>> 5ce30b0 (Update changes)

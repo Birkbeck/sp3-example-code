@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -19,3 +20,27 @@
     </orderEntry>
   </component>
 </module>
+||||||| (empty tree)
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/helloworld.cmd.line" isTestSource="false" packagePrefix="helloworld.cmd.line" />
+      <sourceFolder url="file://$MODULE_DIR$/src/helloworld.decoupled" isTestSource="false" packagePrefix="helloworld.decoupled" />
+      <sourceFolder url="file://$MODULE_DIR$/src/helloworld.decoupled.factory" isTestSource="false" packagePrefix="helloworld.decoupled.factory" />
+      <sourceFolder url="file://$MODULE_DIR$/src/helloworld.spring" isTestSource="false" packagePrefix="helloworld.spring" />
+      <sourceFolder url="file://$MODULE_DIR$/src/helloworld.spring.di" isTestSource="false" packagePrefix="helloworld.spring.di" />
+      <sourceFolder url="file://$MODULE_DIR$/src/helloworld.spring.di.xml" isTestSource="false" packagePrefix="helloworld.spring.di.xml" />
+    </content>
+    <orderEntry type="jdk" jdkName="openjdk-23" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="commons-logging-1.3.0-adapters" level="project" />
+    <orderEntry type="library" name="projectlombok.lombok" level="project" />
+    <orderEntry type="library" name="springframework.spring.beans" level="project" />
+    <orderEntry type="library" name="springframework.spring.context" level="project" />
+  </component>
+</module>
+>>>>>>> 5ce30b0 (Update changes)
