@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/live-coding-02-05-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_logging_1_3_0_adapters.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spring_beans_6_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spring_beans_6_1_31.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spring_core_6_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spring_expression_6_1_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,67 +91,67 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.C.executor": "Run",
-    "Application.Example.executor": "Run",
-    "Application.HelloWorld (1).executor": "Run",
-    "Application.HelloWorld (2).executor": "Run",
-    "Application.HelloWorld.executor": "Run",
-    "Application.HelloWorldDecoupled.executor": "Run",
-    "Application.HelloWorldSpringWithDIXMLFile.executor": "Run",
-    "Application.HelloWorldWithCommandLineArguments.executor": "Run",
-    "Application.LambdaDemo.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MethodReferenceDemo.executor": "Run",
-    "Application.OptionalDemo.executor": "Run",
-    "Application.examplethree.OptionalDemo.executor": "Run",
-    "Application.helloworld.cmd.line.Main.executor": "Run",
-    "Application.helloworld.decoupled.Main.executor": "Run",
-    "Application.helloworld.decoupled.factory.Main.executor": "Run",
-    "Application.helloworld.interfaces.Main.executor": "Run",
-    "Application.helloworld.spring.Main.executor": "Run",
-    "Application.helloworld.spring.annotations.Main.executor": "Run",
-    "Application.helloworld.spring.autoscan.Main.executor": "Run",
-    "Application.helloworld.spring.di.Main.executor": "Run",
-    "Application.helloworld.spring.di.xml.Main.executor": "Run",
-    "Application.lombokexamples.Main.executor": "Run",
-    "Application.streams.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Build spring-boot-helloworld.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.SpringBootHelloworldApplication.executor": "Run",
-    "android.gradle.sync.needed": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/keith/Documents/Courses/sdp-sp3/repo/live-coding-02-05-2025/src/helloworld.spring.di",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31724137",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.C.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Example.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloWorld (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloWorld (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloWorld.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloWorldDecoupled.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloWorldSpringWithDIXMLFile.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloWorldWithCommandLineArguments.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LambdaDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MethodReferenceDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OptionalDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.examplethree.OptionalDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.cmd.line.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.decoupled.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.decoupled.factory.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.interfaces.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.spring.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.spring.annotations.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.spring.autoscan.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.spring.di.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.helloworld.spring.di.xml.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.lombokexamples.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.streams.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build spring-boot-helloworld.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.SpringBootHelloworldApplication.executor&quot;: &quot;Run&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/keith/Documents/Courses/sdp-sp3/repo/live-coding-02-05-2025/src/helloworld.spring.di&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="/private/var/folders/38/lr15031n5gldp7lrlktyhntc0000gn/T/qodana_output/qodana.sarif.json" reportGuid="f1e8c3b5-6b11-4c58-bc8d-744b928c3e1a" reportId="repo/qodana/2025-02-02" />
@@ -357,6 +348,7 @@
       <workItem from="1738511849458" duration="153000" />
       <workItem from="1738684961277" duration="18391000" />
       <workItem from="1738763488508" duration="697000" />
+      <workItem from="1738773497271" duration="78000" />
     </task>
     <servers />
   </component>
