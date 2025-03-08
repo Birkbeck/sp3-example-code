@@ -1,0 +1,468 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{minted}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Exercises on Design Patterns III}
+\author{Some more patterns}
+\date{2018}
+
+\fvset{tabsize=2}
+%\fvset{fontsize=\relsize{-1}}
+%\fvset{frame=single}
+
+% https://www.javacodegeeks.com/2015/09/decorator-design-pattern.html
+
+\newcommand{\code}{/Users/keith/Documents/Courses/sdp/repo/worksheets/dp-three/kotlin/src}
+%\newcommand{\codesol}{/Users/keith/Courses/sdp/SDP-2017/exercises/week10sol/src/main/scala}
+
+\begin{document}
+\maketitle
+
+In these exercises we will be examining the following design patterns:
+\begin{itemize}
+\item Chain of Responsibility,
+\item Command,
+\item Interpreter,
+\item Prototype,
+\item Iterator, and
+\item Mediator.
+\end{itemize}
+
+The source code snippets listed below are written using the Kotlin language; similar versions in Scala can be 
+found on the source code repository under the \verb!worksheets/dp-three! folder. 
+
+\begin{questions}
+
+\question
+This question concerns the \textsc{Chain of Responsibility} design pattern.
+
+Your company has got a contract to provide an analytical application to a health company. The application would 
+tell the user about the particular health problem, its history, its treatment, medicines, 
+interview of the person suffering from it, etc.; basically everything that is required to know about it. 
+For this, your company receives a huge amount of data. The data could be in any format, it could text files, doc 
+files, excels, audio, images, videos, anything that you can think of would be there.
+
+Now, your job is to save this data in the company's database. Users will provide the data in any format and you 
+should provide them a single interface to upload the data into the database. The user is not interested, not even 
+aware, to know that how you are saving the different unstructured data?
+
+The problem here is that you need to develop different handlers to save the various formats of data. For example, 
+a text file save handler does not know how to save an mp3 file.
+
+To solve this problem you can use the \emph{Chain of Responsibility} design pattern. You can create different 
+objects which process different formats of data and chain them together. 
+When a request comes to a single object, it will check whether it can process and handle the specific file format. 
+If it can, it will process it; otherwise, it will forward it to the next object chained to it. 
+This design pattern also decouples the user from the object that is serving the request; the user is not aware 
+which object is actually serving its request.
+
+To implement the Chain of Responsibility pattern to solve the above problem, you will create an interface, 
+\mintinline{scala}{Handler}.
+\VerbatimInput{\code/chain/Handler.kt}
+The above interface contains two main methods, the \mintinline{scala}{setHandler} and the \mintinline{scala}
+{process} methods. The \mintinline{scala}{setHandler} is used to set the next handler in the 
+chain, whereas; the \mintinline{scala}{process} method is used to process the request, only if the handler can 
+able process the request. 
+Optionally, we have the \mintinline{scala}{getHandlerName} method which is used to return the handler's name.
+The handlers are designed to process files which contain data. The concrete handler checks if it's able to handle 
+the file by checking the file type, otherwise forwards to the next handler in the chain.
+
+The \mintinline{scala}{File} class looks like this:
+\VerbatimInput{\code/chain/File.kt}
+The \mintinline{scala}{File} class creates simple file objects which contain the file name, file type, and the 
+file path. 
+The file type would be used by the handler to check if the file can be handled by them or not. If a handler can, 
+it will process and save it, or it will forward it to the next handler in the chain.
+
+Your solution should satisfy the following tests:
+\VerbatimInput{\code/chain/TestChainofResponsibility.kt}
+The above program should have the following output:
+\begin{Verbatim}
+Text Handler forwards request to Doc Handler
+Doc Handler forwards request to Excel Handler
+Excel Handler forwards request to Audio Handler
+Process and saving audio file... by Audio Handler
+
+Text Handler forwards request to Doc Handler
+Doc Handler forwards request to Excel Handler
+Excel Handler forwards request to Audio Handler
+Audio Handler forwards request to Video Handler
+Process and saving video file... by Video Handler
+
+Text Handler forwards request to Doc Handler
+Process and saving doc file... by Doc Handler
+
+Text Handler forwards request to Doc Handler
+Doc Handler forwards request to Excel Handler
+Excel Handler forwards request to Audio Handler
+Audio Handler forwards request to Video Handler
+Video Handler forwards request to Image Handler
+File not supported
+\end{Verbatim}
+\begin{solution}
+\ldots	
+\end{solution}
+
+
+\question
+This question concerns the \textsc{Command} design pattern.
+
+You are required to create an application to execute different types of jobs. A job can be anything in a system,
+for example, sending emails, SMS, logging, or performing some IO functions.
+The \textsc{Command} pattern will help to decouple the invoker from a receiver and helps to execute any type of 
+job without knowing its implementation. 
+We'll make this example more interesting by creating threads which will help to execute these jobs concurrently. 
+As these jobs are independent of each other, so the sequence of execution of these 
+jobs is not really important. We will create a thread pool to limit the number of threads to execute jobs. A 
+command object will encapsulate jobs and will hand it over to a thread from the pool 
+that will execute the job.
+
+The command object will be referenced by a common interface and will contain a method that will be used to execute 
+the requests. 
+The concrete command classes will override that method and will provide their own specific implementation to 
+execute the request.
+\VerbatimInput{\code/command/Job.kt}
+The \mintinline{scala}{Job} interface is the command interface, contains a single method \mintinline{scala}{run}, 
+which is executed by a thread. 
+Our command's \mintinline{scala}{execute} method is the \mintinline{scala}{run} method which will be used to 
+execute by a thread to get the work done.
+There would be a different type of jobs that can be executed. The following is one of the concrete classes whose 
+instances will be executed by the different command objects:
+\VerbatimInput{\code/command/Email.kt}
+
+The implementation classes of the \mintinline{scala}{Job} interface hold a reference to their respective classes 
+that will be used to get the job done. 
+The classes override the \mintinline{scala}{run} method and do the work requested. For example, the 
+\mintinline{scala}{SmsJob} class is used to send sms, its 
+\mintinline{scala}{run} method calls the \mintinline{scala}{sendSms} method of the \mintinline{scala}{Sms} object 
+to get the job done.
+
+You can set different objects one by one to the same command object.
+
+The below is the \mintinline{scala}{ThreadPool} class used to create pool of threads and allow a thread to fetch 
+and execute the job from the job queue.
+\VerbatimInput{\code/command/ThreadPool.kt}
+The above class is used to create $n$ threads (worker threads). Each worker thread will wait for a job in a queue 
+and then execute the job and will go back to waiting state. 
+The class contains a job queue; when a new job will be added into the queue, a worker thread from the pool will 
+execute the job.
+
+Your solution should satisfy the following tests:
+\VerbatimInput{\code/command/TestCommandPattern.kt}
+The above code will result in the following output:
+\begin{Verbatim}
+Job ID: 9 executing email jobs.
+Sending email.......
+Job ID: 12 executing logging jobs.
+Job ID: 17 executing email jobs.
+Sending email.......
+Job ID: 13 executing email jobs.
+Sending email.......
+Job ID: 10 executing sms jobs.
+Sending SMS...
+Job ID: 11 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 18 executing sms jobs.
+Sending SMS...
+Logging...
+Job ID: 16 executing logging jobs.
+Logging...
+Job ID: 15 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 14 executing sms jobs.
+Sending SMS...
+Job ID: 12 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 10 executing logging jobs.
+Logging...
+Job ID: 18 executing email jobs.
+Sending email.......
+Job ID: 16 executing sms jobs.
+Sending SMS...
+Job ID: 14 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 9 executing logging jobs.
+Logging...
+Job ID: 17 executing email jobs.
+Sending email.......
+Job ID: 13 executing sms jobs.
+Sending SMS...
+Job ID: 15 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 11 executing logging jobs.
+Logging...
+\end{Verbatim}
+Due to the nature of concurrency the output may differ on subsequent executions.
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Interpreter} design pattern.
+
+Given a language, define a representation for its grammar along with an interpreter that uses the 
+representation to interpret sentences in the language.
+
+In general, languages are made up of a set of grammar rules. Different sentences can be constructed by 
+following these grammar rules. Sometimes an application may need to process repeated occurrences of 
+similar requests that are a combination of a set of grammar rules. These requests are distinct but are 
+similar in the sense that they are all composed using the same set of rules.
+
+A simple example of this would be the set of different arithmetic expressions submitted to a calculator program 
+(some familiar?). Though each such expression is different, they are all constructed using the basic rules 
+that make up the grammar for the language of arithmetic expressions.
+
+In such cases, instead of treating every distinct combination of rules as a separate case, it may be beneficial 
+for the application to have the ability to interpret a generic combination of rules. The Interpreter pattern can 
+be used to design this ability in an application so that other applications and users can specify operations using 
+a simple language defined by a set of grammar rules.
+
+A class hierarchy can be designed to represent the set of grammar rules with every class in the hierarchy 
+representing a separate grammar rule. An Interpreter module can be designed to interpret the sentences constructed 
+using the class hierarchy designed above and carries out the necessary operations.
+
+Because a different class represents every grammar rule, the number of classes increases with the number of 
+grammar rules. A language with extensive, complex grammar rules requires a large number of classes. The 
+\textsc{Interpreter} pattern works best when the grammar is simple. Having a simple grammar avoids the need 
+to have many classes corresponding to the complex set of rules involved, which are hard to manage and maintain.
+
+Consider the following interface specification:
+\VerbatimInput{\code/interpreter/Expression.kt}
+The above interface is used by all different concrete expressions and overrides the interpret method to 
+define their specific operation on the expression.
+The following are the operation specific expression classes which you need to complete:
+\VerbatimInput{\code/interpreter/Add.kt}
+\VerbatimInput{\code/interpreter/Product.kt}
+Your solution should satisfy the following tests:
+\VerbatimInput{\code/interpreter/TestInterpreterPattern.kt}
+The code above should provide the following output:
+\begin{Verbatim}
+( 7 3 -2 1 + * ):12
+\end{Verbatim}
+Please note that we have used postfix notation.
+
+\subsubsection*{Postfix notation}
+
+If you don't know about postfix, here is a brief introduction. There are three notations for 
+a mathematical expression i.e., \emph{infix}, \emph{postfix}, and \emph{prefix}.
+\begin{description}
+\item[Infix notation] is the common arithmetic and logical formula notation, in which operators are written infix-
+style between the operands they act on e.g. $3 + 4$.
+\item[Postfix a.k.a. Reverse Polish notation (RPN)] is mathematical notation in which every operator follows all 
+of its operands e.g. $3 4 +$.\item[Prefix (Polish notation)] is a form of notation for logic, arithmetic, and algebra in which operators to the 
+left of their operands e.g. $+ 3 4$.
+\end{description}
+Infix notation is a normally used in mathematical expressions. The other two notations are used as syntax for 
+mathematical expressions by interpreters of programming languages.
+
+In the above class, we declared a postfix of an expression in the \mintinline{scala}{tokenString} variable. 
+Then we split the \mintinline{scala}{tokenString} and assigned it into an array, the \mintinline{scala}
+{tokenArray}. While iterating tokens one by one, first we have checked whether the token 
+is an \emph{operator} or an \emph{operand}. If the token is an operand we pushed it onto the stack, but if it is 
+an operator we popped the first two operands from the stack. 
+The \mintinline{scala}{getOperation} method returns the appropriate expression class according to the operator 
+passed to it.We next interpreted the result and pushed it back onto the stack. After iterating over the complete 
+\mintinline{scala}{tokenList} we got the final result.
+
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Prototype} design pattern.
+
+Let us consider a scenario where an application requires some access control. The features of the applications 
+can be used by the users according to the access rights provided to them. For example, some users have access to 
+the reports generated by the application, while some don't. Some of them even can modify the reports, while some 
+can only read it. Some users also have administrative rights to add or even remove other users.
+
+Every user object has an access control object, which is used to provide or restrict the controls of the 
+application. This access control object is a bulky, heavy object and its creation is very costly since it requires 
+data to be fetched from some external resources, like databases or some property files etc.
+
+We also cannot share the same access control object with users of the same level, because the rights can be 
+changed at runtime by the administrator and a different user with the same level could have a different access 
+control. One user object should have one access control object.
+
+We can use the Prototype Design Pattern to resolve this problem by creating the access control objects on all 
+levels at once, and then provide a copy of the object to the user whenever required. In this case, data fetching 
+from the external resources happens only once. Next time, the access control object is created by copying the 
+existing one. The access control object is not created from scratch every time the request is sent; this approach 
+will certainly reduce object creation time.
+
+You will use the \mintinline{scala}!clone! method to solve the above problem.
+\VerbatimInput{\code/prototype/Prototype.kt}
+The above interface extends the \mintinline{scala}!Cloneable! interface and contains a method 
+\mintinline{scala}!clone!. This interface is implemented by classes which want to create a prototype object.
+
+The \mintinline{scala}!AccessControl! class implements the 
+\mintinline{scala}!Prototype! interface and overrides the \mintinline{scala}!clone! method.
+The class also contains two properties; the \mintinline{scala}!controlLevel! is used to 
+specific the level of control this object contains. The level depends upon the type of user going to use it, 
+for example, USER, ADMIN, MANAGER etc.
+
+The other property is the \mintinline{scala}!access!; it contains the access right for the user. 
+Please note that, for simplicity, we have used access as a \mintinline{scala}!String! type attribute. 
+This could be of type \mintinline{scala}!Map! which can contain key value pairs of long access 
+rights assigned to the user.
+
+The \mintinline{scala}!User! class has a \mintinline{scala}!userName!, 
+\mintinline{scala}!level! and a reference to the \mintinline{scala}!AccessControl! assigned to it.
+You should use an \mintinline{scala}!AccessControlProvider! class that creates and 
+stores the possible \mintinline{scala}!AccessControl! objects in advance.When there is a request to an \mintinline{scala}!AccessControl! object, 
+it returns a new object created by copying the stored prototypes.
+
+The \mintinline{scala}!getAccessControlObject! method fetches a stored prototype 
+object according to the \mintinline{scala}!controlLevel! passed to it, 
+from the map and returns a newly created cloned object to the client code.
+
+You should test your code using the following:
+\VerbatimInput{\code/prototype/TestPrototypePattern.kt}
+The code above should provide the following output:
+\begin{Verbatim}
+Fetching data from external resources and creating access control objects...************************************Name: User A, Level: USER Level, Access Control Level:USER, Access: DO_WORKChanging access of: User BName: User B, Level: USER Level, Access Control Level:USER, Access: READ REPORTS 
+************************************Name: User C, Level: MANAGER Level, Access Control Level:MANAGER, Access: 
+	GENERATE/READ REPORTS	
+\end{Verbatim}
+
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Iterator} design pattern which you are going to explore 
+using a \mintinline{scala}!Shape! class. We will store and iterate through the \mintinline{scala}!Shape! 
+objects using an iterator.
+\VerbatimInput{\code/iterator/Shape.kt}
+The simple \mintinline{scala}!Shape! class has an \mintinline{scala}!id! and 
+\mintinline{scala}!name! as its attributes.
+\VerbatimInput{\code/iterator/ShapeStorage.kt}
+The above class is used to store the \mintinline{scala}!Shape! objects. 
+The class contains an array of \mintinline{scala}!Shape! type; for simplicity we have initialised 
+that array up to five elements. The \mintinline{scala}!addShape! method is used to add a 
+\mintinline{scala}!Shape! object to the array and increment the index by one. The \mintinline{scala}!getShapes!
+method returns the array of \mintinline{scala}!Shape! type.
+
+The \mintinline{scala}!ShapeIterator! class is an \mintinline{scala}!Iterator! to the 
+\mintinline{scala}!Shape! class. The class implements the \mintinline{scala}!Iterator! 
+interface and defines all the methods of the \mintinline{scala}!Iterator! interface.
+The \mintinline{scala}!hasNext! method returns a \mintinline{scala}!Boolean! if there's an item left. 
+The \mintinline{scala}!next! method returns the next item from the collection and the 
+\mintinline{scala}!remove! method removes the current item from the collection.
+
+You should test your code using the following:
+\VerbatimInput{\code/iterator/TestIteratorPattern.kt}
+The above code should result to the following output:
+\begin{Verbatim}
+ID: 0 Shape: PolygonID: 1 Shape: HexagonID: 2 Shape: CircleID: 3 Shape: RectangleID: 4 Shape: SquareApply removing while iterating...ID: 0 Shape: PolygonID: 2 Shape: CircleID: 4 Shape: Square	
+\end{Verbatim}
+
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Mediator} design pattern.
+
+A big electronic company has asked you to develop a piece of software to operate its new fully automatic 
+washing machine. The company has provided you with the hardware specification and the working knowledge of 
+the machine. In the specification, they have provided you the different washing programs the machine 
+supports. They want to produce a fully automatic washing machine that will require almost zero human 
+intervention. 
+The user should only need to connect the machine with a tap to supply water, load the clothes to wash, 
+set the type of clothes in the machine like cotton, silk, or denims etc, provide detergent and softener 
+to their respective trays, and press the start button.
+
+The machine should be smart enough to fill the water in the drum, as much as required. It should 
+adjust the wash temperature by itself by turning the heater on, according to the type of clothes in it. 
+It should start the motor and spin the drum as much required, rinse according to the clothes needs, use 
+soil removal if required, and softener too.
+
+As an Object Oriented developer, you started analysing and classifying objects, classes, and their relationships. 
+Let's check some of the important classes and parts of the system. First of all, a 
+\mintinline{scala}!Machine! class, which has a drum. So a 
+\mintinline{scala}!Drum! class, but also a heater, a sensor to check the temperature, a motor. 
+Additionally, the machine also has a valve to control the water supply, a soil removal, detergent, and a softener.
+
+These classes have a very complex relationship with each other, and the relationship also varies. 
+Please note that currently we are talking only about the high level abstraction of the machine. 
+If we try to design it without keeping much of OOP principles and patterns in mind, then the initial 
+design would be very tightly coupled and hard to maintain. 
+This is because the above classes should contact with each other to get the job done. For example, 
+the \mintinline{scala}!Machine! class should ask the \mintinline{scala}!Valve! class to open the valve, 
+or the \mintinline{scala}!Motor! should spin the 
+\mintinline{scala}!Drum! at certain rpm according to the wash program set (which is set by the type of clothes 
+in the machine). Some type of clothes require softener or soil removal while others don't, or the temperature
+should be set according to the type of clothes.
+If we allow classes to contact each other directly, that is, by providing a reference, 
+the design will become very tightly coupled and hard to maintain. 
+It would become very difficult to change one class without affecting the other. 
+Even worse, the relationship between the classes varies, according to the different wash programs, 
+like different temperature for different type of clothes. So these classes won't able to be reused. 
+To support all the wash programs we need to put control statements like \emph{if-else} 
+in the code which would make the code even more complex and difficult to maintain.
+To decouple these objects from each other we need a \textsc{Mediator}, which will contact the object on 
+behalf of the other object, hence providing loose coupling between them. 
+The object only needs to know about the mediator, and perform operations on it. 
+The mediator will perform operations on the required underlying object in order to get the work done.
+
+You will see how the \textsc{Mediator Pattern} will make the washing machine design better, 
+reusable, maintainable and loosely coupled.
+\VerbatimInput{\code/mediator/MachineMediator.kt}
+The \mintinline{scala}!MachineMediator! is an interface which acts as a generic mediator. 
+\VerbatimInput{\code/mediator/Colleague.kt}
+The \mintinline{scala}!Colleague! interface has one method to set the mediator for the concrete 
+colleague's class.
+\VerbatimInput{\code/mediator/Button.kt}
+The above \mintinline{scala}!Button! class is a colleague class which holds a reference to a mediator. 
+The user presses the button which calls the \mintinline{scala}!press! method of this class which in turn, 
+calls the \mintinline{scala}!start! method of the concrete mediator class. 
+This \mintinline{scala}!start! method of the mediator calls the 
+\mintinline{scala}!start! method of the machine class on behalf of the \mintinline{scala}!Button! class.
+
+As stated by the company, the washing machine has a set of wash programs and the software should support 
+all these programs. 
+The following mediator is set as a washing program for cottons, so parameters such as temperature, 
+drum spinning speed, level of soil removal etc., are set accordingly. 
+We can have different mediators for different washing programs without changing the existing colleague 
+classes and thus providing loose coupling and reusability. 
+All these colleague classes can be reused with others washing programs of the machine.
+\VerbatimInput{\code/mediator/CottonMediator.kt}
+
+To see the advantages and power of the \textsc{Mediator Pattern}, let's take another mediator that is 
+used as a washing program for denim jeans. Now we just need to create a new mediator and set the rules in 
+it to wash denims: rules like temperature, and the speed at which drum will spin, whether softener is 
+required or not, the level of the soil removal, etc. We don't need to change anything in the existing structure.
+No conditional statements like \emph{if-else} are required, something that would otherwise 
+increase the complexity.
+\VerbatimInput{\code/mediator/DenimMediator.kt}
+Now we test these mediators:
+\VerbatimInput{\code/mediator/TestMediator.kt}
+and should result in the following output:
+\begin{Verbatim}
+Setting up for COTTON programButton pressed.Valve is opened...Filling water...Valve is closed...Heater is on...Temperature reached 40 CTemperature is set to 40Heater is off...Start motor...Rotating drum at 700 rpm.Adding detergentSetting Soil Removal to lowAdding softener
+Setting up for DENIM programButton pressed.Valve is opened...Filling water...Valve is closed...Heater is on...Temperature reached 30 CTemperature is set to 30Heater is off...Start motor...Rotating drum at 1400 rpm.Adding detergentSetting Soil Removal to mediumNo softener is required	
+\end{Verbatim}
+
+\begin{solution}
+	
+\end{solution}
+\end{questions}
+
+\end{document}

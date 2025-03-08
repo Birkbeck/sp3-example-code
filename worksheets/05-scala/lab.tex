@@ -1,0 +1,349 @@
+\documentclass[a4paper,12pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx}
+
+%\setcounter{secnumdepth}{0}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+
+\title{Exercises --- Scala (Week Five)}
+\author{\emph{Practice with classes}}
+\date{Spring term 2017}
+
+\begin{document}
+\maketitle
+
+\subsection*{Overview}
+
+We now have enough of the syntax to have some fun playing with classes. 
+
+\subsection*{Learning Objectives}
+
+\begin{itemize}
+	\item Practice with classes.
+	\item Practice with case classes.
+	\item Practice with companion classes.
+\end{itemize}
+
+\subsection*{Testing}
+
+This exercise sheet does not come with any existing code or test harness --- 
+you are required to write appropriate tests using the \verb!ScalaTest! framework.
+You should follow \emph{good practice} with respect to \verb!sbt! folder structure
+and build files (Hint: copy them from an earlier week).
+
+\subsection*{The Questions}
+
+\begin{questions}
+\question
+\begin{parts}
+\part
+Implement a \texttt{Counter} class. The constructor should take an \texttt{Int}. The methods \texttt{inc} and 
+\texttt{dec} should increment and decrement the counter respectively returning a new \texttt{Counter}. 
+Here’s an example of the usage:
+\begin{Verbatim}
+scala> new Counter(10).inc.dec.inc.inc.count
+res02: Int = 12
+\end{Verbatim}
+
+\begin{solution}
+\begin{Verbatim}
+class Counter(val count: Int) { 
+	def dec = new Counter(count - 1) 
+	def inc = new Counter(count + 1)}	
+\end{Verbatim}	
+Aside from practicing with classes and objects, this exercise has a second goal -—- to think about 
+why \verb!inc!and \verb!dec! return a new \verb!Counter!, rather than updating 
+the same counter directly.
+
+Because \verb!val! fields are immutable, we need to come up with some other way of 
+propagating the new value of \verb!count!. 
+Methods that return new \verb!Counter! objects give us a way of returning new state 
+without the side-effects of assignment. 
+They also permit \emph{method chaining}, allowing us to write whole sequences of 
+updates in a single expression
+
+\textbf{Performance tip}: The use-case 
+\begin{Verbatim}
+new Counter(10).inc.dec.inc.inc.count 
+\end{Verbatim}
+actually creates five instances of \verb!Counter! before returning its final \verb!Int! value. 
+You may be concerned about the extra memory and CPU overhead for such a simple 
+calculation, but don’t be. Modern execution environments like the JVM render the 
+extra overhead of this style of programming negligible in all but the most performance 
+critical code.
+\end{solution}
+
+
+\part
+Augment the \texttt{Counter} to 
+allow the user can optionally pass an \texttt{Int} 
+parameter to inc and dec. If the parameter is omitted it should default to 1.
+
+\begin{solution}
+The simplest solution is this:
+\begin{Verbatim}
+class Counter(val count: Int) {	def dec(amount: Int = 1) = new Counter(count - amount) 
+	def inc(amount: Int = 1) = new Counter(count + amount)}	
+\end{Verbatim}	
+However, this adds parentheses to \verb!inc! and \verb!dec!. 
+If we omit the parameter we now have to provide an empty pair of parentheses. 
+We can work around this using method overloading to recreate our original parenthesis-
+free methods. Note that overloading methods requires us to specify the return types:
+\begin{Verbatim}
+class Counter(val count: Int) { 
+	def dec: Counter = dec()	def inc: Counter = inc()	def dec(amount: Int = 1): Counter = new Counter(count - amount)	def inc(amount: Int = 1): Counter = new Counter(count + amount) 
+}	
+\end{Verbatim}
+\end{solution}
+
+\part
+Reimplement \texttt{Counter} as a case class, using \texttt{copy} where appropriate. 
+Additionally initialise \texttt{count} to a default value of \texttt{0}.
+\begin{solution}
+\begin{Verbatim}
+case class Counter(count: Int = 0) {	def dec = copy(count = count - 1)	def inc = copy(count = count + 1)	def adjust(adder: Adder) = copy(count = adder(count))}	
+\end{Verbatim}	
+\end{solution}
+
+\part
+Here is a simple class called \texttt{Adder}:
+\begin{Verbatim}
+class Adder(amount: Int) {
+  def add(in: Int) = in + amount
+}
+\end{Verbatim}
+Extend \texttt{Counter} to add a method called \texttt{adjust}. 
+This method should accept an \texttt{Adder} and return a new \texttt{Counter} with the result of 
+applying the \texttt{Adder} to the \texttt{count}.
+\begin{solution}
+\begin{Verbatim}
+class Counter(val count: Int) { 
+	def dec = new Counter(count - 1) 
+	def inc = new Counter(count + 1) 
+	def adjust(adder: Adder) =		new Counter(adder.add(count))
+}	
+\end{Verbatim}	
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+Implement a companion object for 
+a \texttt{Person} class containing an \texttt{apply} method that accepts a 
+whole name as a single string rather than individual first and last names.
+
+Tip: you can split a \texttt{String} into an \texttt{Array} of components as follows:
+\begin{Verbatim}
+scala> val parts = "John Doe".split(" ")
+parts: Array[String] = Array(John, Doe)
+
+scala> parts(0)
+res36: String = John
+\end{Verbatim}
+\begin{solution}
+\begin{Verbatim}
+object Person {	def apply(name: String) = {		val parts = name.split(" ")		new Person(parts(0), parts(1)) 
+	}}	
+\end{Verbatim}	
+\end{solution}
+
+\part
+What happens when we define a companion object for a case class?
+
+Take our \texttt{Person} class and turn it into a case class. 
+Make sure you still have the companion object with the alternate \texttt{apply} method as well.
+\begin{solution}
+\begin{Verbatim}
+case class Person(
+			firstName: String, 
+			lastName: String) { 
+			
+			def name = firstName + " " + lastName}
+			object Person {	def apply(name: String): Person = {		val parts = name.split(" ")	    apply(parts(0), parts(1))	}}	
+\end{Verbatim}	
+\end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+\part
+Write two classes, \texttt{Director} and \texttt{Film}, with fields and methods as follows:
+\begin{itemize}
+\item    \texttt{Director} should contain:
+\begin{itemize}
+\item        a field \texttt{firstName} of type \texttt{String}
+\item        a field \texttt{lastName} of type \texttt{String}
+\item        a field \texttt{yearOfBirth} of type \texttt{Int}
+\item        a method called \texttt{name} that accepts no parameters and returns the full name
+\end{itemize}
+\item
+    \texttt{Film} should contain:
+    \begin{itemize}
+    \item        a field \texttt{name} of type \texttt{String}
+    \item    a field \texttt{yearOfRelease} of type \texttt{Int}
+     \item   a field \texttt{imdbRating} of type \texttt{Double}
+     \item   a field \texttt{director} of type \texttt{Director}
+     \item   a method \texttt{directorsAge} that returns the age of the director at the time of release
+      \item  a method \texttt{isDirectedBy} that accepts a \texttt{Director} as a parameter and 
+      returns a \texttt{Boolean}
+\end{itemize}
+\end{itemize}
+You will find appropriate demo data on the repo under the folder \verb!scala-exercises!;
+you will need to adjust your constructors so that the code works without modification.
+
+\begin{solution}
+see next question\ldots	
+\end{solution}
+
+Implement a method of \texttt{Film} called \texttt{copy}. 
+This method should accept the same parameters as the
+constructor and create a new copy of the film. Give each parameter a default value so you can 
+copy a film changing any subset of its values:
+\begin{Verbatim}
+highPlainsDrifter.copy(name = "L'homme des hautes plaines")
+// returns Film("L'homme des hautes plaines", 1973, 7.7, /* etc */)
+
+thomasCrownAffair.copy(yearOfRelease = 1968,
+  director = new Director("Norman", "Jewison", 1926))
+// returns Film("The Thomas Crown Affair", 1926, /* etc */)
+
+inception.copy().copy().copy()
+// returns a new copy of `inception`
+\end{Verbatim}
+\begin{solution}
+see next question\ldots
+\end{solution}
+
+\part
+Write companion objects for \texttt{Director} and \texttt{Film} as follows:
+\begin{itemize}
+\item
+The \texttt{Director} companion object should contain:
+\begin{itemize}
+\item
+    an \texttt{apply} method that accepts the same parameters as the constructor of the class 
+    and returns a new \texttt{Director};
+\item
+    a method \texttt{older} that accepts two \texttt{Director}s and returns the oldest of the two.
+\end{itemize}
+\item
+The \texttt{Film} companion object should contain:
+\begin{itemize}
+\item
+    an \texttt{apply} method that accepts the same parameters as the constructor of the class and 
+    returns a new \texttt{Film};
+\item
+    a method \texttt{highestRating} that accepts two \texttt{Film}s and returns the highest \texttt{imdbRating} 
+    of the two;
+\item
+    a method \texttt{oldestDirectorAtTheTime} that accepts two \texttt{Film}s and returns the 
+    \texttt{Director} who was oldest at the respective time of filming.
+
+\end{itemize}
+\end{itemize}
+
+\begin{solution}
+\begin{Verbatim}
+class Director(	val firstName: String, 
+	val lastName: String, 
+	val yearOfBirth: Int) {
+	
+	def name: String = s"$firstName $lastName"
+	
+	def copy(		firstName: String = this.firstName,		lastName: String = this.lastName,		yearOfBirth: Int = this.yearOfBirth) =			new Director(firstName, lastName, yearOfBirth)	
+}
+
+object Director {	def apply(firstName: String, lastName: String, yearOfBirth: Int) =		new Director(firstName, lastName, yearOfBirth)
+
+	def older(director1: Director, director2: Director): Director =		if (director1.yearOfBirth < director2.yearOfBirth) director1 else director2}
+
+class Film(	val name: String,	val yearOfRelease: Int, 
+	val imdbRating: Double, 
+	val director: Director) {
+	
+	def directorsAge =		yearOfRelease - director.yearOfBirth
+	
+	def isDirectedBy(director: Director) = this.director == director	
+	def copy(		name: String = this.name,		yearOfRelease: Int = this.yearOfRelease, 
+		imdbRating: Double = this.imdbRating,		director: Director = this.director) =			new Film(name, yearOfRelease, imdbRating, director)}
+		
+object Film { 
+	def apply(		name: String,		yearOfRelease: Int,		imdbRating: Double,		director: Director) =			new Film(name, yearOfRelease, imdbRating, director)
+	
+	def newer(film1: Film, film2: Film): Film =		if (film1.yearOfRelease < film2.yearOfRelease) film1 else film2
+	
+	def highestRating(film1: Film, film2: Film): Double = { 
+		val rating1 = film1.imdbRating		val rating2 = film2.imdbRating		if (rating1 > rating2) rating1 else rating2	}
+		
+	def oldestDirectorAtTheTime(film1: Film, film2: Film): Director =		if (film1.directorsAge > film2.directorsAge) film1.director else film2.director}
+\end{Verbatim}	
+\end{solution}
+
+\part
+We can dispose of much of the \textit{boilerplate} by converting the \texttt{Director} and \texttt{Film} classes
+to \textit{case classes}. Do this conversion and work out what code we can remove.
+
+\end{parts}
+\end{questions}
+\end{document}
+
+\question
+The similarity in naming of classes and companion objects tends to cause confusion for new Scala developers. 
+When reading a block of code it is important to know which parts refer to a class or type and which parts refer 
+to a singleton object or value.
+
+This is the inspiration for the new hit quiz, \textit{Type or Value?}, which we will be piloting below. 
+In each case identify whether the word \texttt{Film} refers to the type or value:
+\begin{parts}
+\part
+\begin{Verbatim}
+val prestige: Film = bestFilmByChristopherNolan()
+\end{Verbatim}
+\begin{solution}
+Type
+\end{solution}
+
+\part
+\begin{Verbatim}
+new Film("Last Action Hero", 1993, mcTiernan)
+\end{Verbatim}
+\begin{solution}
+Type
+\end{solution}
+
+
+\part
+\begin{Verbatim}
+Film("Last Action Hero", 1993, mcTiernan)
+\end{Verbatim}
+\begin{solution}
+Value
+\end{solution}
+
+\part
+\begin{Verbatim}
+Film.newer(highPlainsDrifter, thomasCrownAffair)
+\end{Verbatim}
+\begin{solution}
+Value
+\end{solution}
+
+\part
+\begin{Verbatim}
+Film.type
+\end{Verbatim}
+\begin{solution}
+Value
+\end{solution}
+\end{parts}

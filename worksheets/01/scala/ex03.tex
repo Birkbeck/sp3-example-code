@@ -1,0 +1,314 @@
+\documentclass[12pt,a4paper,times]{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pgf}
+\usepackage{relsize}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\fvset{tabsize=2}
+\fvset{fontsize=\small}
+
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{SDP Primer}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\rfoot{Exercise sheet 03}
+\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
+
+\title{The SDP Primer}
+\author{Exercise sheet 03}
+\date{Session: 2016-17}
+
+% https://www.cis.upenn.edu/~matuszek/cit591-2013/Assignments/00-warm-up-exercises.html
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%\fontsize{18}{24}
+%\selectfont
+\section{Purposes of these exercises}\label{purposes-of-this-assignment}
+\begin{itemize}
+\item
+To give you more practice with Scala, methods in particular
+\item
+To stress the importance of following specifications exactly
+\end{itemize}
+
+\section{General idea of the exercises}\label{general-idea-of-the-assignment}
+
+For each of the numbers 1 through 100, determine some characteristics of
+those numbers. Print out the numbers, one per line, along with a list of
+its characteristics (on the same line).
+Your output should look approximately like this:
+\begin{Verbatim}
+    1   c, h, t, s, not sm, ht, not pr, d
+    2   p, u, not t, not s, sm, ht, pr, d
+    3   p, u, t, not s, not smug, ht, not pr, d
+    4   c, u, not t, s, not sm, ht, not pr, d
+    5   p, u, not t, not s, sm, dis, not pr, d
+    6   c, u, t, not s, not sm, dis, pr, per
+    ...
+\end{Verbatim}
+where
+\begin{Verbatim}
+c = composite
+d = deficient
+dis = dishonest
+h = happy
+ht = honest
+per = perfect
+p = prime
+pr = pronic
+sm = smug
+s = square
+t = triangular
+u = unhappy
+\end{Verbatim}
+
+\section{Details}\label{details}
+
+\subsection{General}\label{general}
+
+Create an object \verb!NumberPersonalities! in a file
+\verb!NumberPersonalities.scala!.
+Within the \verb!NumberPersonalities! object, declare a variable as \verb!val limit = 100!.
+Within the \verb!NumberPersonalities! object, write a
+\begin{Verbatim}
+def main(args: Array[String]) 
+\end{Verbatim}
+method to test the
+numbers \verb!1! through \verb!limit!, inclusive, and print out
+the results in the form shown above. In \verb!main!, do \emph{not}
+assume that \verb!limit! is 100, but write your program to handle
+\emph{any} positive \verb!Int!. This makes it easy to change the limit later.
+
+\verb!main! should probably be the \emph{last} method you write,
+after you have written \emph{and tested} all the methods that it will
+need to call.
+
+A \emph{predicate} is a method that returns a \texttt{Boolean} value
+(\texttt{true} or \texttt{false}). Within the
+\verb!NumberPersonalities! object, write the following predicates:
+\begin{itemize}
+\item
+  \texttt{isPrime(n:\ Int):\ Boolean}
+\item
+  \texttt{isHappy(n:\ Int):\ Boolean}
+\item
+  \texttt{isTriangular(n:\ Int):\ Boolean}
+\item
+  \texttt{isSquare(n:\ Int):\ Boolean}
+\item
+  \texttt{isSmug(n:\ Int):\ Boolean}
+\item
+  \texttt{isHonest(n:\ Int):\ Boolean}
+\item
+  \texttt{isPronic(n:\ Int):\ Boolean}
+\item
+  \texttt{isDeficient(n:\ Int):\ Boolean}
+\item
+  \texttt{isPerfect(n:\ Int):\ Boolean}
+\item
+  \texttt{isAbundant(n:\ Int):\ Boolean}
+\end{itemize}
+And also write the following method:
+\begin{itemize}
+\item
+  \texttt{sumOfPositiveDivisorsOf(n:\ Int):\ Int}
+\end{itemize}
+You should provide tests for all your methods.
+\begin{itemize}
+\item
+  Testing does \emph{not} depend on the parameter names (\texttt{n} in
+  each of the above). You can use whatever parameter names you like. For
+  these methods, however, \texttt{n} is as good a name as any.
+\item
+  In most cases, Scala can deduce the return type (\texttt{Boolean} in
+  all but one of the above methods), and you don't have to specify it.
+\end{itemize}
+
+\subsection{Prime and composite numbers}\label{prime-and-composite-numbers}
+
+A positive number is \textbf{prime} if its only positive divisors are
+itself and one. For example, \verb!7! is prime because it is evenly
+divisible by \verb!1! and \verb!7!, but not by any number in
+between (in particular, it is not evenly divisible
+by \verb!2!, \verb!3!, \verb!4!, \verb!5!, or \verb!6!).
+
+A positive number is \textbf{composite} if it is not prime. For
+example, \verb!10! is composite because it is evenly divisible
+by \verb!2! and \verb!5!; \verb!12! is composite because it is evenly divisible
+by \verb!2!, \verb!3!, \verb!4!, and \verb!6!. As a
+special case, \verb!1! is considered to be composite.
+
+\begin{quote}
+\textbf{Programming note.} You can test whether a number \verb!n! is
+prime by dividing it by each of the numbers \texttt{2} through
+\texttt{n-1}, and testing if the remainder is zero (use the
+\textbf{\texttt{\%}} operator). A zero remainder means \verb!n! was
+evenly divisible by that divisor, hence is composite.
+\end{quote}
+
+\subsection{Happy and unhappy numbers}\label{happy-and-unhappy-numbers}
+
+Repeatedly apply the following procedure to a number:
+\begin{enumerate}
+\item Square each of the digits of the number.
+\item Add the squares together.
+\end{enumerate}
+If by doing this you eventually get to \verb!1!, then the number is \textbf{happy}.
+For example, if you start with \verb!19!:
+\begin{itemize}
+\item
+  \texttt{12\ +\ 92\ =\ 1\ +\ 81\ =\ 82}
+\item
+  \texttt{82\ +\ 22\ =\ 64\ +\ 4\ =\ 68}
+\item
+  \texttt{62\ +\ 82\ =\ 36\ +\ 64\ =\ 100}
+\item
+  \texttt{12\ +\ 02\ +\ 02\ =\ 1\ +\ 0\ +\ 0\ =\ 1} and the number is happy.
+\end{itemize}
+If instead you get into an infinite loop, the number is
+\textbf{unhappy}. So if your program runs forever, the number is
+unhappy. This isn't a very useful test, however. Fortunately, every
+unhappy number will eventually get into this cycle:
+\begin{quote}
+\texttt{4,\ 16,\ 37,\ 58,\ 89,\ 145,\ 42,\ 20,\ 4,\ ...}
+\end{quote}
+so if you get any one of these numbers, say \verb!4!, then you can
+stop and conclude that the number is unhappy.
+\begin{quote}
+\textbf{Programming note.} You can get the last digit of a
+number \verb!n! with the expression \texttt{(n\ \%\ 10)}. You can
+subsequently discard this digit by doing an ``integer division'' by 10;
+when you get a zero, there are no more digits.
+\begin{quote}
+Example: Taking the number \verb!1024!:
+\begin{quote}
+\texttt{~~~~~~~~~~~~~~~~1024\ \ \ \ \ \ \ \ \ \ \%\ 10\ =\ 4\ \ \ \ \ \ \ \ \ 1024\ /\ 10\ =\ 102,\ 102\ \%\ 10\ =\ 2\ \ \ \ \ \ \ \ \ ~102\ /\ 10\ =\ 10,~~\ 10\ \%\ 10\ =\ 0\ \ \ \ \ \ \ \ \ ~~10\ /\ 10\ =\ 1,~~~~\ 1\ \%\ 10\ =\ 1\ \ \ \ \ \ \ \ \ ~~\ 1\ /\ 10\ =\ 0\ }(stop)
+\end{quote}
+\end{quote}
+\end{quote}
+
+\subsection{Triangular numbers}\label{triangular-numbers}
+
+\centerline{\includegraphics{images/triangular_numbers}}
+
+A \textbf{triangular number} is a number of the form \texttt{1~+~2~+~3~+~...~+~n}, for some
+positive\texttt{\ n}. These numbers are called triangular because, if
+you have that many objects, you can arrange them in an equilateral
+triangle (see figure).
+The first few triangular numbers are
+\texttt{1,\ 3,\ 6,\ 10,\ 15}\ldots{}.
+\begin{quote}
+\textbf{Programming note.} You can test if a number is triangular by
+subtracting the number 1 from it, then subtracting 2, then subtracting
+3, etc. If at some point you get zero, then the starting number is
+triangular; but if you first get a negative number, then the number is
+not triangular.
+
+Example:
+
+\noindent\texttt{6\ -\ 1\ =\ 5\ ~~~~5\ -\ 2\ =\ 3\ ~~~~3\ -\ 3\ =\ 0\ }and
+the number is triangular.
+\end{quote}
+
+\subsection{Square numbers}\label{square-numbers}
+
+A \textbf{square number}
+
+\centerline{\includegraphics[width=0.86458in,height=1.06250in]{images/square-numbers}}
+
+\noindent is a number of the form \texttt{1~+~3~+~5~+~7~+~...~+~n}, for some odd
+positive\texttt{\ n}. (The figure should help you understand why this
+definition is the same as the usual definition of square numbers.)
+
+\begin{quote}
+\textbf{Programming note.} To test if a number is \textbf{square}, do
+the following. For each of the odd numbers \texttt{1~+~3~+~5~+~7~+~...},
+subtract that number, and see if you get zero (square) or a negative
+number (not square).
+\end{quote}
+
+\subsection{Smug numbers}\label{smug-numbers}
+
+A number is \textbf{smug} if it is the sum of two square numbers. The
+first few smug numbers are \texttt{2} (1+1), \texttt{5} (1+4),
+\texttt{8} (4+4), \texttt{10} (1+9), \texttt{13} (4+9), etc.
+
+\begin{quote}
+\textbf{Programming note.} To test if a number is smug, do the
+following. For each of the square numbers (which you can get as
+\texttt{1*1,\ 2*2,\ 3*3}, etc.), subtract that number, and see if the
+remainder is also a square number. You can stop if the remainder is less
+than the square number you subtracted.
+\end{quote}
+
+\subsection{Honest and dishonest
+numbers}\label{honest-and-dishonest-numbers}
+
+A number is \textbf{dishonest} if it ``pretends'' to be a square number,
+but isn't one. Specifically, n is dishonest if there is a
+number\texttt{\ k\ }such that\texttt{\ n/k~=~k\ }(using integer
+division), but\texttt{\ \ \ \ k*k\ }is not\texttt{\ n}. A number is
+\textbf{honest} if it is not dishonest.
+
+\begin{quote}
+\textbf{Programming note.} To find\texttt{\ k}, try the numbers 1, 2, 3,
+\ldots{} until you find a\texttt{\ k\ }such that either \texttt{n/k~=~k}
+or \texttt{n/k~\textless{}~k}.
+\end{quote}
+
+\subsection{Pronic numbers}\label{pronic-numbers}
+
+A number is \textbf{pronic} if it is the product of two consecutive
+numbers. The first few pronic numbers are \texttt{2} (1*2), \texttt{6}
+(2*3), \texttt{12} (3*4), \texttt{20} (4*5), etc.
+
+\begin{quote}
+\textbf{Programming note.} Starting with\texttt{\ k\ =\ 1}, compute
+\texttt{k\ *\ (k\ +\ 1)} until the result either equals or exceeds the
+number you are testing.
+\end{quote}
+
+\subsection{Deficient, perfect, and abundant
+numbers}\label{deficient-perfect-and-abundant-numbers}
+
+Every positive number is either \textbf{deficient}, \textbf{perfect}, or
+\textbf{abundant}. To determine which it is, add up all the positive
+numbers (including \texttt{1}) that divide it evenly.
+
+\begin{itemize}
+\item
+  If the sum of the divisors is less than the number, the number is
+  \textbf{deficient}.
+\item
+  If the sum of the divisors exactly equals the number, the number is
+  \textbf{perfect}.
+\item
+  If the sum of the divisors is greater than the number, the number is
+  \textbf{abundant}.
+\end{itemize}
+For example, \texttt{24} is evenly divisible by \texttt{1}, \texttt{2},
+\texttt{3}, \texttt{4}, \texttt{6}, \texttt{8}, and \texttt{12}. Because
+\texttt{1+2+3+4+6+8+12\ =\ 36}, and \texttt{36\ \textgreater{}\ 24}, the
+number \texttt{24} is abundant.
+
+A fundamental rule of good programming is the \textbf{DRY Principle}:
+\emph{Don't Repeat Yourself!} In each of three methods
+(\texttt{isDeficient}, \texttt{isPerfect}, and \texttt{isAbundant}), you
+need to compute the sum of the divisors of a number. It's poor style to
+write this same code in all three methods; instead, write a
+\texttt{sumOfPositiveDivisorsOf} method that each of the three methods
+can use.
+\end{document}

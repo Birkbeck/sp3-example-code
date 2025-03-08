@@ -1,0 +1,8 @@
+trait Shape {
+  def sides: Int
+  def perimeter: Double
+  def area: Double
+}
+
+case class Circle(radius: Double) extends Shape {
+  val sides = 1

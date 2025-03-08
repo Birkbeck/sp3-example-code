@@ -1,0 +1,396 @@
+\documentclass[12pt,a4paper,times]{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pgf}
+\usepackage{relsize}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\fvset{tabsize=2}
+\fvset{fontsize=\small}
+
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{SDP Primer}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\rfoot{Exercise sheet 02}
+\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
+
+\title{The SDP Primer}
+\author{Exercise sheet 02}
+\date{Session: 2016-17}
+
+% https://www.cis.upenn.edu/~matuszek/cit591-2013/Assignments/00-warm-up-exercises.html
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%\fontsize{18}{24}
+%\selectfont
+\section{Purposes of this assignment}\label{purposes-of-this-assignment}
+
+\begin{itemize}
+\item
+  To get you started programming in Scala.
+\item
+  To convey the idea of ``Write a little, test a little.''
+\end{itemize}
+
+\section{General idea of the
+assignment}\label{general-idea-of-the-assignment}
+
+Hammurabi is a very old computer game, in which you are the ruler of
+ancient Samaria, trying to increase the wealth of your country. Your job
+is to bring this program into the 21st century by writing it in Scala.
+
+\section{Step by step instructions}\label{step-by-step-instructions}
+
+Since some of you have never programmed before, this assignment is in
+the form of a step-by-step tutorial. Later assignments will leave more
+up to you.
+
+\begin{enumerate}
+\item
+  Using a text editor, write a \texttt{println} statement to print out
+  the following introductory message:
+
+\begin{Verbatim}
+Congratulations, you are the newest ruler of ancient Samaria, elected
+for a ten year term of office. Your duties are to dispense food, direct
+farming, and buy and sell land as needed to support your people. Watch
+out for rat infestations and the plague! Grain is the general currency,
+measured in bushels. The following will help you in your decisions:
+
+  * Each person needs at least 20 bushels of grain per year to survive.
+
+  * Each person can farm at most 10 acres of land.
+
+  * It takes 2 bushels of grain to farm an acre of land.
+
+  * The market price for land fluctuates yearly.
+
+Rule wisely and you will be showered with appreciation at the end of
+your term. Rule poorly and you will be kicked out of office!
+\end{Verbatim}
+\begin{description}
+\item[Hint \#1:] You can put this all into a single \texttt{println}
+  statement by using a so-called ``triply-quoted string''; that is, a
+  string that begins and ends with three double quote marks. Such a
+  string can hold more than one line.
+\item[Hint \#2:] You can save some typing by copying code from the assignment and pasting it
+into your Scala file.
+\end{description}
+How to run this:
+  \begin{enumerate}
+  \item
+    Save the above on a file named \texttt{Hammurabi.scala}.
+  \item
+    Open a command-line (``Terminal'' or ``DOS'') window.
+  \item
+    Use the \texttt{cd\ path\_to\_directory} (``change directory'')
+    command to move to the directory containing the
+    \texttt{Hammurabi.scala} file.
+  \item
+    Start the REPL by entering the command: \texttt{scala}
+  \item
+    In the REPL, enter the command \texttt{:load\ Hammurabi.scala}\\
+    This should display the above introductory message.
+  \end{enumerate}
+  Stay in the REPL as you write the rest of the program.
+\item
+  Put the \texttt{println} statement from above into a function called
+  \texttt{printIntroductoryMessage}. Test your function by calling it
+  from the REPL.
+
+Save and load the modified program. Since the
+  \texttt{println} expression is now inside a function, it is not
+  automatically executed when you load the program. To run it,
+  enter \texttt{printIntroductoryMessage}
+\item
+  Write a function called \texttt{hammurabi}. Inside this function put a
+  call to \texttt{printIntroductoryMessage}.
+
+  Once we have more than one function, we have to arrange them in a
+  certain order. This is a nuisance. To avoid this problem, ``wrap'' all
+  your code into an {object}, like this:
+
+\begin{Verbatim}
+object Hammurabi {
+  All your code goes in here
+}
+\end{Verbatim}
+Test your \texttt{hammurabi} function. Since your function is now
+inside the Hammurabi object, call it by entering
+\texttt{Hammurabi.hammurabi}. That is, the name of the object, a dot,
+and the name of the function you want to call. Other functions can be
+tested similarly.
+
+\item\label{variables}
+  Declare the following variables, which you will need in the rest of
+  the program. Put them as the first thing inside your
+  \texttt{hammurabi} function, before the call to
+  \texttt{printIntroductoryMessage}.
+\begin{Verbatim}
+    var starved = 0            // how many people starved
+    var immigrants = 5         // how many people came to the city
+    var population = 100
+    var harvest = 3000          // total bushels harvested
+    var bushelsPerAcre = 3      // amount harvested for each acre planted
+    var rats_ate = 200          // bushels destroyed by rats
+    var bushelsInStorage = 2800
+    var acresOwned = 1000
+    var pricePerAcre = 19       // each acre costs this many bushels
+    var plagueDeaths = 0
+\end{Verbatim}
+\item
+  Next inside \texttt{hammurabi}, write a loop to print the following
+  report ten times, with the variable \texttt{year} set to 1, 2, 3,
+  \ldots{}, 10. Each of the numbers in the report (shown in red) should
+  be the value of the corresponding variable (remember that you can
+  ``add'' strings and numbers).
+\begin{Verbatim}
+O great Hammurabi!
+You are in year 1 of your ten year rule.
+In the previous year 0 people starved to death.
+In the previous year 5 people entered the kingdom.
+The population is now 100.
+We harvested 3000 bushels at 3 bushels per acre.
+Rats destroyed 200 bushels, leaving 2800 bushels in storage.
+The city owns 1000 acres of land.
+Land is currently worth 19 bushels per acre.
+There were 0 deaths from the plague.
+\end{Verbatim}
+  Remember that expressions inside parentheses can extend across more
+  than one line. It is good style to keep your lines short (less than
+  about 80 characters) in a program. A good place to break some of the
+  above \texttt{println} statements is just after a
+  \texttt{+}.
+  
+  The above summary represents the initial
+  state, at the \emph{beginning} of the first year--that is, when you
+  first take office, and before you do any of the computations below).
+  So, for example, the previous year (under a different ruler) must have
+  started with 95 people; none starved, and 5 entered the kingdom, so as
+  you enter office you rule 100 people.
+  
+  Since you are not yet changing the values of any of the variables, when you test the
+  \texttt{hammurabi} function you should get the \emph{same} report
+  (except for the \texttt{year} number) printed out ten times.
+\end{enumerate}
+That's it for most of the printing.
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item
+  You will be asking the user to enter integers, which you \emph{could}
+  do with code like this:
+\begin{Verbatim}
+var answer = readLine(prompt).toInt
+\end{Verbatim}
+but if the user enters something that isn't an integer, the program
+  will crash. That's frustrating. Instead, copy \emph{and test} the
+  following function, which I have written for you:
+\begin{Verbatim}
+def readInt(message: String): Int = {
+  try {
+    readLine(message).toInt
+  } catch {
+    case _ : Throwable =>
+      println("That's not an integer. Please enter an integer.")
+      readInt(message)
+    }
+  }    
+\end{Verbatim}
+\item
+  Next, inside the ``year loop,'' you will use functions to ask the
+  Great Hammurabi (the user) to make some decisions. Check each decision
+  to see whether it is possible (give enough parameters to the function
+  to be able to decide this). If it is not possible, ask the Great
+  Hammurabi very, very politely (as befits his high status) for a
+  different answer, and repeat if necessary until a legal answer is
+  obtained.
+  
+  At the beginning of each year, ask the player (``Hammurabi'') for:
+  \begin{itemize}
+  \item
+    \textbf{How many acres of land to buy}
+  \item
+    \textbf{How many acres of land to sell}
+
+    \begin{itemize}
+    \item
+      Do not ask this question if the player is buying land.
+    \end{itemize}
+  \item
+    \textbf{How much grain to feed to the people}
+  \item
+    \textbf{How many acres to plant with seed}
+  \end{itemize}
+  Questions should be asked in this order, and the player does not get a
+  chance to go back and change an earlier answer. A player who is buying
+  land is not allowed to sell land during the same turn; so if the user
+  asks to buy land, do not call the function that asks how much land to
+  sell.
+
+  As an example, the first function has been written for you.
+\begin{Verbatim}
+  def askHowMuchLandToBuy(bushels: Int, price: Int) = {
+    var acresToBuy = readInt("How many acres will you buy? ")
+    while (acresToBuy < 0 || acresToBuy * price > bushels) {
+      println("O Great Hammurabi, we have but " + bushels + " bushels of grain!")
+      acresToBuy = readInt("How many acres will you buy? ")
+    }
+    acresToBuy
+  }
+\end{Verbatim}
+And here is a sample call to the function (which you would put inside the \verb!hammurabi! function).
+\begin{Verbatim}
+var acresToBuy = askHowMuchLandToBuy(bushelsInStorage, pricePerAcre)
+acresOwned = acresOwned + acresToBuy
+\end{Verbatim}
+  Each function should be given just enough information to test whether
+  the user's answer is legal, and to return that legal answer. That
+  answer should then be used (within the \texttt{hammurabi} function) to
+  adjust the values of the variables declared in \ref{variables} above. Don't forget
+  to test each function as you write it!
+\item
+  After you collect the answers to the above questions, you need to
+  determine the consequences, in the order specified below. For each of
+  the following, call an appropriately-named function, and use the
+  number returned by the function to update the variables in the
+  \texttt{hammurabi} function. Do the update immediately, before going
+  on to the next part (for example, if people die of the plague, there
+  are fewer people when you check for starvation). Test each function as
+  you go.\\[2\baselineskip]Many of the functions use ``random'' numbers;
+  see below for information on how to get these numbers.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    \textbf{If there is a plague}
+
+    \begin{itemize}
+    \item
+      Each year, there is a 15\% chance of a horrible plague. When this
+      happens, half your people die. Change the \texttt{population}
+      variable immediately, before going on to the next part.
+    \item
+      There are a couple of ways you could write this function. You
+      could just return \texttt{true} 15\% of the time, and
+      \texttt{false} the other 85\% of the time. Or, you could pass in
+      the number of people you have, and return the number who died (or
+      the number you have left).
+    \item
+      Similar comments apply to the rest of the functions in this list.
+    \end{itemize}
+  \item
+    \textbf{How many people starved}
+
+    \begin{itemize}
+    \item
+      Each person needs 20 bushels of grain to survive. If you feed them
+      more than this, the grain has been wasted.
+    \item
+      If more than 45\% of the people starve, you will be immediately
+      thrown out of office (in this case, you should print a suitably
+      nasty message), and the game ends.
+    \end{itemize}
+  \item
+    \textbf{How many people came to the city}
+
+    \begin{itemize}
+    \item
+      Nobody will come to the city if people are starving. If everyone
+      is well fed, compute how many people come to the city as:
+     \begin{Verbatim}
+(20 * number of acres + amount of grain in storage) / (100 * population) + 1
+     \end{Verbatim}
+     \end{itemize}
+  \item
+    \textbf{How good the harvest is}
+
+    \begin{itemize}
+    \item
+      Choose a random number between 1 and 8, inclusive. Each acre that
+      was planted with seed will yield this many bushels of grain.
+      (Example: if you planted 50 acres, and the random number is 3, you
+      harvest 150 bushels of grain).
+    \end{itemize}
+  \item
+    \textbf{If you have a problem with rats}
+
+    \begin{itemize}
+    \item
+      There is a 40\% chance that you will have a rat infestation. When
+      this happens, rats will eat somewhere between 1/10 and 3/10 of
+      your grain.
+    \end{itemize}
+  \item
+    \textbf{How much land will cost next year}
+
+    \begin{itemize}
+    \item
+      The price of land is random, and ranges from 17 to 23 bushels per
+      acre. The player will need this information in order to buy or
+      sell land.
+    \end{itemize}
+  \end{enumerate}
+\item
+  At the end of the game (inside the \texttt{hammurabi} function but
+  outside the ``year loop''), use a function to print out a final
+  summary, and to tell the player how good a job he/she did. I'll leave
+  the details up to you, but the usual evaluation is based on how many
+  people starved, and how many acres you end up with.
+\item
+  To start your program as soon as it is loaded, add the line
+  \texttt{Hammurabi.hammurabi} at the very end of the file.
+\end{enumerate}
+
+\section{Additional information}\label{additional-information}
+
+\subsection{Arithmetic}\label{arithmetic}
+
+All the required arithmetic in this program should be \textbf{integer}.
+You do not need doubles; rounding errors of one or two percentage points
+are acceptable.
+
+\subsection{Random numbers}\label{random-numbers}
+
+To get random numbers, you need to get a random number generator from
+Scala's vast library of pre-written code. Put this line at the very
+beginning of your program:
+\begin{Verbatim}
+import scala.util.Random
+\end{Verbatim}
+To get a new random number in the range \texttt{0} to \texttt{n-1}, call
+\texttt{Random.nextInt(n)}. For example, to simulate the roll of a die,
+you could use \texttt{Random.nextInt(6)+1}. (The \texttt{+1} is
+necessary because the function call will return a number between 0 and
+5, inclusive.) To do something that happens \texttt{p} percent of the
+time, use
+\begin{Verbatim}
+if (Random.nextInt(100) < p) { 
+  // do something
+}
+\end{Verbatim}
+
+\subsection{Summary of program structure}\label{summary-of-program-structure}
+
+\begin{Verbatim}
+import scala.util.Random
+
+object Hammurabi {
+  def hammurabi = {...}
+  Other function definitions
+}
+Hammurabi.hammurabi
+\end{Verbatim}
+\end{document} 

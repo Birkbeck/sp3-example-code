@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,times]{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pgf}
+\usepackage{relsize}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\fvset{tabsize=2}
+\fvset{fontsize=\small}
+
+\lfoot{SDP Primer}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\rfoot{Exercise sheet 01}
+\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
+
+\title{The SDP Primer}
+\author{Exercise sheet 01\\[2mm]
+\textsc{Scala Warm-Up Exercises}}
+\date{Session: 2016-17}
+
+% https://www.cis.upenn.edu/~matuszek/cit591-2013/Assignments/00-warm-up-exercises.html
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%\fontsize{18}{24}
+%\selectfont
+\begin{description}
+
+\item[Get started] Log in. Open a command-line window and enter \verb!scala! to start the Scala REPL. 
+Use the REPL to compute \verb!2+2!.
+
+\item[Reading and printing] Use \verb!readLine! to ask the user for an integer, 
+and save it in a \verb!val! named \verb!number!. Then use \verb!println! to tell the user the 
+value of half of that number.
+
+\item[Use an if statement] Compare the number just entered to 100, then print
+\begin{Verbatim}
+"That's a big number"
+\end{Verbatim} 
+if the number is greater than 100, or 
+\begin{Verbatim}
+"That's a small number" 
+\end{Verbatim}
+if the number is less than 100. \\
+(Remember that your test must be put inside parentheses.)
+
+\item[Use a while loop] Write a program to repeatedly do the following: 
+\begin{enumerate}
+\item Ask for a number, and 
+\item print out a message that says what number you entered, and the square of that number 
+(for example, 5 squared is 25). 
+\item Quit when the number 0 is entered. 
+\end{enumerate} 
+(Remember that the \verb!readLine! and \verb!println! expressions must be inside curly braces, \verb!{}!).
+
+\item[Use a for loop] Write a program to print out the numbers 1 through 25 and, for each number, 
+print its square and its cube on the same line. 
+(You can use \verb!+! to combine strings and numbers into a single string.)
+
+\item[Write a program] In a text editor, write a program to compute and print the result of adding 2 and 2. 
+Save this program  in a file named \verb!test.scala!, then run it by entering a \verb!:load! 
+command into the REPL. The \verb!:load! command looks like this:
+\begin{Verbatim}
+:load complete_path_to_the_Scala_file
+\end{Verbatim}
+
+\item[Edit a program] Edit your program to compute and print the result of 13 squared.\\
+(You can use \verb!13 * 13!, or \verb!13 ** 2! to compute this.) Run the program by loading it in again.
+
+\item[Write a function] In your program, write a function named \verb!isEven! that, given a single \verb!Int! 
+as a parameter, returns \verb!true! if the remainder when divided by 2 is zero 
+(the operator that gives you the remainder is \verb!%!), and \verb!false! otherwise. 
+Reload the program and try calling the function with various numbers.
+\end{description}
+\end{document} 

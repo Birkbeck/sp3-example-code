@@ -1,0 +1,267 @@
+\documentclass[12pt,a4paper,answers]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{minted}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Exercises on Design Patterns III}
+\author{Some more patterns}
+\date{%
+\textsc{Chain of Responsibility},
+\textsc{Command},
+\textsc{Interpreter},
+\textsc{Prototype},
+\textsc{Iterator}, and
+\textsc{Mediator}}
+
+\fvset{tabsize=2}
+%\fvset{fontsize=\relsize{-1}}
+%\fvset{frame=single}
+
+% https://www.javacodegeeks.com/2015/09/decorator-design-pattern.html
+
+\newcommand{\code}{/Users/keith/Courses/sdp/SDP-2017/exercises/week09/src/main/scala}
+\newcommand{\codesol}{/Users/keith/Courses/sdp/SDP-2017/exercises/week09sol/src/main/scala}
+
+\begin{document}
+\maketitle
+
+You should use Scala to answer the following exercises.\\
+The source code examples can be found on the repository under the \verb!exercises/week09! folder.
+
+\begin{questions}
+
+%\inputminted{scala}{\codesol/composite/HtmlElement.scala}
+
+\question
+This question concerns the \textsc{Chain of Responsibility} design pattern.
+
+Your company has got a contract to provide an analytical application to a health company. The application would tell the user about the particular health problem, its history, its treatment, medicines, 
+interview of the person suffering from it, etc.; basically everything that is required to know about it. 
+For this, your company receives a huge amount of data. The data could be in any format, it could text files, doc files, excels, audio, images, videos, anything that you can think of would be there.
+
+Now, your job is to save this data in the company's database. Users will provide the data in any format and you should provide them a single interface to upload the data into the database. The user is not interested, not even aware, to know that how you are saving the different unstructured data?
+
+The problem here is that you need to develop different handlers to save the various formats of data. For example, a text file save handler does not know how to save an mp3 file.
+
+To solve this problem you can use the \emph{Chain of Responsibility} design pattern. You can create different objects which process different formats of data and chain them together. 
+When a request comes to a single object, it will check whether it can process and handle the specific file format. If it can, it will process it; otherwise, it will forward it to the next object chained to it. 
+This design pattern also decouples the user from the object that is serving the request; the user is not aware which object is actually serving its request.
+
+To implement the Chain of Responsibility pattern to solve the above problem, you will create an interface, \mintinline{scala}{Handler}.
+\inputminted{scala}{\code/chain/Handler.scala}
+The above interface contains two main methods, the \mintinline{scala}{setHandler} and the \mintinline{scala}{process} methods. The \mintinline{scala}{setHandler} is used to set the next handler in the 
+chain, whereas; the \mintinline{scala}{process} method is used to process the request, only if the handler can able process the request. 
+Optionally, we have the \mintinline{scala}{getHandlerName} method which is used to return the handler’s name.
+The handlers are designed to process files which contain data. The concrete handler checks if it’s able to handle the file by checking the file type, otherwise forwards to the next handler in the chain.
+
+The \mintinline{scala}{File} class looks like this:
+\inputminted{scala}{\code/chain/File.scala}
+The \mintinline{scala}{File} class creates simple file objects which contain the file name, file type, and the file path. 
+The file type would be used by the handler to check if the file can be handled by them or not. If a handler can, it will process and save it, or it will forward it to the next handler in the chain.
+
+Your solution should satisfy the following tests:
+\inputminted{scala}{\code/chain/TestChainofResponsibility.scala}
+The above program will have the following output:
+\begin{Verbatim}
+Text Handler fowards request to Doc Handler
+Doc Handler fowards request to Excel Handler
+Excel Handler fowards request to Audio Handler
+Process and saving audio file... by Audio Handler
+
+Text Handler fowards request to Doc Handler
+Doc Handler fowards request to Excel Handler
+Excel Handler fowards request to Audio Handler
+Audio Handler fowards request to Video Handler
+Process and saving video file... by Video Handler
+
+Text Handler fowards request to Doc Handler
+Process and saving doc file... by Doc Handler
+
+Text Handler fowards request to Doc Handler
+Doc Handler fowards request to Excel Handler
+Excel Handler fowards request to Audio Handler
+Audio Handler fowards request to Video Handler
+Video Handler fowards request to Image Handler
+File not supported
+\end{Verbatim}
+\begin{solution}
+	
+\end{solution}
+
+
+\question
+This question concerns the \textsc{Command} design pattern.
+
+You are required to create an application to execute different types of jobs. A job can be anything in a system, for example, sending emails, SMS, logging, or performing some IO functions.
+The \textsc{Command} pattern will help to decouple the invoker from a receiver and helps to execute any type of job without knowing its implementation. 
+We'll make this example more interesting by creating threads which will help to execute these jobs concurrently. As these jobs are independent of each other, so the sequence of execution of these 
+jobs is not really important. We will create a thread pool to limit the number of threads to execute jobs. A command object will encapsulate jobs and will hand it over to a thread from the pool 
+that will execute the job.
+
+The command object will be referenced by a common interface and will contain a method that will be used to execute the requests. 
+The concrete command classes will override that method and will provide their own specific implementation to execute the request.
+\inputminted{scala}{\code/command/Job.scala}
+The \mintinline{scala}{Job} interface is the command interface, contains a single method \mintinline{scala}{run}, which is executed by a thread. 
+Our command’s \mintinline{scala}{execute} method is the \mintinline{scala}{run} method which will be used to execute by a thread to get the work done.
+There would be a different type of jobs that can be executed. The following is one of the concrete classes whose instances will be executed by the different command objects:
+\inputminted{scala}{\code/command/Email.scala}
+
+The implementation classes of the \mintinline{scala}{Job} interface hold a reference to their respective classes that will be used to get the job done. 
+The classes override the \mintinline{scala}{run} method and do the work requested. For example, the \mintinline{scala}{SmsJob} class is used to send sms, its 
+\mintinline{scala}{run} method calls the \mintinline{scala}{sendSms} method of the \mintinline{scala}{Sms} object to get the job done.
+
+You can set different objects one by one to the same command object.
+
+The below is the \mintinline{scala}{ThreadPool} class used to create pool of threads and allow a thread to fetch and execute the job from the job queue.
+\inputminted{scala}{\code/command/ThreadPool.scala}
+The above class is used to create $n$ threads (worker threads). Each worker thread will wait for a job in a queue and then execute the job and will go back to waiting state. 
+The class contains a job queue; when a new job will be added into the queue, a worker thread from the pool will execute the job.
+
+Your solution should satisfy the following tests:
+ \inputminted{scala}{\code/command/TestCommandPattern.scala}
+The above code will result in the following output:
+\begin{Verbatim}
+Job ID: 9 executing email jobs.
+Sending email.......
+Job ID: 12 executing logging jobs.
+Job ID: 17 executing email jobs.
+Sending email.......
+Job ID: 13 executing email jobs.
+Sending email.......
+Job ID: 10 executing sms jobs.
+Sending SMS...
+Job ID: 11 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 18 executing sms jobs.
+Sending SMS...
+Logging...
+Job ID: 16 executing logging jobs.
+Logging...
+Job ID: 15 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 14 executing sms jobs.
+Sending SMS...
+Job ID: 12 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 10 executing logging jobs.
+Logging...
+Job ID: 18 executing email jobs.
+Sending email.......
+Job ID: 16 executing sms jobs.
+Sending SMS...
+Job ID: 14 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 9 executing logging jobs.
+Logging...
+Job ID: 17 executing email jobs.
+Sending email.......
+Job ID: 13 executing sms jobs.
+Sending SMS...
+Job ID: 15 executing fileIO jobs.
+Executing File IO operations...
+Job ID: 11 executing logging jobs.
+Logging...
+\end{Verbatim}
+Due to the nature of concurrency the output may differ on subsequent executions.
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Interpreter} design pattern.
+
+Given a language, define a representation for its grammar along with an interpreter that uses the 
+representation to interpret sentences in the language.
+
+In general, languages are made up of a set of grammar rules. Different sentences can be constructed by 
+following these grammar rules. Sometimes an application may need to process repeated occurrences of 
+similar requests that are a combination of a set of grammar rules. These requests are distinct but are 
+similar in the sense that they are all composed using the same set of rules.
+
+A simple example of this would be the set of different arithmetic expressions submitted to a calculator program 
+(some familiar?). Though each such expression is different, they are all constructed using the basic rules 
+that make up the grammar for the language of arithmetic expressions.
+
+In such cases, instead of treating every distinct combination of rules as a separate case, it may be beneficial 
+for the application to have the ability to interpret a generic combination of rules. The Interpreter pattern can 
+be used to design this ability in an application so that other applications and users can specify operations using 
+a simple language defined by a set of grammar rules.
+
+A class hierarchy can be designed to represent the set of grammar rules with every class in the hierarchy 
+representing a separate grammar rule. An Interpreter module can be designed to interpret the sentences constructed 
+using the class hierarchy designed above and carries out the necessary operations.
+
+Because a different class represents every grammar rule, the number of classes increases with the number of 
+grammar rules. A language with extensive, complex grammar rules requires a large number of classes. The 
+\textsc{Interpreter} pattern works best when the grammar is simple. Having a simple grammar avoids the need 
+to have many classes corresponding to the complex set of rules involved, which are hard to manage and maintain.
+
+Consider the following interface specification:
+\inputminted{scala}{\code/interpreter/Expression.scala}
+The above interface is used by all different concrete expressions and overrides the interpret method to 
+define their specific operation on the expression.
+The following are the operation specific expression classes which you need to complete:
+\inputminted{scala}{\code/interpreter/Add.scala}
+\inputminted{scala}{\code/interpreter/Product.scala}
+Your solution should satisfy the following tests:
+\inputminted{scala}{\code/interpreter/TestInterpreterPattern.scala}
+The code above should provide the following output:
+\begin{Verbatim}
+( 7 3 -2 1 + * ):12
+\end{Verbatim}
+Please note that we have used postfix notation.
+
+\subsubsection*{Postfix notation}
+If you don’t know about postfix, here is a brief introduction. There are three notations for a mathematical expression i.e., \emph{infix}, \emph{postfix}, and \emph{prefix}.
+\begin{description}
+\item[Infix notation] is the common arithmetic and logical formula notation, in which operators are written infix-style between the operands they act on e.g. $3 + 4$.
+\item[Postfix a.k.a. Reverse Polish notation (RPN)] is mathematical notation in which every operator follows all of its operands e.g. $3 4 +$.\item[Prefix (Polish notation)] is a form of notation for logic, arithmetic, and algebra in which operators to the left of their operands e.g. $+ 3 4$.
+\end{description}
+Infix notation is a normally used in mathematical expressions. The other two notations are used as syntax for mathematical expressions by interpreters of programming languages.
+
+In the above class, we declared a postfix of an expression in the \mintinline{scala}{tokenString} variable. 
+Then we split the \mintinline{scala}{tokenString} and assigned it into an array, the \mintinline{scala}{tokenArray}. While iterating tokens one by one, first we have checked whether the token 
+is an \emph{operator} or an \emph{operand}. If the token is an operand we pushed it onto the stack, but if it is an operator we popped the first two operands from the stack. 
+The \mintinline{scala}{getOperation} method returns the appropriate expression class according to the operator passed to it.We next interpreted the result and pushed it back onto the stack. After iterating over the complete \mintinline{scala}{tokenList} we got the final result.
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Prototype} design pattern.
+
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Iterator} design pattern.
+
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Mediator} design pattern.
+
+\begin{solution}
+	
+\end{solution}
+\end{questions}
+
+\end{document}

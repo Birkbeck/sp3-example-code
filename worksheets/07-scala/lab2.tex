@@ -1,0 +1,201 @@
+\documentclass[a4paper,12pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\ScaleIfNeeded{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+{%
+ \catcode`\@=11\relax%
+ \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+}%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={Worksheet: Streams},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+%\setcounter{secnumdepth}{0}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+
+\title{Exercises --- Week Seven}
+\date{Spring term 2016}
+\author{Optional exercise --- Object-Oriented Sets}
+
+\begin{document}
+\maketitle
+
+You need to have installed the current Scala distribution and the current Java distribution
+before commencing these exercises.
+Don't forget the documentation for both distributions as they will come in very useful.
+
+Any source code examples are available under the \verb!week07/objsets! folder.
+
+The exercise is based upon one from one of the EPFL courses on functional programming techniques, 
+later reused in Martin Odersky's \url{coursera.org} course.
+
+\section*{Preamble}
+
+In this exercise set you will work with an object-oriented representations based on binary trees.
+You will be  completing the \verb!TweetSet.scala! file. 
+This file defines an abstract class \verb!TweetSet! with two concrete subclasses, 
+\begin{description}
+\item[\texttt{Empty}] --- which represents an empty set, and 
+\item[\texttt{NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet)}] 
+--- which represents a non-empty set as a binary tree rooted at \verb!elem!. 
+\end{description}
+The tweets are indexed by their text bodies: the bodies of all tweets on the left 
+are lexicographically smaller than \verb!elem! and all bodies of elements on the right 
+are lexicographically greater. Note that these classes are immutable: 
+the set-theoretic operations do not modify \verb!this! but should return a new set.
+
+Before tackling this assignment, we suggest you first study the already implemented 
+methods of \verb!TweetSet!, \verb!contains! and \verb!incl!.
+\begin{questions}
+\question
+Implement \emph{filtering} on tweet sets. Complete the stubs for the methods 
+\verb!filter! and \verb!filterAcc!. \verb!filter! takes as argument a function, 
+the predicate, which takes a tweet and returns a boolean. \verb!filter! 
+then returns the subset of all the tweets in the original set for which the predicate is true. 
+For example, the following call:
+\begin{Verbatim}
+tweets.filter(tweet => tweet.retweets > 10)	
+\end{Verbatim}
+applied to a set \verb!tweets! of two tweets, say, where the first tweet was not retweeted and 
+the second tweet was retweeted 20 times should return a set containing only the second tweet.
+
+Hint: start by defining the helper method \verb!filterAcc! 
+which takes an accumulator set as a second argument. 
+This accumulator contains the ongoing result of the filtering.
+\begin{Verbatim}
+/** This method takes a predicate and returns a subset of all the elements
+ *  in the original set for which the predicate is true.
+ */
+def filter(p: Tweet => Boolean): TweetSet
+def filterAcc(p: Tweet => Boolean, acc: TweetSet): TweetSet	
+\end{Verbatim}
+The definition of \verb!filter! in terms of \verb!filterAcc! should then be straightforward.
+
+\question
+Implement union on tweet sets. Complete the stub for the method \verb!union!. 
+The method \verb!union! takes another set \verb!that!, and computes a new set which is 
+the union of \verb!this! and \verb!that!, i.e., a set that contains exactly the elements 
+that are either in \verb!this! or in \verb!that!, or \emph{in both}.
+\begin{Verbatim}
+def union(that: TweetSet): TweetSet	
+\end{Verbatim}
+Note that in this exercise it is your task to find out in which class(es) to define the 
+\verb!union! method (should it be abstract in class \verb!TweetSet!?).
+
+\question
+The more often a tweet is ``re-tweeted'' 
+(that is, repeated by a different user with or without additions), the more influential it is.
+
+The goal of this part of the exercise is to add a method 
+\verb!descendingByRetweet! to \verb!TweetSet! which should produce a linear sequence of 
+tweets (as an instance of class \verb!TweetList!), ordered by their number of retweets:
+\begin{Verbatim}
+def descendingByRetweet: TweetList	
+\end{Verbatim}
+This method reflects a common pattern when transforming data structures. 
+While traversing one data structure (in this case, a \verb!TweetSet!), 
+we’re building a second data structure (here, an instance of class \verb!TweetList!). 
+The idea is to start with the empty list \verb!Nil! (containing no tweets), 
+and to find the tweet with the most retweets in the input \verb!TweetSet!. 
+This tweet is removed from the \verb!TweetSet! (that is, we obtain a new \verb!TweetSet! 
+that has all the tweets of the original set except for the tweet that was ``removed''; 
+this \emph{immutable} set operation, \verb!remove!, 
+is already implemented for you), and added to the result list by creating a new \verb!Cons!. 
+After that, the process repeats itself, but now we are searching through a \verb!TweetSet! 
+with one less tweet.
+
+Hint: start by implementing the method \verb!mostRetweeted! which returns the most 
+popular tweet of a \verb!TweetSet!.
+
+\question
+In the last step of this exercise your task is to detect influential tweets in a set of 
+recent tweets. You are provided you with a \verb!TweetSet! containing several hundred tweets 
+from popular tech news sites, located in the \verb!TweetReader! object (file 
+\verb!TweetReader.scala!). \verb!TweetReader.allTweets! returns an instance of 
+\verb!TweetSet! containing a set of all available tweets.
+
+Furthermore, you are given two lists of keywords. The first list corresponds to 
+keywords associated with Google and Android smartphones, while the second list corresponds 
+to keywords associated with Apple and iOS devices. Your objective is to detect which 
+platform has generated more interest or activity.
+
+As a first step, use the functionality you implemented in the first parts of this assignment 
+to create two different \verb!TweetSet!s, \verb!googleTweets! and \verb!appleTweets!. 
+The first \verb!TweetSet!, \verb!googleTweets!, should contain all tweets that 
+mention (in their ``text'') one of the keywords in the google list. 
+The second \verb!TweetSet!, \verb!appleTweets!, should contain all tweets that mention 
+one of the keyword in the apple list. Their signature is as follows:
+\begin{Verbatim}
+val googleTweets: TweetSet
+val appleTweets: TweetSet	
+\end{Verbatim}
+Hint: use the \verb!exists! method of \verb!List! and \verb!contains! 
+method of class \verb!java.lang.String!.
+
+From the \emph{union} of those two \verb!TweetSet!s, produce \verb!trending!, 
+an instance of class \verb!TweetList! representing a sequence of tweets ordered 
+by their number of retweets:
+\begin{Verbatim}
+val trending: TweetList	
+\end{Verbatim}
+
+\end{questions}
+\end{document}

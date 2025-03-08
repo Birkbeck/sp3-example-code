@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper,answers]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{fancyvrb}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Worksheet 02: Further exercises on Java Reflection}
+\author{}
+\date{}
+
+\fvset{tabsize=2}
+\fvset{fontsize=\relsize{-1}}
+\fvset{frame=single}
+
+\begin{document}
+
+\maketitle
+
+The Reflection API allows a Java program to inspect and manipulate itself; it comprises the \verb!java.lang.Class! 
+class and the \verb!java.lang.reflect! package, which represents the members of a class with \verb!Method!, 
+\verb!Constructor!, and \verb!Field! objects.
+
+\begin{questions}
+\question
+Write a Java program that reads the name of a class from the command line and emits the interface of the class in Java 
+syntax (interface or class, modifiers, constructors, methods, fields; no method bodies). 
+
+Hint: You can load a class whose name you know with \verb!java.lang.Class.forName()!. The 
+\verb!java.lang.Class! class offers a rich interface that enables you to inspect the interface of any class.
+
+Apply this program to a set of classes and interfaces as test input. You may also use the program on itself.
+
+\question
+Write a program that reads a class name and a list of arguments, 
+and creates an object of that class where the read arguments are passed to the constructor.
+
+Hint: Treat arguments as strings. A \verb!java.lang.Class! can enumerate its constructors. 
+Choose a constructor with the appropriate parameter count. 
+Then, find the parameter types. To create typed argument objects, call the appropriate constructors 
+that take a string as their only argument. 
+Call dynamic constructors using 
+
+\verb!java.lang.reflect.Constructor.newInstance()!.
+
+\question
+Write a \verb!JUnit! test to help grade the internal correctness of a student's submitted program for a hypothetical 
+assignment.
+
+Make the tests fail if the class under test has any of the following:\begin{itemize}
+\item more than four fields\item any non-private fields\item any fields of type \verb!ArrayList!\item fewer than two private helper methods\item any method that has a \verb!throws! clause\item any method that returns an \verb!int!\item missing a zero-argument constructor	
+\end{itemize}
+
+\question
+Normally it is up to the programmer to write a \verb!toString()! method for each class one creates. 
+This exercise is about writing a general \verb!toString! method once and for all. 
+As part of the reflection API for java, it is possible to find out which fields exist for a given object, 
+and to get their values. The purpose of this exercise is to make a \verb!toString! method that gives a printed 
+representation of any object, in such a manner that all fields are printed, 
+and references to other objects are handled as well. 
+
+To solve this exercise, you will need to examine the \verb!java.lang.reflect! API. 
+You will (probably) end up with around 50--60 lines of code, including that necessary for trying it out. 
+\end{questions}
+
+\end{document}

@@ -1,0 +1,343 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{minted}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Exercises on Design Patterns IV}
+\author{Nearly there --- just a few to go\ldots}
+\date{2018}
+
+\fvset{tabsize=2}
+%\fvset{fontsize=\relsize{-1}}
+%\fvset{frame=single}
+
+% https://www.javacodegeeks.com/2015/09/decorator-design-pattern.html
+
+\newcommand{\code}{/Users/keith/Documents/Courses/sdp/repo/worksheets/dp-four/kotlin/src}
+%\newcommand{\codesol}{/Users/keith/Courses/sdp/SDP-2017/exercises/week11sol/src/main/scala}
+
+\begin{document}
+\maketitle
+
+In these exercises we will be examining the following design patterns:
+\begin{itemize}
+\item Flyweight, 
+\item Memento, and
+\item Proxy.
+\end{itemize}
+The source code snippets listed below are written using the Kotlin language; 
+similar versions in Scala can be found on the source 
+code repository under the \verb!worksheets/dp-four! folder. 
+
+\begin{questions}
+
+\question
+This question concerns the \textsc{Flyweight} design pattern.
+
+Sometimes the objects in an application might have great similarities and be of a similar kind 
+(a similar kind here means that most of their properties have similar values and only a few of 
+them vary in value). In case they are also heavy objects to create, they should be controlled by 
+the application developer. Otherwise, they might consume much of the memory and eventually slow 
+down the whole application.
+
+The \textsc{Flyweight Pattern} is designed to control such kind of object creation and 
+provides you 
+with a basic caching mechanism. It allows you to create one object per type (the type here 
+differs by a property of that object), and if you ask for an object with the same property 
+(already created), it will return you the same object instead of creating a new one.
+The X-programming site allows users to create and execute programs using their favourite
+programming language. It provides you with plenty of programming language options. You choose 
+one, write a program with it and execute it to see the result.
+
+But now the site has started losing its users, the reason being the slowness of the site. The 
+users are not interested in it any more. The site is very popular and sometimes there could be 
+more than thousands of programmers using it. Because of that, the site is crawling. But the heavy 
+usage is not the real problem behind the slowness of the site. Let us see the core programming of 
+the site which allows users to run and execute their program, and the true issue will be revealed 
+there.
+\VerbatimInput{\code/flyweight/Code.kt}
+The above class is used to set the code done by the programmer in order to get it executed. The 
+\mintinline{scala}!Code! object is a lightweight simple object having a property code along 
+with its setter and getter.
+\VerbatimInput{\code/flyweight/Platform.kt}
+The \mintinline{scala}!Platform! interface is implemented by the language specific 
+platform in order to execute the code. It has one method, executes, which takes 
+the \mintinline{scala}!Code! object as its parameter.
+\VerbatimInput{\code/flyweight/ScalaPlatform.kt}
+The above class implements the \mintinline{scala}!Platform! 
+interface and provides an implementation for the \mintinline{scala}!execute! 
+method, to execute the code in Scala.
+
+To execute the code, a \mintinline{scala}!Code! object which contains the code and a 
+\mintinline{scala}!Platform! object to execute the code get created. The code looks like this:
+\begin{Verbatim}
+Platform platform = ScalaPlatform()platform.execute(code)
+\end{Verbatim}
+The intent of the \textsc{Flyweight Pattern} is to use shared objects to support large numbers 
+of fine-grained objects efficiently. A flyweight is a shared object that can be used in 
+multiple contexts simultaneously. The flyweight acts as an independent object in each context 
+--- it’s indistinguishable from an instance of the object that’s not shared. 
+Flyweights cannot make assumptions about the context in which they operate. 
+
+The key concept here is the distinction between \emph{intrinsic} and 
+\emph{extrinsic} state. 
+\begin{description}
+\item[Intrinsic state] is stored in the flyweight; it consists of information that’s 
+independent of the flyweight’s context, thereby making it sharable. 
+\item[Extrinsic state] depends on and varies with the flyweight’s context and therefore can’t be 
+shared. 
+\end{description}
+Client objects are responsible for passing extrinsic state to the flyweight when it needs it.
+
+To solve the problem, you will need to provide a platform factory class which will control 
+the creation of the \mintinline{scala}!Platform! objects.
+\VerbatimInput{\code/flyweight/PlatformFactory.kt}
+Your code should pass the following (indicative) tests:
+\VerbatimInput{\code/flyweight/TestFlyweight.kt}
+\begin{solution}
+	
+\end{solution}
+
+\question
+This question concerns the \textsc{Memento} design pattern.
+
+Sometimes it’s necessary to record the internal state of an object. 
+This is required when implementing checkpoints and ``undo'' mechanisms that let users back 
+out of tentative operations or recover from errors. You must save state information somewhere, 
+so that you can restore objects to their previous conditions. But objects normally 
+encapsulate some or all of their state, making it inaccessible to other objects and 
+impossible to save externally. Exposing this state would violate encapsulation, 
+which can compromise the application’s reliability and extensibility.
+
+The \textsc{Memento} pattern can be used to accomplish this without exposing the 
+object’s internal structure. The object whose state needs to be captured is referred to 
+as the originator.
+
+You will create a class that will contain two double type fields and we will run 
+some mathematical operations on it. We will provide users with an \mintinline{scala}!undo!
+operation. If the results after some operations are not satisfactory for a user, 
+the user can call the \mintinline{scala}!undo! operation which will restore the state of 
+the object to the last saved point.
+\VerbatimInput{\code/memento/Originator.kt}
+The above is the \mintinline{scala}!Originator! class whose object state should be saved 
+in a memento. The class contains two double type’s fields \mintinline{scala}!x! and 
+\mintinline{scala}!y!, and also takes a reference of a \mintinline{scala}!CareTaker!. 
+The \mintinline{scala}!CareTaker! is used to save and retrieve the memento objects 
+which represent the state of the \mintinline{scala}!Originator! object.
+In the constructor, you should save the initial state of the object using the 
+\mintinline{scala}!createSavepoint! method. This method creates a memento object and 
+requests the care taker to take care of the object. You should use a 
+\mintinline{scala}!lastUndoSavepoint! variable which is used to store the key name of 
+last saved memento in order to implement the \mintinline{scala}!undo! operation.
+The class provides three types of \mintinline{scala}!undo! operations:
+\begin{itemize}
+\item The \mintinline{scala}!undo! method without any parameter restores the last saved state.
+\item The \mintinline{scala}!undo! with the \mintinline{scala}!savepoint! name as a parameter
+restores the state saved with that particular \mintinline{scala}!savepoint! name. 
+\item The \mintinline{scala}!undoAll! method asks the care taker to clear all the 
+savepoints and set it to the initial state (the state at the time of the creation of the object).
+\end{itemize}
+\VerbatimInput{\code/memento/Memento.kt}
+The \mintinline{scala}!Memento! class is used to store the state of the 
+\mintinline{scala}!Originator! and stored by the care taker. 
+The class does not have any setter methods, it is only used to get the state of the object.
+\VerbatimInput{\code/memento/CareTaker.kt}
+The above class is the care taker class used to store and provide the 
+requested memento object. The class contains the \mintinline{scala}!saveMemento! 
+method is used to save the memento object, the \mintinline{scala}!getMemento! is 
+used to return the request memento object and the \mintinline{scala}!clearSavepoints! 
+method which is used to clear all the savepoints and it deletes all the saved memento objects.
+
+Your code should pass the following (indicative) tests:
+\VerbatimInput{\code/memento/TestMementoPattern.kt}
+The above code will result to the following output:
+\begin{Verbatim}
+Saving state...INITIALDefault State: X: 5.0, Y: 10.0State: X: 510.0, Y: 10.0Saving state...SAVE1State: X: 510.0, Y: 23.181818181818183Undo at ...SAVE1State after undo: X: 510.0, Y: 10.0Saving state...SAVE2State: X: 1.32651E8, Y: 10.0Saving state...SAVE3State: X: 1.32651E8, Y: 1.3265097E8Saving state...SAVE4State: X: 1.32651E8, Y: 6029590.909090909Undo at ...SAVE2Retrieving at: X: 1.32651E8, Y: 10.0Undo at ...INITIALClearing all save points...State after undo all: X: 5.0, Y: 10.0	
+\end{Verbatim}
+
+\begin{solution}
+	
+\end{solution}
+
+\question
+The \textsc{Proxy} design pattern comes up with several different variations. 
+Some of the important variations are:
+\begin{itemize}
+\item Remote Proxy, 
+\item Virtual Proxy, and 
+\item Protection Proxy. 
+\end{itemize}
+In this question, we will examine these variations and you will implement each of them in Scala.
+\begin{parts}
+\part \textsc{Remote Proxy}\\
+
+There is a Pizza Company, which has its outlets at various locations. 
+The owner of the company gets a daily report by the staff members of the company from 
+various outlets. The current application supported by the Pizza Company is a desktop 
+application, not a web application. So, the owner has to ask his employees to generate the 
+report and send it to him. But now the owner wants to generate and check the report by his own, 
+so that he can generate it whenever he wants without anyone’s help. The owner wants you to 
+develop an application for him.
+
+The problem here is that all applications are running at their respective JVMs and the 
+\textsc{Report Checker} application (which you will design) should run in the owner’s local 
+system. The object required to generate the report does not exist in the owner’s system 
+JVM and you cannot directly call on the remote object. 
+You should use \textsc{Remote Proxy} to solve this problem.
+
+The \mintinline{scala}!ReportGenerator! interface should looks like this:
+\VerbatimInput{\code/proxy/remoteproxy/ReportGenerator.kt}
+This is a remote interface which defines the methods that a client can call remotely. 
+It’s what the client will use as the class type for your service. 
+Both the stub and actual service will implement this. 
+The method in the interface returns a \mintinline{scala}!String! object. 
+You can return any object from the method; this object is going to be shipped over the wire 
+from the server back to the client, so it must be \mintinline{scala}!Serializable!. 
+Please note that all the methods in this interface should throw 
+\mintinline{scala}!RemoteException!.
+\VerbatimInput{\code/proxy/remoteproxy/ReportGeneratorImpl.kt}
+The final step is to start the service that is, run your concrete implementation of 
+remote class, in this case the class is \mintinline{scala}!ReportGeneratorImpl!.
+So far, you have created and run a service. You now need a client to use it. 
+The report application for the owner of the pizza company will use this service 
+in order to generate and check the report. 
+\VerbatimInput{\code/proxy/remoteproxy/ReportGeneratorClient.kt}
+The above program should result in the following output:
+\begin{Verbatim}
+********************Location X Daily Report******************** Location ID: 012 Today's Date: Sun Sep 39 00:11:23 GMT 2016 Total Pizza Sell: 112 Total Sale: $2534 Net Profit: $1985***************************************************************	
+\end{Verbatim}
+
+\part \textsc{Virtual Proxy}\\
+
+The \textsc{Virtual Proxy} design pattern is a memory saving technique that recommends 
+postponing an object creation until it is needed; it is used when creating an 
+object the is expensive in terms of memory usage or processing involved. 
+
+Suppose there is a \mintinline{scala}!Company! object in your application and this 
+object contains a list of employees of the company in a 
+\mintinline{scala}!ContactList! object. 
+There could be thousands of employees in a company. 
+Loading the \mintinline{scala}!Company! object from the database along with the list of all 
+its employees in 
+the \mintinline{scala}!ContactList! object could be very time consuming. 
+In some cases you don’t even require the list of the employees, but you are forced to wait 
+until the company and its list of employees loaded into the memory.
+One way to save time and memory is to avoid loading of the employee objects until required, 
+and this is done using the \textsc{Virtual Proxy}. 
+This technique is also known as \textsc{Lazy Loading} where you are fetching the 
+data only when it is required.
+\VerbatimInput{\code/proxy/virtualproxy/Company.kt}
+The above \mintinline{scala}!Company! class has a reference to 
+\mintinline{scala}!ContactList! interface whose real object will be load only when requested 
+to call of \mintinline{scala}!contactList()! method.
+\VerbatimInput{\code/proxy/virtualproxy/ContactList.kt}
+The \mintinline{scala}!ContactList! interface only contains one method 
+\mintinline{scala}!getEmployeeList()! which is used to get the employee list of 
+the company.
+\VerbatimInput{\code/proxy/virtualproxy/ContactListImpl.kt}
+The above class should create a real \mintinline{scala}!ContactList! object which will 
+return the list of employees of the company. 
+The object will be loaded on demand, only when required.
+\VerbatimInput{\code/proxy/virtualproxy/ContactListProxyImpl.kt}
+The \mintinline{scala}!ContactListProxyImpl! is the proxy class which also implements 
+\mintinline{scala}!ContactList! and holds a reference to the real 
+\mintinline{scala}!ContactList! object. On the implementation of the method 
+\mintinline{scala}!getEmployeeList()! it will check if the 
+\mintinline{scala}!contactList! reference is \mintinline{scala}!null!, 
+then it will create a real \mintinline{scala}!ContactList! object and then will 
+invoke the \mintinline{scala}!getEmployeeList()! method on it to get the list of the employees.
+
+The \mintinline{scala}!Employee! class should look like this, although you will need to 
+complete the method.
+\VerbatimInput{\code/proxy/virtualproxy/Employee.kt}
+You should then test your code with:
+\VerbatimInput{\code/proxy/virtualproxy/TestVirtualProxy.kt}
+Producing the following output:
+{\small\begin{Verbatim}
+Company object created...Company Name: ABC CompanyCompany Address: AlabamaCompany Contact No.: 011-2845-8965
+Requesting for contact listCreating contact list and fetching list of employees...Employee Name: Employee A, EmployeeDesignation: SE, Employee Salary: 2565.55Employee Name: Employee B, EmployeeDesignation: Manager, Employee Salary: 22574.0Employee Name: Employee C, EmployeeDesignation: SSE, Employee Salary: 3256.77Employee Name: Employee D, EmployeeDesignation: SSE, Employee Salary: 4875.54Employee Name: Employee E, EmployeeDesignation: SE, Employee Salary: 2847.01	
+\end{Verbatim}
+}
+
+\part \textsc{Protection Proxy}\\
+
+In general, objects in an application interact with each other to implement the 
+overall application functionality. Most application object are generally accessible to 
+all other objects in the application. At times, it may be necessary to restrict 
+the accessibility of an object only to a limited set of client objects based on their 
+access rights. When a client object tries to access such an object, 
+the client is given access to the services provided by the object only if the client can 
+furnish proper authentication credentials. 
+In such cases, a separate object can be designated with the responsibility of verifying 
+the access privileges of different client objects when they access the actual object. 
+In other words, every client must successfully authenticate with this designated object to 
+get access to the actual object functionality. Such an object with which a client needs 
+to authenticate to get access to the actual object can be referred as an object 
+authenticator which is implemented using the \textsc{Protection Proxy} design pattern.
+
+We will return to the \mintinline{scala}!ReportGenerator! application that you worked on
+earlier for the pizza company. The owner now requires that only he can generate the daily report 
+and that no other employee should be able to do so.
+
+To implement this security feature, you are going to use the \textsc{Protection Proxy} 
+design pattern which will check if the object which is trying to generate the report is 
+the owner; in this case, the report gets generated, otherwise it will not.
+\VerbatimInput{\code/proxy/protectedproxy/Staff.kt}
+The \mintinline{scala}!Staff! interface is used by the 
+\mintinline{scala}!Owner! and the \mintinline{scala}!Employee! 
+classes and the interface has two methods: \mintinline{scala}!isOwner()! returns a 
+boolean to check whether the calling object is the owner or not. 
+
+The other method is used to set the \mintinline{scala}!ReportGeneratorProxy! 
+which is a protection proxy used to generate the report is \mintinline{scala}!isOwner()! 
+method return true.
+\VerbatimInput{\code/proxy/protectedproxy/Employee.kt}
+The \mintinline{scala}!Employee! class implements the \mintinline{scala}!Staff! interface, 
+since it's an employee \mintinline{scala}!isOwner()! method return \mintinline{scala}!false!. 
+The \mintinline{scala}!generateDailyReport()! method asks 
+\mintinline{scala}!ReportGenerator! to generate the daily report.
+\VerbatimInput{\code/proxy/protectedproxy/Owner.kt}
+The \mintinline{scala}!Owner! class looks almost same as the 
+\mintinline{scala}!Employee! class, the only difference is that the 
+\mintinline{scala}!isOwner()! method returns \mintinline{scala}!true!.
+\VerbatimInput{\code/proxy/protectedproxy/ReportGeneratorProxy.kt}
+The \mintinline{scala}!ReportGeneratorProxy! acts as a 
+\textsc{Protection Proxy} which has only one method \mintinline{scala}!generateDailyReport()!
+that is used to generate the report.
+\VerbatimInput{\code/proxy/protectedproxy/ReportGeneratorProtectionProxy.kt}
+The above class is the concrete implementation of the 
+\mintinline{scala}!ReportGeneratorProxy! which holds a reference to the 
+\mintinline{scala}!ReportGenerator! interface which is the remote proxy. 
+In the \mintinline{scala}!generateDailyReport()! method, it checks if the staff is 
+referring to the owner, then asks the remote proxy to generate the report, 
+otherwise it returns a string with \verb!“Not Authorised to view report”! as a message.
+\VerbatimInput{\code/proxy/protectedproxy/TestProtectionProxy.kt}
+The above program should result in the following output:
+\begin{Verbatim}
+For owner:********************Location X Daily Report******************** Location ID: 012 Today’s Date: Sun Sep 14 13:28:12 IST 2014 Total Pizza Sell: 112 Total Sale: $2534
+ Net Profit: $1985***************************************************************For employee:Not Authorized to view report.	
+\end{Verbatim}
+\end{parts}
+
+\begin{solution}
+	
+\end{solution}
+
+\end{questions}
+
+\end{document}

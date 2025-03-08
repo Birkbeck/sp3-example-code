@@ -1,0 +1,203 @@
+\documentclass[11pt,a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{fancyvrb}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Worksheet 01: Java Generics and Reflection (introspection)}
+\author{}
+\date{}
+
+\fvset{tabsize=2}
+\fvset{fontsize=\relsize{-1}}
+\fvset{frame=single}
+
+\begin{document}
+
+\maketitle
+
+This worksheet reinforces your existing knowledge of Java Generics and Reflection. These \emph{techniques} are
+commonly used in the technologies we will be examining in the rest of the module. 
+
+\subsection*{Required:}
+
+You should ensure you are using (at least) version 7 of the JDK.
+
+\subsection*{Preparation:}
+
+Create the following \texttt{Storage}, \texttt{BankAccount} and \texttt{Driver} classes in a directory of your choice.
+
+\VerbatimInput{src/Storage.java}
+\VerbatimInput{src/BankAccount.java}
+\VerbatimInput{src/Driver.java}
+
+Add the following code snippet to your \texttt{Driver} class \texttt{main} method, 
+creating two different storage
+objects with two different type specialisations:
+
+\begin{Verbatim}
+  Storage<BankAccount>  aStorage = new Storage<>();
+  Storage<String>       sStorage = new Storage<>();
+\end{Verbatim}
+
+\begin{questions}
+
+\question What are the reasons for using generics here? 
+
+\begin{solution}
+Generics are used to introduce two different types into a function	
+\end{solution}
+
+\item What are the benefits? 
+
+\begin{solution}
+\begin{itemize}
+\item They enable programmers to implement generic algorithms. 
+\item Programmers can implement generic algorithms that work on collections of different types, that can be customised, and are type-safe and easier to read
+\end{itemize}
+\end{solution}
+
+\item\label{ques}
+Now add the following code to your \texttt{Driver} class:
+\begin{Verbatim}
+  Class baCls = BankAccount.class;
+  try {
+    Object myAccount =  baCls.newInstance();
+    aStorage.setValue(myAccount);
+    
+    // Deposit
+    myAccount.deposit(15);
+  }
+  catch ( InstantiationException e ) {
+    // ...
+  }
+  catch ( IllegalAccessException e ) {
+    // ...
+  }
+\end{Verbatim}
+
+\noindent Compile and analyse the compiler output. \\
+What is the cause of the problem reported by the compiler, if any?
+
+\begin{solution}
+The problem is caused class \verb!Storage! which can't be applied to the
+given type \verb!aStorage.setValue(myAccount);!
+\end{solution}
+
+\item
+Now replace:
+\begin{Verbatim}
+    Object myAccount =  baCls.newInstance();
+\end{Verbatim}
+with
+\begin{Verbatim}
+    BankAccount myAccount =  baCls.newInstance();
+\end{Verbatim}
+
+\noindent How does this affect the compilation process? \\
+What is the problem, if any? \\
+What does the \texttt{myAccount} variable hold when the code is executed?\\
+Decide whether your diagnosis from question (~\ref{ques}) was correct.
+
+\begin{solution}
+\begin{itemize}
+\item The class will still not compile.
+\item The problem is related to incompatible types, namely:
+\begin{Verbatim}
+            BankAccount myAccount = baCls.newInstance();
+\end{Verbatim}
+\item The code can't be executed at this stage because of the compile error 
+\item A dynamic cast is required.
+\end{itemize}	
+\end{solution}
+
+\item
+Now add an explicit dynamic cast:
+\begin{Verbatim}
+    BankAccount myAccount =  (BankAccount) baCls.newInstance();
+\end{Verbatim}
+
+\noindent What does the dynamic cast do here? \\
+Is it the compiler that performs the cast operation or the Java runtime environment (JVM)? \\
+Is this code safe?
+
+\begin{solution}
+We need to convert the new object to the same type \verb!BankAccount! 
+so that we are able to obtain the new balance on the account. \\
+The cast operation is performed by JVM that is why is called a \emph{dynamic} cast.\\
+It is not safe to perform the comparison using a static cast due to 
+location where the cast is performed. 	
+\end{solution}
+
+\item
+Now replace your initial declaration:
+\begin{Verbatim}
+  Class baCls = BankAccount.class;
+\end{Verbatim}
+with
+\begin{Verbatim}
+  Class<BankAccount> baCls = BankAccount.class;
+\end{Verbatim}
+
+\noindent
+Explain the compiler output? \\
+Are there errors? \\
+What is the reason? \\
+What does it say about the role of generics?
+
+\begin{solution}
+All the code should compile correctly without errors, this is because all the objects 
+have been defined correctly with the aid of a dynamic cast.\\
+The role of generics in Java is solely a compile-time effect due to \emph{type erasure}.
+\end{solution}
+
+\item
+Now add:
+\begin{Verbatim}
+  System.out.println( aStorage.getValue().showBalance() );
+
+  if( aStorage.getClass() == sStorage.getClass() ) {
+    System.out.println( "EQUAL" );
+  } else {
+    System.out.println( "NOT EQUAL" );
+  }
+\end{Verbatim}
+\noindent
+What is the run-time output? \\
+Explain why you get such output and how does this relate to generics and their use with reflective 
+instantiation of objects?
+
+\begin{solution}
+\begin{Verbatim}
+115.0
+EQUAL
+BUILD SUCCESSFUL (total time: 0 seconds)
+\end{Verbatim}
+
+We obtain the number \verb!115! because this is now the new balance on the account.  
+The initial balance was \verb!100! held by the \verb!BankAccount! object. When this object 
+is called by the main method of the \verb!Driver! class we then added \verb!15! 
+to the current balance.
+
+That is the mechanics of the code --- generics enables addition compile time constraints to be 
+applied to the types but, of course, this does not apply to runtime.  
+	
+\end{solution}
+
+\end{questions}
+
+\end{document}

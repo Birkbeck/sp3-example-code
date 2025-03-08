@@ -1,0 +1,314 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage{geometry}
+\usepackage{fancyvrb}
+\usepackage{pdfsync}
+\usepackage{url}
+\usepackage{comment}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+
+\title{Exercises --- Kotlin (Week Four)}
+\author{\emph{Functional functions}}
+\date{Spring term 2018}
+
+% http://umass-cs-220.github.io/assignments/pa01/01-starter-student.pdf
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Overiew}
+
+\noindent This worksheet introduces several functions that are commonly used in 
+functional programming. 
+Again you are provided with a starter project where you will complete several Kotlin functions that exercise 
+your understanding of functional programming. 
+
+Lists are the most common data structure in functional programming, and functions like \verb!map! and 
+\verb!foldLeft! are the building blocks of programs that work with lists. Instead of recursion or looping, 
+we define what transformations we’d like to apply to the contents of the list and let 
+our building blocks do the work.
+
+You will be relying heavily on recursion and pattern matching, so please be familiar with these concepts, 
+either from the notes or from other recommended texts. 
+%I particularly like this 
+%blog post\footnote{\url{https://kerflyn.wordpress.com/2011/02/14/playing-with-scalas-pattern-matching/}} 
+%which can act as a quick pattern matching reference.
+All of these functions will manipulate the Kotlin \verb!List! types.
+%and the blog post referenced above goes into that a bit, but will we also provide some examples.
+
+The functions you will write are based on concepts introduced in the 
+notes and slides; further details can be found in the recommended supplementary texts. 
+You will also have more practice using the IntelliJ IDE and running tests.
+
+%\subsection*{Examples}
+%
+%\begin{Verbatim}
+%val list = List(1,2,3)
+%list match {
+%// Matching single element:
+%    case l :: _ => println(s"The head of the list is $l")
+%// Matching the rest of the list:
+%    case _ :: ls => println(s"The tail of the list is $ls")
+%// Match both parts:
+%    case l :: ls => println("Use l for something, then recurse with ls!")
+%// Checking if the list is empty:
+%    case Nil => println("Nil represents the empty list")
+%// Matching an element at the end of the list:
+%    case l :: Nil => println(s"$l is the last element of the list.")
+%// Matching a specific list:
+%    case List(1,2,3) => println("The lists are identical")
+%// Matching an unknown element:
+%    case List(1,2,n) => println(s"The last element is $n")
+%// Guards let you match on a condition (l > 2, in this case):
+%    case l :: ls if (l > 2) => println("The first element is greater than 0")
+%// A default case is often useful:
+%    case _ => println("The underscore matches everything.")
+%}	
+%\end{Verbatim}
+%Kotlin will complain at compile time if you have too few cases or if you have too many.
+%Too few cases means the match can’t be completed successfully, and Scala will thrown an appropriate error.
+%\begin{Verbatim}
+%list match {
+%    case l :: Nil => println("This only matches a list with 1 element.")
+%    // There's no other cases -- uh oh!
+%}	
+%\end{Verbatim}
+
+\subsection*{Learning Objectives}
+
+\begin{itemize}
+	\item To understand the methodology behind common functions like \verb!map! and \verb!fold!.
+	\item To understand how these functions may be used in your programs.
+	\item To understand how to combine these functions to elegantly program complex tasks.
+	\item To practice using these functions in simple and complex ways.
+	\item To reinforce your knowledge of the IntelliJ IDE.
+\end{itemize}
+
+\subsection*{General Information}
+
+Read this entire document. If, after a careful reading, something seems ambiguous or unclear to you, 
+then communicate this to a member of the teaching team immediately.
+
+\subsection*{Test files}
+
+In the appropriate directory, we provide several test suites that will 
+help you keep on track while completing these exercises. 
+We recommend you run the tests often and use them to help create a checklist of things to do next.
+
+We recommend that you think about possible cases and add new test cases to these 
+files as part of your programming discipline. Simple tests to add will consider questions such as:
+\begin{itemize}
+	\item Do your methods handle edge cases such as integer arguments that may be positive, 
+	negative, or zero? Many methods only accept arguments that are in a particular range.
+	\item Does your code handle unusual cases, such as empty or maximally sized data structures?	
+\end{itemize}
+To build good test cases, think about ways to exercise the functions and methods. 
+Work out the correct result for a call of a method with a given set of parameters by hand, 
+then add it as a test case.
+
+%\subsection*{Project structure}
+%
+%Just a refresher on the project structure and what it should normally contain as root items:
+%\begin{description}
+%\item[src/main/scala]: This is the source folder where all code you are submitting must go. 
+%You can change anything you want in this folder (unless otherwise specified in the problem description 
+%and in the code we provide), you can add new files, etc.
+%\item[src/instructor/scala]: This folder contains support code that we encourage you to use 
+%(and must be used to pass certain tests). You must not change or add anything in this folder. 
+%If you make changes or add/remove anything it can lead to problems in your testing.
+%\item[src/test/scala]: The test folder where all of the public unit tests are available.
+%\item[build.sbt]: This is the build definition file. It provides build information to 
+%build your project. Do not remove.
+%\item[.gitignore]: This is a special file used by git source control to ignore certain files. 
+%You should not touch this file and please do not remove. 
+%This file may not be present if the assignment does not call for git usage.	
+%\end{description}
+
+%\subsection*{Testing}
+%
+%As mentioned previously, you are provided a set of unit tests that will test various aspects of 
+%your implementation. You should get in the habit of running the tests frequently to see how you are 
+%doing and to understand where you might be going wrong.
+
+%\subsection*{Editors and IDEs}
+%
+%You are welcome to use any editor or IDE you choose. 
+%We recommend using either IntelliJ or a basic text editor such as Atom, SublimeText, Notepad++, emacs, or vim.
+%If you use a text editor you should use sbt in a separate terminal window to compile, run, and test your code.
+
+\subsection*{Implementing the functional functions}
+
+This exercise is split into four question: 
+\begin{enumerate}
+\item list basics, 
+\item folding, 
+\item mapping, and 
+\item combining functions. 
+\end{enumerate} 
+Each function has a comment in the \verb!functions.kt! file, which explains the desired behaviour 
+of the function and a \verb!TODO()! definition of the function signature. 
+Further details and hints may be found there. 
+You may have to write the signature for a function if we haven't specified it.
+
+Every function must be written either recursively with \emph{pattern matching} or by using 
+functions you have already implemented.
+You \textbf{must not} use explicit iteration, including \emph{for loops} and \emph{for comprehensions}, 
+in any of these functions unless you have tried all other approaches.
+
+Additionally, you will rarely need to define variables or use \verb!if! statements. 
+If you find yourself doing so, try to see if there’s another way to implement the function. 
+If in doubt, ask a member of the teaching team.
+
+\begin{questions}
+\question
+\textsc{List Basics}\\
+These functions are simple enough that you won’t need to call any other functions to implement them. 
+All you need is pattern matching and recursion!
+\begin{parts}
+\part \verb!tail!: \\
+takes a list and returns all but the first element. 
+This isn't a recursive function, but you still need to use pattern matching to catch when the input is 
+\verb!Nil!. Calling \verb!tail! on an empty list throws an \verb!IllegalArgumentException!.\\
+Example: \verb!tail(listOf(1,2,3)) = listOf(2,3)!
+\part \verb!setHead!: \\
+takes a list and replaces the first element. If the list is empty, it simply inserts the element 
+into the empty list.\\
+Question: Can you use \verb!tail! for this?\\
+Example: \verb!setHead(listOf(1,2,3), 0) = listOf(0,2,3)!
+\part \verb!drop!: \\
+removes the first \verb!N! elements from the given list. 
+If the number of elements to remove exceeds the number of elements in the list, 
+\verb!drop! will return an empty list.\\
+\emph{Hint}: You have multiple base cases here. How can you match the number of elements 
+to remove and the list at the same time?\\
+Example: \verb!drop(listOf(1,2,3,4), 3) = listOf(4)!.
+\part \verb!init!: \\
+is the opposite of \verb!tail!: It removes the last element of the list. 
+Remember that you’re not modifying the input list, but building a new list. 
+Calling \verb!init! on an empty list throws an \verb!IllegalArgumentException!.\\
+Example: \verb!init(listOf(1,2,3)) = listOf(1,2)!.	
+\end{parts}
+
+\question
+\textsc{Folding Lists}\\
+To \emph{fold} a list means to reduce it down to a single value. 
+You’ve done this before; for example, \verb!mkString! takes a list (or array, vector, etc.) and 
+turns it into a single String. For this question we are generalising that into a generic 
+\verb!foldLeft! function and seeing just what we can do with it. 
+After you implement \verb!foldLeft! yourself, you must use it to implement the remaining functions for
+this question.
+\begin{parts}
+\part
+\verb!foldLeft!: \\
+One of the real \emph{bread-and-butter} functions. 
+takes a list, an initial value, and a function, then computes a value by 
+iteratively applying the function to the elements of the list and carrying the result along. 
+\verb!foldLeft! and \verb!foldRight! are very similar functions; they just perform the operations in a 
+different order. The difference is subtle; the key takeaway is that \verb!foldLeft! is tail recursive.
+You should implement your own version of \verb!foldLeft! using pattern matching and recursion. 
+The function that \verb!foldLeft! takes has two arguments: the \emph{accumulative result} 
+and the \emph{current element} of the list.
+\part
+\verb!sum!: \\
+takes a list of doubles and computes the sum. That’s it! Very straightforward.\\
+Example: \verb!sum(listOf(1.0, 2.0, 3.0)) = 6.0!
+\part
+\verb!product!: \\
+takes a list of doubles and computes the product. This should be very similar to \verb!sum!.\\
+Example: \verb!product(listOf(1.0, 2.0, 3.0)) = 6.0!
+\part
+\verb!length!: \\
+computes the length of the input. This is a case where the result of \verb!foldLeft! 
+isn’t directly related to the input data! 
+\verb!foldLeft! doesn’t have to use the data, it just iterates over the list.\\
+Example: \verb!length(listOf(1,2,3,4,5,6)) = 6!.
+\part
+\verb!reverse!: \\
+reverses a list. Yes, you can do this with \verb!foldLeft!, too!\\
+Example: \verb!reverse(listOf(1,2,3)) = listOf(3,2,1)!
+\part
+\verb!flatten!: \\
+turns a nested list into a single list. This is more straightforward than it sounds.\\
+Example: \verb!flatten(listOf(listOf(1,2,3), listOf(4,5,6))) = listOf(1,2,3,4,5,6)!	
+\end{parts}
+At this point, you may be wondering about the difference between \verb!foldLeft! and 
+\verb!foldRight!. Try this out in the Kotlin REPL online, or via the command line.
+\begin{Verbatim}
+val h = listOf("H","e","l","l","o")
+foldLeft(h,"", {x,y -> x + y})
+foldRight(h,"", {x,y -> x + y})
+\end{Verbatim}
+Those should be the same. Now try these:
+\begin{Verbatim}
+foldLeft(h,"!",{x,y -> x + y})
+foldRight(h,"!",{x,y -> x + y})
+\end{Verbatim}
+
+\question
+\textsc{Map and Filter}\\
+\verb!map! and \verb!filter! are two more building blocks. \verb!map! is incredibly useful: 
+it applies a function to each element of a list, producing a new list of the same length 
+containing the results. \verb!filter! lets you remove unwanted elements from a list using a function.
+
+Question: Why are \verb!map! (the function) and \verb!Map[A,B]! (the data structure) named the same thing?
+This isn’t a graded question.
+
+Reminder: \emph{recursion} and \emph{pattern matching} are your friends!
+\begin{parts}
+\part
+\verb!map!: \\
+takes a list and a function, then builds a new list by applying the function to each element of the list. 
+This is the third or fourth time you’ve read that description so far in this exercise. 
+Still unsure what it does? Ask!\\
+Unlike \verb!foldLeft!, \verb!map!’s function takes only a single argument.
+\part
+\verb!filter!: \\ 
+applies a predicate (a function that returns a \verb!Boolean! value) to the elements of the list, 
+and discards the ones for which the predicate returns \verb!False!.\\
+\part
+\verb!flatMap!: \\
+is a cross between \verb!map! and \verb!flatten!. 
+Instead of a single value, \verb!flatMap!’s function returns a list of values. 
+\verb!flatMap! collects all of these values into a single list.\\
+Hint: Don’t overthink it.	
+\end{parts}
+
+\question
+\textsc{Combining Functional Functions --- bringing it all together}\\
+You’ll notice there weren’t any neat small functions for the \emph{Map and Filter}
+section like there were for the \emph{Folding Lists} section. 
+Instead, we’re going to jump right into solving some interesting and complex 
+problems using the functions you’ve written so far.
+
+\emph{Note}: These functions are all independent. You must use the functions you implemented 
+in the previous parts, but you won’t be using these functions to implement each other unless 
+specifically noted otherwise.
+\begin{parts}
+\part
+\verb!maxAverage!: \\
+takes as input a list of tuples of doubles. It then finds the average of the largest values in each tuple.\\
+Hint: You need to transform the input list into a list of the max values, 
+then find the average of that list. What function(s) can you use for that?
+\part
+\verb!variance!: \\
+calculates the statistical variance of a population, or the squared deviation from the mean. Statistics!\\
+In more detail: \emph{variance} is the average of the squared difference of each element 
+from the average of the whole list. So if the average of the whole list is $M$, the variance is 
+$$
+sum((element - M)^2)/length
+$$ 
+(Sometimes, you will see the sum divided by $length - 1$. 
+Don’t worry about that –-- we’re treating the list as a whole population instead of a random sample.)	
+\end{parts}
+
+\end{questions}
+As you implement these functions you should run the tests frequently as described above. 
+You should also take advantage of the REPL (read eval print) loop and test out your functions by cut and 
+pasting them from your source code into the console to test. (This presumes you are not using an IDE; if 
+you are then just \emph{right click} the test file and select \verb!run! from the resulting menu.)
+
+\end{document}

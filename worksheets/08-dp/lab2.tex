@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper,answers]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{minted}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Exercises on Design Patterns V}
+\author{Last one\ldots}
+\date{2018}
+
+\fvset{tabsize=2}
+%\fvset{fontsize=\relsize{-1}}
+%\fvset{frame=single}
+
+% https://www.javacodegeeks.com/2015/09/decorator-design-pattern.html
+
+\newcommand{\code}{/Users/keith/Documents/Courses/sdp/repo/worksheets/dp-five/scala/src}
+%\newcommand{\code}{/Users/keith/Courses/sdp/SDP-2017/exercises/week11/src/main/scala}
+\newcommand{\codesol}{/Users/keith/Courses/sdp/SDP-2017/exercises/week11sol/src/main/scala}
+
+\begin{document}
+\maketitle
+
+In these exercises we will be examining the following design patterns:
+\begin{itemize}
+\item State,
+\item Template Method, and
+\item Visitor.	
+\end{itemize}
+
+
+You should use Scala or Kotlin to answer the exercises.\\
+The source code examples can be found on the repository under the 
+\verb!worksheets/dp-five! folder.
+
+\begin{questions}
+
+%\inputminted{scala}{\codesol/composite/HtmlElement.scala}
+
+\question
+This question concerns the \textsc{State} design pattern.
+
+To illustrate the use of the \textsc{State Design Pattern}, you will help a company which is 
+looking to build a robot for cooking. 
+The company wants a simple robot that can simply \emph{walk} and \emph{cook}. 
+A user can operate a robot using a set of commands via remote control. 
+Currently, a robot can do three things, it can \emph{walk}, \emph{cook}, or can be switched off.
+
+The company has set protocols to define the functionality of the robot. 
+If a robot is in an \textbf{on} state you can command it to walk. 
+If asked to cook, the state would change to \textbf{cook} or if set to \textbf{off}, it will be 
+switched off.
+
+Similarly, when in \textbf{cook} state it can walk or cook, but cannot be switched off. And 
+finally, when in \textbf{off} state it will automatically turn on and walk when the user commands 
+it to walk but cannot cook in the off state.
+
+This might look like an easy implementation: a robot class with a set of methods like 
+\mintinline{scala}!walk!, 
+\mintinline{scala}!cook!, \mintinline{scala}!off!, and states like \textbf{on}, \textbf{cook}, and 
+\textbf{off}. 
+We can use \emph{if-else} branches, or switches, to implement the protocols set by the company. 
+Too much \emph{if-else} or switch statements will create a maintenance nightmare as complexity 
+might increase in the future.
+
+You might think that we can implement this without issues using \emph{if-else} statements, but as 
+a change comes the code would become more complex. 
+The requirement clearly shows that the behaviour of an object is truly based on the state of that 
+object. 
+To achieve this you can use the \textsc{State Design Pattern} which encapsulates the states of 
+the object into another individual class and keeps the context class independent of any state 
+change.
+
+The following is the \mintinline{scala}!RoboticState! interface which contains the behaviour of a 
+robot.
+\inputminted[]{scala}{\code/state/RoboticState.scala}
+The \mintinline{scala}!Robot! class is a concrete class implements the 
+\mintinline{scala}!RoboticState! interface. 
+The class contains the set of all possible states a robot can be in.
+\inputminted[]{scala}{\code/state/Robot.scala}
+The class initialises all the states and sets the current state as on.Now, we will see all the concrete states of a robot. 
+A robot will be in any of these states at any time.
+\inputminted{scala}{\code/state/RoboticOn.scala}
+\inputminted{scala}{\code/state/RoboticCook.scala}
+\inputminted{scala}{\code/state/RoboticOff.scala}
+Now, let's test the code.
+\inputminted{scala}{\code/state/TestStatePattern.scala}
+The above code should result in the following output:
+\begin{Verbatim}
+Walking...Cooking...Walking...Robot is switched offWalking...Robot is switched offCannot cook at Off state.	
+\end{Verbatim}
+
+\begin{solution}
+	\ldots
+\end{solution}
+
+\question
+The \textsc{Template Design Pattern} is a behaviour pattern and, as the name suggests, 
+it provides a template or a structure of an algorithm which is used by users. 
+A user provides its own implementation without changing the algorithm's structure.
+
+Have you ever connected to a relation database using your Java application? 
+Let's recall some important steps which are required to connect and insert data into 
+the database. First, we need a driver according to the database we want to connect with. 
+Then, we pass some credentials to the database, then, we prepare a statement, set data into the 
+insert statement and insert it using the insert command. Later, we close all the connections, and 
+optionally destroy all the connection objects.
+
+You need to write all these steps regardless of any vendor's relational database. 
+Consider a problem where you need to insert some data into the different databases. You need to 
+fetch some data from a CSV file and have to insert it into a MySQL database. Some data comes from 
+a text file and which should be insert into an Oracle database. The only difference is the driver 
+and the data, the rest of the steps should be the same, as JDBC provides a common set of 
+interfaces to communicate to any vendor's specific relation database.
+
+We can create a template, which will perform some steps for the client, and we will leave 
+some steps to let the client to implement them in its own specific way. 
+Optionally, a client can override the default behaviour of some already defined steps.
+
+Below we can see the connection template class used to provide a template 
+for clients to connect and communicate with the various databases.
+\inputminted{scala}{\code/template/ConnectionTemplate.scala}
+The abstract class provides steps to connect, communicate and later to close the connections. All 
+these steps are required in order to get the work done. The class provides default implementation 
+to some common steps and leaves the specific steps as abstract which force the client to provide 
+an implementation to them.
+The \mintinline{scala}!setDBDriver! method should be implementing by the user to provide 
+database specific drivers. The credentials could be different for different databases; 
+therefore, \mintinline{scala}!setCredentials! is also left as abstract to let the 
+user implement it.
+
+Similarly, connecting to the database using the JDBC API and preparing a statement is common.
+But, data would be specific so user will provide it, and rest of other steps like running an
+insert statement, closing connections and destroying object are similar to any 
+database, therefore their implementations are kept common inside the template.
+
+The key method of the above class is the \mintinline{scala}!run! method. 
+The \mintinline{scala}!run! method is used to run these steps in order. 
+The method is set as final because the steps should be kept safe and should not be change 
+by any user.
+
+The below two classes extend the template class and provide specific 
+implementation to some methods.
+\inputminted{scala}{\code/template/MySqLCSVCon.scala}
+The above class is used to connect to a MySQL database and provides data by reading a CSV file.
+\inputminted{scala}{\code/template/OracleTxtCon.scala}
+The above class is used to connect to an Oracle database and provides 
+data by reading a text file.
+\inputminted{scala}{\code/template/TestTemplatePattern.scala}
+The above code should result in the following output:
+\begin{Verbatim}
+For MYSQL....Setting MySQL DB drivers...Setting credentials for MySQL DB...Setting connection...Preparing insert statement...Setting up data from csv file....Inserting data...Closing connections...Destroying connection objects...
+For Oracle...Setting Oracle DB drivers...Setting credentials for Oracle DB...Setting connection...Preparing insert statement...Setting up data from txt file....Inserting data...Closing connections...Destroying connection objects...	
+\end{Verbatim}
+The above output clearly shows how the template pattern works to connect and communicate 
+with the different databases using the similar way. The pattern keeps the common code under 
+one class and promotes code reusability. It sets a framework and controls it for the users 
+and allows the users to extends the template in order to provide their specific 
+implementation to some of the steps.
+\begin{solution}
+	\ldots
+\end{solution}
+
+\question
+Implementing the \textsc{Visitor Design Pattern} requires two important interfaces, 
+an \mintinline{scala}!Element! interface which will contain an 
+\mintinline{scala}!accept! method with an argument of type 
+\mintinline{scala}!Visitor!. This interface will be implemented by all the classes that need 
+to allow visitors to visit them. In our case, the class \mintinline{scala}!HtmlTag! 
+will implement the \mintinline{scala}!Element! interface, as the 
+\mintinline{scala}!HtmlTag! is the parent abstract class of all the concrete html classes, 
+the concrete classes will inherit and will override the \mintinline{scala}!accept! 
+method of the \mintinline{scala}!Element! interface.
+The other important interface is the \mintinline{scala}!Visitor! interface; this 
+interface will contain \mintinline{scala}!visit! methods with an argument of a 
+class that implements the \mintinline{scala}!Element! interface. 
+Please also note that we have added two new methods in our 
+\mintinline{scala}!HtmlTag! class, the \mintinline{scala}!getStartTag! and
+\mintinline{scala}!getEndTag!. 
+\inputminted{scala}{\code/visitor/Element.scala}
+and
+\inputminted{scala}{\code/visitor/Visitor.scala}
+The supplemental classes are:
+\inputminted{scala}{\code/visitor/HtmlTag.scala}
+The abstract \mintinline{scala}!HtmlTag! class implements the \mintinline{scala}!Element!
+interface. The below concrete classes will override the 
+\mintinline{scala}!accept! method of the \mintinline{scala}!Element! interface 
+and will call the \mintinline{scala}!visit! method, and will pass this operator as an argument.
+This will allow the visitor method to get all the public members of the object, 
+and to add new operations based on it.
+\inputminted{scala}{\code/visitor/HtmlParentElement.scala}
+\inputminted{scala}{\code/visitor/HtmlElement.scala}
+Now, the concrete visitor classes: we have created two concrete classes, 
+one will add a css class visitor to all html tags and the other one will 
+change the width of the tag using the style attribute of the html tag.
+\inputminted{scala}{\code/visitor/CssClassVisitor.scala}
+Now, let's test your code.
+\inputminted{scala}{\code/visitor/TestVisitorPattern.scala}
+The above code should result in the following output:
+\begin{Verbatim}
+Before visitor.........
+<html><body><P>Testing html tag library</P><P>Paragraph 2</P></body></html>
+
+After visitor.......
+
+<html style='width:58px;' class='visitor'><body style='width:58px;' class='visitor'><p style='width:46px;' class='visitor'>Testing html tag library</P><p style='width:46px;' class='visitor'>Paragraph 2</P></body></html>	
+\end{Verbatim}
+
+\begin{solution}
+	\ldots
+\end{solution}
+\end{questions}
+
+\end{document}

@@ -1,0 +1,629 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{relsize}
+\usepackage{pgf}
+
+\geometry{
+  %includeheadfoot,
+  margin=2.54cm
+}
+\title{Exercises on Design Patterns II}
+\author{Even more basics}
+\date{2018}
+
+\fvset{tabsize=2}
+\fvset{fontsize=\relsize{-1}}
+%\fvset{frame=single}
+
+%http://hp.fciencias.unam.mx/~alg/bd/patrones.pdf
+
+\newcommand{\code}{/Users/keith/Documents/Courses/sdp/repo/worksheets/dp-two/kotlin/src}
+%\newcommand{\codesol}{/Users/keith/Courses/sdp/SDP-2017/exercises/week08sol/src/main/scala}
+
+\begin{document}
+\maketitle
+
+In these exercises we will be examining the following design patterns:
+\begin{itemize}
+\item Strategy,
+\item Abstract Factory,
+\item Builder,
+\item Facade,
+\item Bridge, and
+\item Composite.
+\end{itemize}
+The source code snippets listed below are written using the Kotlin language; 
+similar versions in Scala can be found on the source 
+code repository under the \verb!worksheets/dp-one! folder. 
+
+\section*{Short form questions}
+
+\begin{questions}
+
+\question
+\begin{parts}
+\part
+Briefly describe the Strategy Design Pattern?
+
+\begin{solution}
+The Strategy Design Pattern defines a family of algorithms, 
+encapsulating each one, and making them interchangeable. 
+Strategy lets the algorithm vary independently from the clients that use it	
+\end{solution}
+
+\part
+When is it appropriate to use the \textsc{Strategy Design Pattern}?
+
+\begin{solution}
+Use the Strategy pattern when:
+\begin{itemize}
+\item
+Many related classes differ only in their behaviour. 
+Strategies provide a way to configure a class with one of many behaviours.
+\item
+You need different variants of an algorithm. For example, you might define algorithms 
+reflecting different space/time trade-offs. Strategies can be used when these variants 
+are implemented as a class hierarchy of algorithms.
+\item
+An algorithm uses data that clients shouldn't know about. 
+Use the Strategy pattern to avoid exposing complex, algorithm- specific data structures.
+\item
+A class defines many behaviours, and these appear as multiple conditional statements in 
+its operations. Instead of many conditionals, move related conditional branches into 
+their own \verb!Strategy! class.	
+\end{itemize}
+\end{solution}
+
+\end{parts}
+
+\question
+When is it appropriate to use the \textsc{Abstract Factory} design pattern?
+
+\begin{solution}
+Use the \textsc{Abstract Factory} pattern when
+\begin{itemize}
+\item 
+A system should be independent of how its products are created, composed, and represented.
+\item 
+A system should be configured with one of multiple families of products.
+\item
+A family of related product objects is designed to be used together, 
+and you need to enforce this constraint.
+\item
+You want to provide a class library of products, and you want to reveal just their interfaces, 
+not their implementations.
+\end{itemize}	
+\end{solution}
+
+\question % Builder Design Pattern 
+
+\noindent ``In general, the details of object construction, such as instantiating and initialising
+the components that comprise the object, are kept within the object, often as part of 
+its constructor.''
+
+Comment on this statement with reference to \emph{modularity} and 
+\emph{construction bloat}.
+
+\begin{solution}
+This type of design closely ties the object construction process with the 
+components that make up the object. This approach is suitable as long as the 
+object under construction is simple and the object construction process is 
+definite and always produces the same representation of the object.
+
+However, this design may not be effective when the object being created is 
+complex and the series of steps constituting the object creation process can be 
+implemented in different ways, thus producing different representations of the object. 
+Because the different implementations of the construction process are all kept within the 
+object, the object can become bulky (construction bloat) and less modular. Subsequently, 
+adding a new implementation or making changes to an existing implementation 
+requires changes to the existing code.
+\end{solution}
+
+\question % Facade Design Pattern 
+\begin{parts}
+\part What is the Facade Pattern? 	
+\begin{solution}
+The Facade Pattern makes a complex interface easier to use, using a Facade class. 
+The Facade Pattern provides a unified interface to a set of interface in a subsystem. 
+Facade defines a higher-level interface that makes the subsystem easier to use.	
+\end{solution}
+\part When, and why, would you use the Facade Pattern?
+\begin{solution}
+\begin{itemize}
+\item
+You want to provide a simple interface to a complex subsystem. Subsystems often get more 
+complex as they evolve. Most patterns, when applied, result in more and smaller classes. 
+This makes the subsystem more reusable and easier to customise, but it also becomes harder 
+to use for clients that donâ't need to customise it. A facade can provide a simple default 
+view of the subsystem that is good enough for most clients. Only clients needing 
+more customisability will need to look beyond the facade.
+\item 
+There are many dependencies between clients and the implementation classes of an abstraction. 
+Introduce a facade to decouple the subsystem from clients and other subsystems, 
+thereby promoting subsystem independence and portability.
+\item
+You can layer your subsystems. Use a facade to define an entry point to each subsystem level. 
+If subsystems are dependent, then you can simplify the dependencies between them by making 
+them communicate with each other solely through their facades.
+\end{itemize}	
+\end{solution}
+\end{parts}
+
+\question
+When should one make use of the \textsc{Bridge Design Pattern}?
+
+\begin{solution}
+You should use the Bridge Pattern when:
+\begin{itemize}
+\item
+You want to avoid a permanent binding between an abstraction and its implementation. 
+This might be the case, for example, when the implementation must be selected or switched 
+at run-time.
+\item
+Both the abstractions and their implementations should be extensible by sub-classing. 
+In this case, the Bridge pattern lets you combine the different abstractions and 
+implementations and extend them independently.
+\item
+Changes in the implementation of an abstraction should have no impact on clients; that is, 
+their code should not have to be recompiled.
+\item
+You want to share an implementation among multiple objects (perhaps using reference counting),
+and this fact should be hidden from the client.
+\end{itemize}
+\end{solution}
+
+\question % Composite Design Pattern
+\begin{parts}
+\part
+What is the Composite Pattern?
+
+\begin{solution}
+The formal definition of the Composite Pattern says that it allows you to compose 
+objects into tree structures to represent part- whole hierarchies. Composite lets clients to treat 
+individual objects and compositions of objects uniformly.	
+\end{solution}
+
+\part
+Under what conditions would you use a Composite Design Pattern?
+
+\begin{solution}
+\begin{itemize}
+\item When you want to represent part-whole hierarchies of objects.
+\item When you want clients to be able to ignore the difference between compositions 
+of objects and individual objects. Clients will treat all objects in the composite 
+structure uniformly.
+\end{itemize}	
+\end{solution}
+
+\part
+What are the four participants of the Composite Design Pattern?
+
+\begin{solution}
+\begin{itemize}
+	\item	Component 
+	\item	Leaf
+	\item 	Composite 
+	\item 	Client
+\end{itemize}
+\end{solution}
+\end{parts}
+
+\end{questions}
+
+\section*{Long form questions}
+
+\begin{questions}
+
+\question % Strategy Design Pattern 
+Create a text formatter for a text editor. 
+A text editor can have different text formatters to format text. 
+We can create different text formatters and then pass the required one to the text editor, 
+so that the editor will able to format the text as required.
+
+The text editor will hold a reference to a common interface for the text formatter 
+and the editorâ's job will be to pass the text to the formatter to format the text.
+You are required to implement this outline using the \textsc{Strategy Design Pattern} 
+which will make the code flexible and maintainable. 
+
+Below is the \verb!TextFormatter! interface which is implemented by all the concrete formatters.
+
+\inputminted{scala}{\code/strategy/TextFormatter.kt}
+
+The above interface contains only one method, \verb!format!, used to format the text.
+
+Some sample test code might look like:
+
+\inputminted{scala}{\code/strategy/TestStrategyPattern.kt}
+
+The above code will result to the following output:
+
+\begin{Verbatim}
+[CapTextFormatter]: TESTING TEXT IN CAPS FORMATTER
+[LowerTextFormatter]: testing text in lower formatter	
+\end{Verbatim}
+
+%\begin{solution}
+%\inputminted{scala}{\codesol/strategy/CapTextFormatter.kt}
+%
+%The above class, \verb!CapTextFormatter!, is a concrete text formatter 
+%that implements the \verb!TextFormatter! interface and the
+%class is used to change the text into capital case.	
+%
+%\inputminted{scala}{\codesol/strategy/LowerTextFormatter.kt}
+%
+%The \verb!LowerTextFormatter! is a concrete text formatter that implements the 
+%\verb!TextFormatter !interface and the class is used to change the text into small case.
+%
+%\inputminted{scala}{\codesol/strategy/TextEditor.kt}
+%
+%The above class is the \verb!TextEditor! class which holds a reference to the 
+%\verb!TextFormatter! interface. The class contains the \verb!publishText! 
+%method which forwards the text to the formatter to publish the text in the desired format.
+%\end{solution}
+
+\question %Abstract Factory Design Pattern
+A product company, \textsc{Bigfish}, has changed the way they take orders from their clients. 
+The company uses an application to take orders from them. 
+They receive orders, errors in orders, feedback for the previous order, 
+and responses to the order, in an XML format. 
+
+Now the clients donâ't want to follow the companyâ's specific XML rules. 
+The clients want to use their own XML rules to communicate with \textsc{Bigfish}. 
+This means that for every client, the company should have client specific XML parsers. 
+For example, for the NYC client there should be four specific types of XML parsers, i.e.,
+\verb!NYCErrorXMLParser!, \verb!NYCFeedbackXML!, \verb!NYCOrderXMLParser!, 
+\verb!NYCResponseXMLParser!, and four different parsers for the London client.
+
+The company has asked you to change the application according to the new requirements. 
+To develop the parser for the original application they used a \textsc{Factory 
+Method} design pattern in which the exact object to use is decided by the subclasses 
+according to the type of parser. Now, to implement the new requirements, 
+you are required to use a factory of factories, i.e., an \textsc{Abstract Factory}.
+
+\textbf{Note:} You will need parsers according to client specific XMLs, so you will create 
+different factories for different clients which will provide the client specific XML to parse. 
+You will achieve this by creating an \textsc{Abstract Factory} and then implement the 
+factory to provide a client specific XML factory. 
+Then you will use that factory to get the desired client specific XML parser object.
+
+To implement the pattern you first need to create an interface that will be 
+implemented by all the concrete factories:
+
+\inputminted{scala}{\code/abstractfactory/AbstractParserFactory.kt}
+
+The above interface is implemented by the client specific concrete factories which will 
+provide the XML parser object to the client object. The \verb!getParserInstance! method 
+takes the \verb!parserType !as an argument which is used to get the message specific 
+(error parser, order parser etc) parser object.
+
+The following is a test class for the resulting code:
+\inputminted{scala}{\code/abstractfactory/TestAbstractFactoryPattern.kt}
+The above code will result to the following output:
+\begin{Verbatim}
+NYC Parsing order XML...
+NYC Order XML Message
+************************************
+London Parsing feedback XML...
+London Feedback XML Message
+\end{Verbatim}
+
+%\begin{solution}
+%\inputminted{scala}{\codesol/abstractfactory/NYCParserFactory.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/LondonParserFactory.kt}
+%	
+%\inputminted{scala}{\codesol/abstractfactory/XMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/NYCErrorXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/NYCFeedbackXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/NYCOrderXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/NYCResponseXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/LondonErrorXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/LondonFeedbackXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/LondonOrderXMLParser.kt}
+%
+%\inputminted{scala}{\codesol/abstractfactory/LondonResponseXMLParser.kt}
+%
+%To avoid a dependency between the client code and the factories, optionally we can implement
+%a \emph{factory-producer} which has a \verb!static! method and is responsible for 
+%providing a desired factory object to the client object.
+%
+%\inputminted{scala}{\codesol/abstractfactory/ParserFactoryProducer.kt}
+%\end{solution}
+
+\question
+As an example of the \textsc{Builder Pattern}, consider a Car company which displays its 
+different cars to its customers using a graphical model. 
+The company has a graphical tool which displays the car on the screen. 
+The requirements of the tool are that it is provided with a car object display. 
+The car object should contain the car's specifications. 
+The graphical tool uses these specifications to display the car. 
+
+The company has classified its cars into different groups, e.g., Sedan, or Sports Car. 
+There is only one car object, and our job is to create the car object according 
+to the classification. For example, for a sedan car, a car object 
+according to the sedan specification should be built or, if a sports car is required, 
+then a car object according to the sports car specification should be built. 
+
+Currently, the Company wants only these two types of cars, 
+but it may require other types of cars also in the future.
+You are required to create two different builders, one of each classification, 
+i.e., for sedan and sports cars. 
+The two builders will help in building the car object according to its specification. 
+
+Below is the \verb!Car! class which contains some of the important components 
+of the car that are required to construct the complete car object.
+
+\inputminted{scala}{\code/builder/Car.kt}
+
+You should be able to test your implementation using the following 
+\verb!TestBuilderPattern! class:
+
+\inputminted{scala}{\code/builder/TestBuilderPattern.kt}
+
+The above code will result to the following output:
+\begin{Verbatim}
+--------------SEDAN--------------------- 
+ Body: External dimensions: overall length (inches): 202.9, 
+ 	overall width (inches): 76.2, overall height (inches): 60.7, 
+ 	wheelbase (inches): 112.9, front track (inches): 65.3, 
+ 	rear track (inches): 65.5 and curb to curb turning circle (feet): 39.5
+ Power: 285 hp @ 6,500 rpm; 253 ft lb of torque @ 4,000 rpm
+ Engine: 3.5L Duramax V 6 DOHC
+ Breaks: Four-wheel disc brakes: two ventilated. Electronic brake distribution
+ Seats: Front seat centre armrest.Rear seat centre armrest.Split-folding rear seats
+ Windows: Laminated side windows.Fixed rear window with defroster
+ Fuel Type: Diesel 19 MPG city, 29 MPG highway, 23 MPG combined and 437 mi. range
+--------------SPORTS--------------------- 
+ Body: External dimensions: overall length (inches): 192.3, 
+ 	overall width (inches): 75.5, overall height (inches): 54.2, 
+ 	wheelbase (inches): 112.3, front track (inches): 63.7, 
+ 	rear track (inches): 64.1 and curb to curb turning circle (feet): 37.7
+ Power: 323 hp @ 6,800 rpm; 278 ft lb of torque @ 4,800 rpm
+ Engine: 3.6L V 6 DOHC and variable valve timing
+ Breaks: Four-wheel disc brakes: two ventilated. Electronic brake distribution. 
+ 	Stability control
+ Seats: Driver sports front seat with one power adjustments manual height, 
+ 	front passenger seat sports front seat with one power adjustments
+ Windows: Front windows with one-touch on two windows
+ Fuel Type: Petrol 17 MPG city, 28 MPG highway, 20 MPG combined and 380 mi. range	
+\end{Verbatim}
+
+%\begin{solution}
+%The \verb!CarBuilder! is the builder interface and contains a set of common methods 
+%used to build the car object and its components.	
+%
+%\inputminted{scala}{\codesol/builder/CarBuilder.kt}
+%
+%The \verb!getCar! method is used to return the final car object to the client 
+%after its construction.
+%
+%Two implementations of the \verb!CarBuilder! interface, one for each type of car, 
+%i.e., for sedan and sports car.
+%
+%\inputminted{scala}{\codesol/builder/SedanCarBuilder.kt}
+%\inputminted{scala}{\codesol/builder/SportsCarBuilder.kt}
+%\end{solution}
+
+\question % Facade design pattern
+\textsc{BetterBisc} is product based company and it has launched a product in the market, 
+named \emph{Schedule Server}. It is a kind of server in itself, and it is used to manage jobs. 
+The jobs could be any kind of jobs like sending a list of emails, sms, reading or writing 
+files from a destination, or just simply transferring files from a source to the destination. 
+
+The product is used by the developers to manage such types of job and enables them to concentrate 
+on their business goal. The server executes each job at their specified time and 
+also manages any underling issues like concurrency, security, etc. As a developer, one just needs
+to code the relevant business requirements and a good amount of API calls is 
+provided to schedule a job according to their needs.
+
+Everything was going fine, until the clients started complaining about starting and stopping the
+the server. Although the server is working well, the initialisation and the shut down 
+processes are very complex and they want an easy way to do that. 
+The server has exposed a complex interface to the clients which looks a bit \emph{busy} 
+to them.
+
+We need to provide an easy way to start and stop the server.
+
+A complex interface to the client is already considered as a fault in the design of the 
+current system.  Fortunately or unfortunately, we cannot start the design and the coding
+from scratch. We need a way to resolve this problem and make the interface easy to access.
+
+The problem faced by the clients in using the schedule server is 
+the complexity brought by the server in order to start and stop its services. 
+The client wants a simple way to do it. The following is the code that clients 
+required to write to start and stop the server.
+
+\begin{minted}{scala}
+ScheduleServer scheduleServer = new ScheduleServer();	
+\end{minted}
+To start the server, the client needs to create an object of the 
+\mintinline{scala}{ScheduleServer} class and then needs to call the following methods (in 
+sequence) to start and initialise the server.
+\begin{minted}{scala}
+scheduleServer.startBooting();
+scheduleServer.readSystemConfigFile();
+scheduleServer.init();
+scheduleServer.initializeContext();
+scheduleServer.initializeListeners();
+scheduleServer.createSystemObjects();
+System.out.println("Start working......");
+System.out.println("After work done.........");	
+\end{minted}
+To stop the server, the client needs to call the following methods in sequence:
+\begin{minted}{scala}
+scheduleServer.releaseProcesses();
+scheduleServer.destory();
+scheduleServer.destroySystemObjects();
+scheduleServer.destoryListeners();
+scheduleServer.destoryContext();
+scheduleServer.shutdown();	
+\end{minted}
+To resolve this, you will create a \emph{facade class} which will \emph{wrap} a server object. 
+This class will provide simple interfaces (methods) for the client. 
+These interfaces internally will call the methods on the server object. 
+
+\inputminted{scala}{\code/facadepattern/ScheduleServer.kt}
+
+%\begin{solution}
+%\inputminted{scala}{\codesol/facadepattern/ScheduleServerFacade.kt}	
+%\end{solution}
+
+
+\question % Bridge Design Pattern
+\textsc{Dodgy Security Systems} is a security and electronic company which produces and 
+assembles products for cars. It delivers any car electronic or security system you want, 
+from air bags to GPS tracking system, reverse parking system, etc. 
+The company uses a well defined object oriented approach to keep track of their products 
+using software which is developed and maintained only by them. 
+They receive a vehicle, produce the system for it, and then assemble it and install it into 
+the vehicle.
+
+Recently, they received new orders from \textsc{BigWheel} (a car company) to produce 
+central locking and gear lock systems for their new car model. To maintain this, they are 
+creating a new software system. They started by creating a new abstract class 
+\verb!CarProductSecurity!, in which they kept some car specific methods and some of the 
+features which they thought are common to all security products. 
+Then they extended the class and created two different sub classes:
+\begin{itemize}
+\item \verb!BigWheelCentralLocking!, and 
+\item \verb!BigWheelGearLocking!. 
+\end{itemize}
+The class diagram is as follows:
+
+\includegraphics[width=\textwidth]{images/design}
+
+After a while, another car company \textsc{Motoren} asked them to produce a new system of 
+central locking and gear lock for their new model. 
+Since, the same security system cannot be used in both models of different cars,  
+\textsc{Dodgy Security Systems} has produced a new system for them, and also has created 
+two new classes 
+\begin{itemize}
+\item \verb!MotorenCentralLocking!, and 
+\item \verb!MotorenGearLocking! 
+\end{itemize}
+which also extend the \verb!CarProductSecurity! class.
+Now the new class diagram looks like this:
+
+\includegraphics[width=\textwidth]{images/newdesign}
+
+what happens if another car company demands another new system for central locking and gear lock? 
+One would need to create another two new classes for it. 
+This design will create one class per system, or worse, if a reverse parking system 
+is produced for each of these two car companies, 
+two more new classes will be created for each of them.
+
+Provide a solution to this problem using an implementation of the \textsc{Bridge Design Pattern}.
+We provide an appropriate test method:
+
+\inputminted{scala}{\code/bridge/TestBridgePattern.kt}
+
+which will produce the following output:
+
+\begin{Verbatim}
+Producing Central Locking System
+Modifying product Central Locking System according to BigWheel xz model
+Assembling Central Locking System for BigWheel xz model
+Car: BigWheel xz model, Product:Central Locking System
+
+Producing Gear Locking System
+Modifying product Gear Locking System according to BigWheel xz model
+Assembling Gear Locking System for BigWheel xz model
+Car: BigWheel xz model, Product:Gear Locking System
+
+Producing Central Locking System
+Modifying product Central Locking System according to Motoren lm model
+Assembling Central Locking System for Motoren lm model
+Car: Motoren lm model, Product:Central Locking System
+
+Producing Gear Locking System
+Modifying product Gear Locking System according to Motoren lm model
+Assembling Gear Locking System for Motoren lm model
+Car: Motoren lm model, Product:Gear Locking System	
+\end{Verbatim}
+
+%\begin{solution}
+%Instead of creating a subclass for each product per car model in the above discussed problem, 
+%we can separate the design into two different hierarchies. One interface is for the 
+%product which will be used as an implementer and the other will be an abstraction of car type. 
+%The implementer will be implemented by the concrete implementers and provides an 
+%implementation for it. On the other side, the abstraction will be extended by more 
+%refined abstraction.	
+%
+%\includegraphics[width=\textwidth]{images/reviseddesign}
+%
+%\inputminted{scala}{\codesol/bridge/Product.kt}
+%
+%The implementer \verb!Product! has a method \verb!produce()! which will be used by the 
+%concrete implementers to provide concrete functionality to it. The method will 
+%produce the base model of the product which can be used with any 
+%car model after some modifications specific to that car model.
+%
+%\inputminted{scala}{\codesol/bridge/CentralLocking.kt}
+%\inputminted{scala}{\codesol/bridge/GearLocking.kt}
+%
+%The two different concrete implementers provide implementation to the \verb!Product! implementer.
+%
+%Now the abstraction, the \verb!Car! class which holds a reference of a product type 
+%and provides two abstract methods \verb!produceProduct()! and \verb!assemble()!.
+%
+%\inputminted{scala}{\codesol/bridge/Car.kt}
+%
+%The subclasses of the \verb!Car! will provide the concrete and specific implementation 
+%to the methods \verb!assemble()! and produce \verb!Product()!.
+%
+%\inputminted{scala}{\codesol/bridge/BigWheel.kt}
+%\inputminted{scala}{\codesol/bridge/Motoren.kt}
+%\end{solution}
+
+\question
+HTML is hierarchical in nature, its starts from an \verb!<html>! tag which is the 
+parent or the root tag, and it contains other tags which can be a parent or a child tag.
+The \textsc{Composite Pattern} in Java can be implemented using the component class as an 
+abstract class or an interface. In this question, you will use an abstract class which 
+contains all the important methods used in a composite class and a leaf class.
+
+\inputminted{scala}{\code/composite/HtmlTag.kt}
+
+Given the above class complete two subclasses of the class:
+\begin{description}
+	\item[HtmlParentElement] --- handles the \emph{child} nodes, and
+	\item[HtmlElement] --- handles the \emph{leaf} nodes.
+\end{description}
+The following class should be used to test out your classes.
+
+\inputminted{scala}{\code/composite/TestCompositePattern.kt}
+
+The above code will result to the following output:
+\begin{Verbatim}
+<html>
+<body>
+<P>Testing html tag library</P>
+<P>Paragraph 2</P>
+</body>
+</html>	
+\end{Verbatim}
+
+%\begin{solution}
+%\inputminted{scala}{\codesol/composite/HtmlElement.kt}
+%\inputminted{scala}{\codesol/composite/HtmlParentElement.kt}	
+%\end{solution}
+\end{questions}
+
+\end{document}
