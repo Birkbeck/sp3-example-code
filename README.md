@@ -9,7 +9,7 @@ A somewhat out-of-date list of topics (folders).
 
 + anonymous
 + arrays
-+ bridgebetween — some sample code that illustrates how to access data from a (essentially) package private class.
++ bridgebetween — some sample code illustrating how to access data from a (essentially) package private class.
 + collections
 + concurrency
 + consolidation — The Java "refresher" sessions.
@@ -31,8 +31,9 @@ A somewhat out-of-date list of topics (folders).
 + `spring-singleton` — Use of the `@Singleton` annotation
 + staticexample
 + strings
++ topic-?? — examples for that particular topic
 + tryWithResources
-+ worksheet-?? — — outline solutions to the worksheets
++ worksheet-?? —  outline solutions to the worksheets
 + ...
 
 End of list
