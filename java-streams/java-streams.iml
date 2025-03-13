@@ -8,6 +8,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< Updated upstream
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -27,5 +28,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+||||||| Stash base
+=======
+    <orderEntry type="library" name="projectlombok.lombok" level="project" />
+>>>>>>> Stashed changes
   </component>
 </module>

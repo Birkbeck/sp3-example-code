@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.metals/metals.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/help-session-01-26-2025.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/src/examplefour/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/src/exampleone/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/src/examplethree/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help-session-01-26-2025/src/exampletwo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Example.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/src/streams/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-streams/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graalvm-demos" beforeDir="false" afterPath="$PROJECT_DIR$/graalvm-demos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-design-patterns" beforeDir="false" afterPath="$PROJECT_DIR$/java-design-patterns" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/ServiceDiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-design-patterns/localization/zh/circuit-breaker/etc/StateDiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/java-streams.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-streams/java-streams.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/streams/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-streams/src/streams/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/src/streams/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-streams/src/streams/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-streams/test/streams/EmployeeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-01-inject/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-01-inject/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-02-producer/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-02-producer/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-03-alternative/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-03-alternative/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-04-qualifier/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-04-qualifier/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-05-PostConstruct/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-05-PostConstruct/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-06-factory-producer/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-06-factory-producer/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-07-multi-qualifier/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-07-multi-qualifier/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-08-qualifier-attribute/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-08-qualifier-attribute/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-09-qualifier-multi-attributes/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example-09-qualifier-multi-attributes/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi-di-example/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi_javase_greeting/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/cdi_javase_greeting/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_to_field/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_to_field/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_to_field_using_interface/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_to_field_using_interface/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_via_constructor/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_via_constructor/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_via_init/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_bean_via_init/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_ejb_to_field/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_ejb_to_field/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_qualifier/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_qualifier/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_qualifier_ambiguitycase/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_qualifier_ambiguitycase/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_qualifier_attributes/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_qualifier_attributes/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_application/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_application/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_conversation/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_conversation/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_depedent/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_depedent/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_request/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_request/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_session/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/inject_scope_session/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/managedbean_interceptor/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/managedbean_interceptor/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/managedbean_lifecycle_defaultscope/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/managedbean_lifecycle_defaultscope/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/managedbean_lifecycle_requestscope/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/managedbean_lifecycle_requestscope/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/weld-servlet/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-dependency-injection/cdi-examples/weld-servlet/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-gui/javafx/06-DragAndDropExample/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/topic-gui/javafx/06-DragAndDropExample/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-gui/javafx/06-DragAndDropExample/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/topic-gui/javafx/06-DragAndDropExample/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-gui/javafx/06-DragAndDropExample/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/topic-gui/javafx/06-DragAndDropExample/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.backend/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.backend/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.frontend/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.frontend/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.service.consumer/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.service.consumer/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.service.provider/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.hotelprovider.service.provider/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.messagetypes/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.messagetypes/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.traveller/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.traveller/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.backend/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.backend/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.frontend/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.frontend/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.service.consumer/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.service.consumer/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.service.provider/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-jpms/osgi-example-code/org.sose.travelprovider.service.provider/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic-lambdas-and-streams/optional/.project" beforeDir="false" afterPath="$PROJECT_DIR$/topic-lambdas-and-streams/optional/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tryWithResources/.project" beforeDir="false" afterPath="$PROJECT_DIR$/tryWithResources/.project" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/spring-boot-helloworld">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-boot-helloworld" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
+  <component name="GithubPullRequestsUISettings">{}</component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/tmp/kotlin-koans" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="KubernetesApiProvider">{}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2cS3utGMmYRI3JlQuiqOMHfD4Z0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.C.executor": "Run",
+    "Application.Example.executor": "Run",
+    "Application.HelloWorld (1).executor": "Run",
+    "Application.HelloWorld (2).executor": "Run",
+    "Application.HelloWorld.executor": "Run",
+    "Application.HelloWorldSpringWithDIXMLFile.executor": "Run",
+    "Application.LambdaDemo.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MethodReferenceDemo.executor": "Run",
+    "Application.exampleone.Main.executor": "Run",
+    "Application.lombokexamples.Main.executor": "Run",
+    "Application.streams.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Build spring-boot-helloworld.executor": "Run",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.SpringBootHelloworldApplication.executor": "Run",
+    "android.gradle.sync.needed": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/keith/Documents/Courses/sdp-sp3/repo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31724137",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/springframeworkexample/src" />
+      <recent name="$PROJECT_DIR$/springframeworkexample/resources" />
+      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpring/src/helloworld" />
+      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldDecoupledInterfaceWithFactory/resources" />
+      <recent name="$PROJECT_DIR$/dependency-injection-example" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDIXMLFile/resources" />
+      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpringWithDI/resources" />
+      <recent name="$PROJECT_DIR$/dependency-injection-example/lib" />
+      <recent name="$PROJECT_DIR$/dependency-injection-example/HelloWorldSpring/resources" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="helloworld" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="helloworld" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.streams.Main">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lambdas.Example" />
+      <module name="java-lambdas-examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lambdas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="helloworld.HelloWorld" />
+      <module name="HelloWorldSpring" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="helloworld.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exampletwo.Main" />
+      <module name="help-session-01-26-2025" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exampletwo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exampleone.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exampleone.Main" />
+      <module name="help-session-01-26-2025" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exampleone.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lombokexamples.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lombokexamples.Main" />
+      <module name="lombok" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lombokexamples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="streams.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="streams.Main" />
+      <module name="java-streams" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="streams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.streams.Main" />
+        <item itemvalue="Application.lombokexamples.Main" />
+        <item itemvalue="Application.exampleone.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HelloWorld" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28390b856d98-intellij.indexing.shared.core-IU-251.17181.16" />
+        <option value="bundled-js-predefined-d6986cc7102b-b81319f9767f-JavaScript-IU-251.17181.16" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1dbc71c8-3fd3-444f-9245-bd41071d9a3c" name="Changes" comment="" />
+      <created>1708091378653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708091378653</updated>
+      <workItem from="1708091380068" duration="183000" />
+      <workItem from="1708091591606" duration="11985000" />
+      <workItem from="1708184766505" duration="193000" />
+      <workItem from="1708343398555" duration="21000" />
+      <workItem from="1708685829229" duration="1716000" />
+      <workItem from="1708713366312" duration="3117000" />
+      <workItem from="1708792088898" duration="162000" />
+      <workItem from="1708862156302" duration="556000" />
+      <workItem from="1709048773334" duration="841000" />
+      <workItem from="1737138790162" duration="313000" />
+      <workItem from="1737564025286" duration="2570000" />
+      <workItem from="1737568525239" duration="9703000" />
+      <workItem from="1737652147772" duration="29000" />
+      <workItem from="1737889603083" duration="22000" />
+      <workItem from="1737889641978" duration="619000" />
+      <workItem from="1737890280912" duration="516000" />
+      <workItem from="1737890812133" duration="268000" />
+      <workItem from="1737891097450" duration="524000" />
+      <workItem from="1738173020519" duration="1844000" />
+      <workItem from="1738176033952" duration="4000" />
+      <workItem from="1738176069969" duration="6933000" />
+      <workItem from="1738230723906" duration="361000" />
+      <workItem from="1738231102907" duration="67000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dependency-injection-example/HelloWorldSpring/src/helloworld/HelloWorld.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dependency-injection-example/HelloWorldSpring/src/helloworld/HelloWorld.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/help-session-01-26-2025/src/exampleone/Main.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
