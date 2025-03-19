@@ -31,9 +31,11 @@ A somewhat out-of-date list of topics (folders).
 + `spring-singleton` — Use of the `@Singleton` annotation
 + staticexample
 + strings
-+ topic-?? — examples for that particular topic
 + tryWithResources
 + worksheet-?? —  outline solutions to the worksheets
 + ...
+
+Following several requests, the `topic-??` examples for that particular topic have been renamed to remove
+the `topic-` part of the name.
 
 End of list
