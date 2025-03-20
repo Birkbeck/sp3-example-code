@@ -4,7 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 import java.util.*;
 import java.util.function.*;
-import onjava.*;
 
 public class ApplyTest {
   public static

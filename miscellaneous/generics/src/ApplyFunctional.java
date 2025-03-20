@@ -5,7 +5,6 @@
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
-import onjava.*;
 
 public class ApplyFunctional {
   public static void main(String[] args) {

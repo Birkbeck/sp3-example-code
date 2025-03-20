@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="junit-platform-console-standalone-1.7.3" level="project" />
     <orderEntry type="library" name="junit-platform-console-standalone-1.7.2" level="project" />
+    <orderEntry type="library" name="google.guava" level="application" />
   </component>
 </module>

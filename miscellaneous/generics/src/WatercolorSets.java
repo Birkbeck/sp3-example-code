@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 import generics.watercolors.*;
 import java.util.*;
-import static onjava.Sets.*;
+
 import static generics.watercolors.Watercolors.*;
 
 public class WatercolorSets {

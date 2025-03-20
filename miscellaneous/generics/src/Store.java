@@ -5,7 +5,6 @@
 // Building a complex model using generic collections
 import java.util.*;
 import java.util.function.*;
-import onjava.*;
 
 class Product {
   private final int id;

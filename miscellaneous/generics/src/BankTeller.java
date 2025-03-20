@@ -4,7 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 // A very simple bank teller simulation
 import java.util.*;
-import onjava.*;
 
 class Customer {
   private static long counter = 1;

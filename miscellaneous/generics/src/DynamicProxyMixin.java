@@ -4,8 +4,6 @@
 // Visit http://OnJava8.com for more book information.
 import java.lang.reflect.*;
 import java.util.*;
-import onjava.*;
-import static onjava.Tuple.*;
 
 class MixinProxy implements InvocationHandler {
   Map<String, Object> delegatesByMethod;
