@@ -1,9 +1,10 @@
-package helloworld.spring.di;
+package common;
+
+import interfaces.MessageProvider;
 
 public class HelloWorldMessageProviderAlternative implements MessageProvider {
 
-    @Override
-    public String getMessage() {
+    public String message() {
         return "Goodbye cruel!";
     }
 }

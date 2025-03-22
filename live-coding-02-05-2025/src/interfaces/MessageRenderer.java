@@ -1,4 +1,4 @@
-package helloworld.interfaces;
+package interfaces;
 
 public interface MessageRenderer {
     void render();

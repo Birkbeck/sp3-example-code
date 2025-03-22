@@ -7,6 +7,9 @@ import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import interfaces.MessageProvider;
+import interfaces.MessageRenderer;
+
 
 public class HelloWorldSpring {
 

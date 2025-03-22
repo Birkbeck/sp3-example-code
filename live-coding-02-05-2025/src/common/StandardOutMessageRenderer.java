@@ -1,4 +1,7 @@
-package helloworld.interfaces;
+package common;
+
+import interfaces.MessageProvider;
+import interfaces.MessageRenderer;
 
 public class StandardOutMessageRenderer implements MessageRenderer {
     private MessageProvider messageProvider = null;
@@ -10,7 +13,7 @@ public class StandardOutMessageRenderer implements MessageRenderer {
                     "You must set the property messageProvider of class:"
                             + StandardOutMessageRenderer.class.getName());
         }
-        System.out.println(messageProvider.getMessage());
+        System.out.println(messageProvider.message());
     }
 
     @Override

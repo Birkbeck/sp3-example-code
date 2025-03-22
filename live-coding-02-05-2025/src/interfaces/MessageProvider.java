@@ -1,5 +1,5 @@
-package helloworld.interfaces;
+package interfaces;
 
 public interface MessageProvider {
-    String getMessage();
+    String message();
 }
