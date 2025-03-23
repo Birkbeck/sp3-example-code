@@ -1,2 +1,0 @@
-The next sentence is true
-The former sentence is false
