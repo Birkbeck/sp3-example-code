@@ -1,0 +1,48 @@
+Dos and Don'ts of Type Inference in Java
+Venkat Subramaniam
+Email: venkats@agiledeveloper.com
+Twitter: @venkat_s
+http://www.agiledeveloper.com download link
+  
+Topics:
+✓Statically typed languages
+✓typing vs. keying in types
+✓Java has steadily introduced type inference over the years
+✓Java 10 is not the first attempt for this
+✓Type inference in Java 5
+✓Java 7 changes
+✓Java 9 improvements
+✓Java 8 type inference
+✓limitations
+ ✓no annotations
+ ✓some times lack of context
+✓Java 10 Type inference
+✓ var is not a keyword
+ ✓ local variable type inference
+ ✓There is no var type
+ ✓ local variable: variable, for, try,
+ ✓ not for fields
+ ✓ not for parameters 
+✓Addressing Java 8 limitations in Java 11
+✓The inference of type
+✓what's the type again?
+ ✓ targeted intersection types
+ ✓ anonymous non-denotable types
+✓Dos and don'ts
+  ✓ Don't use with diamond
+  ✓ not so fast: Collection<Integer> to var eh?
+  ✓ base vs. derived
+  ✓ can't use to store lambdas
+    ✓seriously, don't
+✓ Recommendations
+ ✓ don't use with <>
+ ✓ don't put type in name
+ ✓ make sure the type is what you wanted it to be
+ ✓ specify type unless it is dead obvious
+ ✓ use var for temp, debugging
+ ✓ use for reuse
+ ✓ use var to annotate lambda parameters while using type inference
+✓ Summary
+
+You can download this topics list and code examples from:
+	http://www.agiledeveloper.com	 - downloads link

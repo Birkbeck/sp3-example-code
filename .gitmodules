@@ -1,0 +1,9 @@
+[submodule "junit5-samples"]
+	path = junit5-samples
+	url = https://github.com/junit-team/junit5-samples.git
+[submodule "worksheet-concurrency-one"]
+	path = worksheet-concurrency-one
+	url = https://github.com/Birkbeck/sdp-sp3-2022-worksheet-eleven.git
+[submodule "manifold-sample-project"]
+	path = manifold-sample-project
+	url = https://github.com/manifold-systems/manifold-sample-project.git

@@ -1,0 +1,47 @@
+Modeling with Sealed Classes
+Venkat Subramaniam
+Email: venkats@agiledeveloper.com
+Twitter: @venkat_s
+
+The Problems:
+-abstract classes
+-final classes
+-restricting the hiearchy
+ -why?
+ -how?
+
+Solution 1:
+-pros
+-cons
+
+Solution 2:
+-pros
+-const
+
+Sealed classes to the rescue:
+-sealed classes
+-creating a hierarchy
+-creating an not-permitted class
+-a look under the hood
+
+Sealed interfaces:
+-creating an interface
+-creating classes
+-creating a class outside of the package
+
+Restrictions on the derived classes:
+-in same package for unnamed modules
+-any package in the same module for named modules
+-final
+-sealed
+-non-sealed
+
+Meta data:
+-isSealed
+-permittedSubclasses
+
+Pattern Matching and Sealed classes:
+-implicit completeness
+-what if we add a new type later?
+  -how does that work?
+

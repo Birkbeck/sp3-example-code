@@ -1,0 +1,90 @@
+#-------------------------------------------------------------------------------#
+#               Qodana analysis is configured by qodana.yaml file               #
+#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
+#-------------------------------------------------------------------------------#
+version: "1.0"
+#Specify inspection profile for code analysis
+profile:
+  name: qodana.starter
+#Enable inspections
+#include:
+#  - name: <SomeEnabledInspectionId>
+#Disable inspections
+#exclude:
+#  - name: <SomeDisabledInspectionId>
+#    paths:
+#      - <path/where/not/run/inspection>
+projectJDK: "23" #(Applied in CI/CD pipeline)
+#Execute shell command before Qodana execution (Applied in CI/CD pipeline)
+#bootstrap: sh ./prepare-qodana.sh
+#Install IDE plugins before Qodana execution (Applied in CI/CD pipeline)
+#plugins:
+#  - id: <plugin.id> #(plugin id can be found at https://plugins.jetbrains.com)
+#Specify Qodana linter for analysis (Applied in CI/CD pipeline)
+linter: jetbrains/qodana-jvm:2025.1
+exclude:
+  - name: All
+    paths:
+      - anonymous-inner-classes
+      - anonymous-inner-classes/src
+      - anonymous-inner-classes/src/anon
+      - anonymous-inner-classes/src/anon/LinkedList.java
+      - anonymous-inner-classes/src/anon/Listener.java
+      - bridgebetween
+      - bridgebetween/src
+      - bridgebetween/src/top
+      - bridgebetween/src/top/items
+      - bridgebetween/src/top/items/MySubClass.java
+      - bridgebetween/src/top/Thing.java
+      - defaults
+      - defaults/src
+      - defaults/src/defaults
+      - defaults/src/defaults/BonusCalculator.java
+      - generics
+      - generics/src
+      - generics/src/covariant
+      - generics/src/covariant/CovariantGenericsExampleTwo.java
+      - generics/src/examples
+      - generics/src/examples/GenericsDemo.java
+      - generics/src/generics
+      - generics/src/generics/boxes
+      - generics/src/generics/boxes/OldBoxDriver.java
+      - generics/src/generics/dogs
+      - generics/src/generics/dogs/Main.java
+      - generics/src/generics/sum
+      - generics/src/generics/sum/Main.java
+      - generics/src/generics/sum/NewSumMain.java
+      - generics/src/helpsession
+      - generics/src/helpsession/Copy.java
+      - generics/src/helpsession/Example.java
+      - help-session-02-02-2025
+      - help-session-02-02-2025/src
+      - help-session-02-02-2025/src/examplethree
+      - help-session-02-02-2025/src/examplethree/OptionalDemo.java
+      - help-session-02-02-2025/src/exampletwo
+      - help-session-02-02-2025/src/exampletwo/Main.java
+      - java-lambdas-examples
+      - java-lambdas-examples/src
+      - java-lambdas-examples/src/capture
+      - java-lambdas-examples/src/capture/Main.java
+      - java-lambdas-examples/src/lambdas
+      - java-lambdas-examples/src/lambdas/ConsumerExample.java
+      - java-lambdas-examples/src/lambdas/Example.java
+      - java-patternmatching
+      - java-patternmatching/src
+      - java-patternmatching/src/PatternMatching.java
+      - live-coding-29-01-2025
+      - live-coding-29-01-2025/src
+      - live-coding-29-01-2025/src/optional
+      - live-coding-29-01-2025/src/optional/OptionalTest.java
+      - live-coding-29-01-2025/src/streams
+      - live-coding-29-01-2025/src/streams/EmployeeRepository.java
+      - live-coding-29-01-2025/src/streams/Main.java
+      - records
+      - records/src
+      - records/src/five
+      - records/src/five/Rectangle.java
+      - switchexpressions
+      - switchexpressions/src
+      - switchexpressions/src/one
+      - switchexpressions/src/one/Example.java

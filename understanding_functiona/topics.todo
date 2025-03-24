@@ -1,0 +1,33 @@
+Understanding Functional Programming in Java
+Venkat Subramaniam
+http://www.agiledeveloper.com/downloads.html
+venkats@agiledeveloper.com
+Twitter: @venkat_s
+        
+Functional Style:
+-imperative
+-declarative
+-functional
+-functional composition
+ -series of transformations
+
+Lambda Expressions:
+-anonymous functions
+-parts and structure of lambdas
+
+Tools of the trade:
+-in imperative: if, for, while,...
+-in functional: filter, map, reduce...
+-filter, map, and reduce operations
+-collectors
+-map vs. flatmap
+
+Revisiting Functional Style:
+-functional composition
+-lazy evaluations
+
+Summary:                                            
+
+Downloads:
+http://www.agiledeveloper.com/downloads.html
+
