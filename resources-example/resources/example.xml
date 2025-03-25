@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item>
+        <name>Item1</name>
+        <value>Value1</value>
+    </item>
+    <item>
+        <name>Item2</name>
+        <value>Value2</value>
+    </item>
+    <item>
+        <name>Item3</name>
+        <value>Value3</value>
+    </item>
+</resources>
