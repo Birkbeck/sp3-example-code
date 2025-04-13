@@ -1,0 +1,1 @@
+Examples adapted from the CDI tutorial at [`Baelbung`](https://www.baeldung.com/java-ee-cdi).

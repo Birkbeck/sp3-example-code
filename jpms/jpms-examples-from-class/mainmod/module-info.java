@@ -1,0 +1,3 @@
+module mainmod {
+	requires example;
+}
