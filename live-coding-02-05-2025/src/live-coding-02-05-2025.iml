@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.cmd.line" isTestSource="false" packagePrefix="helloworld.cmd.line" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.decoupled" isTestSource="false" packagePrefix="helloworld.decoupled" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.interfaces" isTestSource="false" packagePrefix="helloworld.interfaces" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.spring" isTestSource="false" packagePrefix="helloworld.spring" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.spring.annotations" isTestSource="false" packagePrefix="helloworld.spring.annotations" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.spring.autoscan" isTestSource="false" packagePrefix="helloworld.spring.autoscan" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.spring.di" isTestSource="false" packagePrefix="helloworld.spring.di" />
+      <sourceFolder url="file://$MODULE_DIR$/helloworld.spring.di.cons" isTestSource="false" packagePrefix="helloworld.spring.di.cons" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
