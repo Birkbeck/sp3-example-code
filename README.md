@@ -32,7 +32,6 @@ A somewhat out-of-date list of topics (folders).
 + staticexample
 + strings
 + tryWithResources
-+ worksheet-?? —  outline solutions to the worksheets
 + ...
 
 Following several requests, the `topic-??` examples for that particular topic have been renamed to remove
