@@ -30,7 +30,8 @@ public class RecordDeepDive {
             if (members == null) {
                 this.members = List.of();
             } else {
-                this.members = Collections.unmodifiableList(members); // should be thread safe but...
+                //this.members = Collections.unmodifiableList(members); // should be thread safe but...
+                this.members = List.copyOf(members); // the best of a bad bunch hence the reason for "Google Guava"
             }
         }
     }
