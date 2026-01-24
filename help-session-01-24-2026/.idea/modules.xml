@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/help-session-01-24-2026.iml" filepath="$PROJECT_DIR$/help-session-01-24-2026.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lambdas/lambdas.iml" filepath="$PROJECT_DIR$/lambdas/lambdas.iml" />
       <module fileurl="file://$PROJECT_DIR$/solid/solid.iml" filepath="$PROJECT_DIR$/solid/solid.iml" />
     </modules>
   </component>

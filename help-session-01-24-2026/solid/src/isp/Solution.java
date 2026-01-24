@@ -16,7 +16,7 @@ class LocalDeliveryType implements Priceable {
 class InternationalDeliveryType implements Priceable, Exportable {
     @Override
     public void generateCustomsForms() {
-        
+
     }
 
     @Override
