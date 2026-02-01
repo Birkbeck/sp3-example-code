@@ -1,7 +1,6 @@
-package parallel;
+package parallel.one;
 
 import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 public class Demo {
     static void main() {

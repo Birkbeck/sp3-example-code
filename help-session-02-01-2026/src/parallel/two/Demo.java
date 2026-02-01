@@ -1,4 +1,4 @@
-package paralleltwo;
+package parallel.two;
 
 import java.util.List;
 import java.util.Random;
