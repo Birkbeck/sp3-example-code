@@ -1,3 +1,9 @@
+package demo.interfaces;
+
+import java.util.Optional;
+
 public interface DatabaseConfig {
-    public static DatabaseConfig getInstance();
+    public static Optional<DatabaseConfig> getInstance() {
+        return Optional.empty();
+    }
 }

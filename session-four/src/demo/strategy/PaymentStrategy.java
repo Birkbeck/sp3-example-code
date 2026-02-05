@@ -5,13 +5,13 @@ interface PaymentStrategy {
 }
 
 class CreditCardPayment implements PaymentStrategy {
-    public void pay(int amount){
+    public void pay(int amount) {
         System.out.println("Paid " + amount + " using Credit Card");
     }
 }
 
 class BitcoinPayment implements PaymentStrategy {
-    public void pay(int amount){
+    public void pay(int amount) {
         System.out.println("Paid " + amount + " using Bitcoin");
     }
 }
@@ -19,19 +19,23 @@ class BitcoinPayment implements PaymentStrategy {
 class ShoppingCart {
     private PaymentStrategy strategy;
 
-    // DI - constructor
-    public ShoppingCart(PaymentStrategy strategy){
-        this.strategy = strategy;
+    public ShoppingCart() {
     }
-    // this is an example of dependency injection - mutator
-    public void setPaymentStrategy(PaymentStrategy strategy){ 
+
+    // DI - constructor
+    public ShoppingCart(PaymentStrategy strategy) {
         this.strategy = strategy;
     }
 
-    // write a general method which set the PaymentStrategy
+    // this is an example of dependency injection - mutator
+    public void setPaymentStrategy(PaymentStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    // write a general method that sets the PaymentStrategy
     // "method injection"
 
-    public void checkout(int amount){
+    public void checkout(int amount) {
 /*
         Class cl = strategy.getClass();
         if ( cl.equals(CreditCardPayment.class)){
@@ -43,15 +47,5 @@ class ShoppingCart {
         }
 */
         strategy.pay(amount);
-    }
-}
-
-class Demo {
-    public static void main(String... args){
-        // ...
-        ShoppingCart cart = new ShoppingCart();
-        cart.setPaymentStrategy(new BitcoinPayment());
-        // ...
-        cart.checkout(100);
     }
 }
