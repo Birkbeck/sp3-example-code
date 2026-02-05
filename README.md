@@ -5,6 +5,11 @@ London.
 
 ------
 
+Key folders:
+
++ session-<week-number> — code from the in-class session for that <week-number>
++ help-session-<date> — code from the help session of that <date>
+
 A somewhat out-of-date list of topics (folders).
 
 + anonymous
@@ -33,8 +38,5 @@ A somewhat out-of-date list of topics (folders).
 + strings
 + tryWithResources
 + ...
-
-Following several requests, the `topic-??` examples for that particular topic have been renamed to remove
-the `topic-` part of the name.
 
 End of list
