@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dependency-injection/dependency-injection.iml" filepath="$PROJECT_DIR$/dependency-injection/dependency-injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-examples/framework-examples.iml" filepath="$PROJECT_DIR$/framework-examples/framework-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/help-session-02-08.iml" filepath="$PROJECT_DIR$/help-session-02-08.iml" />
+    </modules>
+  </component>
+</project>
