@@ -1,0 +1,2 @@
+renderer.(class)=helloworld.StandardOutMessageRenderer
+provider.(class)=helloworld.AnotherWorldMessageProvider

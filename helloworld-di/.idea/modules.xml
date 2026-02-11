@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/HelloWorld/HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldCommandLineArguments/HelloWorldCommandLineArguments.iml" filepath="$PROJECT_DIR$/HelloWorldCommandLineArguments/HelloWorldCommandLineArguments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldDecoupled/HelloWorldDecoupled.iml" filepath="$PROJECT_DIR$/HelloWorldDecoupled/HelloWorldDecoupled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldDecoupledinterface/HelloWorldDecoupledinterface.iml" filepath="$PROJECT_DIR$/HelloWorldDecoupledinterface/HelloWorldDecoupledinterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldDecoupledinterfaceWithFactory/HelloWorldDecoupledinterfaceWithFactory.iml" filepath="$PROJECT_DIR$/HelloWorldDecoupledinterfaceWithFactory/HelloWorldDecoupledinterfaceWithFactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldSpring/HelloWorldSpring.iml" filepath="$PROJECT_DIR$/HelloWorldSpring/HelloWorldSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dependencyinjection.iml" filepath="$PROJECT_DIR$/.idea/dependencyinjection.iml" />
+    </modules>
+  </component>
+</project>
