@@ -3,8 +3,9 @@ package helloworld;
 public class HelloWorld {
 
     public static void main(String[] args) {
-        MessageRenderer mr = MessageSupportFactory.getInstance().getMessageRenderer();
-        MessageProvider mp = MessageSupportFactory.getInstance().getMessageProvider();
+        MessageSupportFactory msf = MessageSupportFactory.getInstance();
+        MessageRenderer mr = msf.getMessageRenderer();
+        MessageProvider mp = msf.getMessageProvider();
         mr.setMessageProvider(mp);
         mr.render();
     }

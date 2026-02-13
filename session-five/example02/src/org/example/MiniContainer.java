@@ -2,7 +2,8 @@ package org.example;
 
 import java.lang.reflect.Field;
 
-/// This class scans an object, finds fields marked `@Inject`, and assigns an instance to them.
+/// This class scans an object, finds fields marked `@Inject`,
+/// and assigns an instance to them.
 
 public class MiniContainer {
     public static void wire(Object client) throws Exception {

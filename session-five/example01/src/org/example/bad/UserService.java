@@ -11,7 +11,7 @@ import org.example.EmailService;
 public class UserService {
     private EmailService emailService = new EmailService(); // Hardcoded!
 
-    public void registerUser(String email) {
+    public void register(String email) {
         // Logic...
         emailService.send("Welcome!", email);
     }

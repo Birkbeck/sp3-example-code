@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/HelloWorldDecoupledinterface/HelloWorldDecoupledinterface.iml" filepath="$PROJECT_DIR$/HelloWorldDecoupledinterface/HelloWorldDecoupledinterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/HelloWorldDecoupledinterfaceWithFactory/HelloWorldDecoupledinterfaceWithFactory.iml" filepath="$PROJECT_DIR$/HelloWorldDecoupledinterfaceWithFactory/HelloWorldDecoupledinterfaceWithFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/HelloWorldSpring/HelloWorldSpring.iml" filepath="$PROJECT_DIR$/HelloWorldSpring/HelloWorldSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldSpringWithAnnotation/HelloWorldSpringWithAnnotation.iml" filepath="$PROJECT_DIR$/HelloWorldSpringWithAnnotation/HelloWorldSpringWithAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldSpringWithAutoscan/HelloWorldSpringWithAutoscan.iml" filepath="$PROJECT_DIR$/HelloWorldSpringWithAutoscan/HelloWorldSpringWithAutoscan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldSpringWithDIXMLFile/HelloWorldSpringWithDIXMLFile.iml" filepath="$PROJECT_DIR$/HelloWorldSpringWithDIXMLFile/HelloWorldSpringWithDIXMLFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/dependencyinjection.iml" filepath="$PROJECT_DIR$/.idea/dependencyinjection.iml" />
     </modules>
   </component>

@@ -3,9 +3,9 @@ package org.example.demo;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String... args) {
         // 1. Initialize the Spring Context using our Config class
-        AnnotationConfigApplicationContext context =
+        var context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
         // 2. Retrieve the bean from the container
