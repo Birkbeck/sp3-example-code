@@ -1,0 +1,125 @@
+warning: type `Task` is more private than the item `AppState`
+  --> src/main.rs:53:1
+   |
+53 | pub type AppState = Arc<RwLock<HashMap<Uuid, Task>>>;
+   | ^^^^^^^^^^^^^^^^^ type alias `AppState` is reachable at visibility `pub`
+   |
+note: but type `Task` is only usable at visibility `pub(crate)`
+  --> src/main.rs:27:1
+   |
+27 | struct Task {
+   | ^^^^^^^^^^^
+   = note: `#[warn(private_interfaces)]` on by default
+
+warning: type `Task` is more private than the item `list_tasks`
+  --> src/main.rs:77:1
+   |
+77 | pub async fn list_tasks(State(state): State<AppState>) -> Response {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function `list_tasks` is reachable at visibility `pub`
+   |
+note: but type `Task` is only usable at visibility `pub(crate)`
+  --> src/main.rs:27:1
+   |
+27 | struct Task {
+   | ^^^^^^^^^^^
+
+warning: type `Task` is more private than the item `create_task`
+  --> src/main.rs:83:1
+   |
+83 | / pub async fn create_task(
+84 | |     State(state): State<AppState>,
+85 | |     Json(req): Json<CreateTaskRequest>,
+86 | | ) -> Response {
+   | |_____________^ function `create_task` is reachable at visibility `pub`
+   |
+note: but type `Task` is only usable at visibility `pub(crate)`
+  --> src/main.rs:27:1
+   |
+27 | struct Task {
+   | ^^^^^^^^^^^
+
+warning: type `CreateTaskRequest` is more private than the item `create_task`
+  --> src/main.rs:83:1
+   |
+83 | / pub async fn create_task(
+84 | |     State(state): State<AppState>,
+85 | |     Json(req): Json<CreateTaskRequest>,
+86 | | ) -> Response {
+   | |_____________^ function `create_task` is reachable at visibility `pub`
+   |
+note: but type `CreateTaskRequest` is only usable at visibility `pub(crate)`
+  --> src/main.rs:36:1
+   |
+36 | struct CreateTaskRequest {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type `Task` is more private than the item `get_task`
+   --> src/main.rs:103:1
+    |
+103 | pub async fn get_task(State(state): State<AppState>, Path(id): Path<Uuid>) -> Response {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function `get_task` is reachable at visibility `pub`
+    |
+note: but type `Task` is only usable at visibility `pub(crate)`
+   --> src/main.rs:27:1
+    |
+ 27 | struct Task {
+    | ^^^^^^^^^^^
+
+warning: type `Task` is more private than the item `update_task`
+   --> src/main.rs:111:1
+    |
+111 | / pub async fn update_task(
+112 | |     State(state): State<AppState>,
+113 | |     Path(id): Path<Uuid>,
+114 | |     Json(req): Json<UpdateTaskRequest>,
+115 | | ) -> Response {
+    | |_____________^ function `update_task` is reachable at visibility `pub`
+    |
+note: but type `Task` is only usable at visibility `pub(crate)`
+   --> src/main.rs:27:1
+    |
+ 27 | struct Task {
+    | ^^^^^^^^^^^
+
+warning: type `UpdateTaskRequest` is more private than the item `update_task`
+   --> src/main.rs:111:1
+    |
+111 | / pub async fn update_task(
+112 | |     State(state): State<AppState>,
+113 | |     Path(id): Path<Uuid>,
+114 | |     Json(req): Json<UpdateTaskRequest>,
+115 | | ) -> Response {
+    | |_____________^ function `update_task` is reachable at visibility `pub`
+    |
+note: but type `UpdateTaskRequest` is only usable at visibility `pub(crate)`
+   --> src/main.rs:42:1
+    |
+ 42 | struct UpdateTaskRequest {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type `Task` is more private than the item `delete_task`
+   --> src/main.rs:135:1
+    |
+135 | pub async fn delete_task(State(state): State<AppState>, Path(id): Path<Uuid>) -> Response {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function `delete_task` is reachable at visibility `pub`
+    |
+note: but type `Task` is only usable at visibility `pub(crate)`
+   --> src/main.rs:27:1
+    |
+ 27 | struct Task {
+    | ^^^^^^^^^^^
+
+warning: type `Task` is more private than the item `build_router`
+   --> src/main.rs:145:1
+    |
+145 | pub fn build_router(state: AppState) -> Router {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ function `build_router` is reachable at visibility `pub`
+    |
+note: but type `Task` is only usable at visibility `pub(crate)`
+   --> src/main.rs:27:1
+    |
+ 27 | struct Task {
+    | ^^^^^^^^^^^
+
+warning: `exercise15` (bin "exercise15") generated 9 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
