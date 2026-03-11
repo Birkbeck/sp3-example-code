@@ -1,3 +1,0 @@
-module mainmod {
-	requires example;
-}

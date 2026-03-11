@@ -1,9 +1,0 @@
-# Message renderer
-renderer.(class)=helloworld.StandardOutMessageRenderer
-# Message provider
-provider.(class)=helloworld.HelloWorldMessageProviderAlternative
-
-#  Ask Spring to assign provider bean to the helloworld.MessageProvider property
-#  of the Message renderer bean
-renderer.messageProvider(ref)=provider
-

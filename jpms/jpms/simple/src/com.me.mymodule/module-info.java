@@ -1,1 +1,0 @@
-module com.me.mymodule { }
